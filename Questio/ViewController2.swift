@@ -8,13 +8,16 @@
 
 import UIKit
 
-
 class ViewController2: UIViewController {
     var text:String = ""
 
+    @IBOutlet weak var Animoji: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(text)
+        self.Animoji.image = UIImage(named: self.text)
+        //navigationController?.setNavigationBarHidden(true, animated: false)
 
         // Do any additional setup after loading the view.
     }

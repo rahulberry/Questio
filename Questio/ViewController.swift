@@ -12,11 +12,10 @@ import Firebase
 
 
 class ViewController: UIViewController {
-
     
-    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-
     @IBOutlet weak var Animoji: UIImageView!
+    
+    var faceType = ""
     
     let ref = Database.database().reference()
     
@@ -32,23 +31,34 @@ class ViewController: UIViewController {
                         //Change for real gif used
                         //self.Animoji.image = UIImage.gifImageWithName("funny")
                         self.Animoji.image = UIImage(named: "animoji-vos")
+                        self.faceType = "animji-vos"
                       }
                   }
               })
-       ref.child("TransitionState").child("Q1").observe(.value, with: {snapshot in
+        /*ref.child("TransitionState").child("Q1").observe(.value, with: {snapshot in
             print(snapshot)
              if let value = snapshot.value as? Int{
                 if value == 1{
-                    self.navigateToNext()
+                    self.executeSegue(segueIdentifier: "Segue")
                 }
             }
-        })
+        })*/
     }
-    func navigateToNext(){
-          let vc = ViewController2(nibName: "ViewTwo", bundle: nil)
-           vc.text = "test"
-
-        self.navigationController?.pushViewController(vc, animated: true)
+    
+    @IBAction func B(_ sender: Any) {
+           self.executeSegue(segueIdentifier: "Segue")
        }
+    
+    /*Perform Segue*/
+    func executeSegue(segueIdentifier:String){
+        self.performSegue(withIdentifier: segueIdentifier, sender: self)
+    }
+    
+    /*Pass data across view controllers*/
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! ViewController2
+        vc.text = self.faceType
+    }
+    
+    
 }
-
