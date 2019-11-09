@@ -10,14 +10,29 @@ import UIKit
 
 import Firebase
 
-
 class ViewController: UIViewController {
     
     @IBOutlet weak var Animoji: UIImageView!
     
+    var uid = ""
     var faceType = ""
+    var fourDigitNumber: String {
+     var result = ""
+     repeat {
+         // Create a string with a random number 0...9999
+         result = String(format:"%04d", arc4random_uniform(10000) )
+     } while Set<Character>(result).count < 4
+     return result
+    }
     
     let ref = Database.database().reference()
+    
+    /*UID generator*/
+    /*We will need to check against all nodes to make sure no id is repeated*/
+    func randomString(length: Int) -> String {
+      let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+      return String((0..<length).map{ _ in letters.randomElement()! })
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,11 +61,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func B(_ sender: Any) {
-           self.executeSegue(segueIdentifier: "Segue")
+           self.exitVC(segueIdentifier: "Segue")
        }
-    
+
     /*Perform Segue*/
-    func executeSegue(segueIdentifier:String){
+    func exitVC(segueIdentifier:String){
+        /*Set user ID*/
+        uid = randomString(length:5);
+        //self.ref.child("Data").child(self.uid).child("Age").setValue("18-25")
+        //self.ref.child("Data").child(self.uid).child("Emotion").setValue("Angry")
+        //self.ref.child("Data").child(uid).child("Gender").setValue("Male")
         self.performSegue(withIdentifier: segueIdentifier, sender: self)
     }
     
@@ -58,7 +78,10 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! ViewController2
         vc.text = self.faceType
+        vc.uid = self.uid
     }
     
+    
+ 
     
 }
