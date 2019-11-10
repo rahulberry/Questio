@@ -60,9 +60,11 @@ class ViewController: UIViewController {
         })*/
     }
     
-    @IBAction func B(_ sender: Any) {
-           self.exitVC(segueIdentifier: "Segue")
-       }
+    @IBAction func Swipe(_ gestureRecognizer : UISwipeGestureRecognizer) {
+        if(gestureRecognizer.direction == .left){
+        self.exitVC(segueIdentifier: "Segue")
+        }
+    }
 
     /*Perform Segue*/
     func exitVC(segueIdentifier:String){
