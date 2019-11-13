@@ -7,17 +7,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Survey Home Screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Questio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SurveyHomeScreen" customModule="Questio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qDn-jH-8wx">
-                                <rect key="frame" x="288" y="130" width="802" height="728"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quaestio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9T1-lb-Med">
                                 <rect key="frame" x="38" y="20" width="166" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -25,13 +22,28 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey, can I ask you something? " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NSz-R4-Gpd">
-                                <rect key="frame" x="360" y="885" width="659" height="61"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey, can I ask you a few questions? " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NSz-R4-Gpd">
+                                <rect key="frame" x="269" y="627" width="829" height="416"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="51"/>
+                                <fontDescription key="fontDescription" name="AlNile-Bold" family="Al Nile" pointSize="70"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLs-mM-Nop">
+                                <rect key="frame" x="975" y="872" width="333" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="48"/>
+                                <state key="normal" title="Start Now">
+                                    <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="StartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fnF-1x-SgH"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qDn-jH-8wx">
+                                <rect key="frame" x="342" y="122" width="682" height="655"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
@@ -42,37 +54,39 @@
                             <constraint firstItem="qDn-jH-8wx" firstAttribute="centerX" secondItem="NSz-R4-Gpd" secondAttribute="centerX" id="lV8-YT-2Ab"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="jNN-61-8wn" appends="YES" id="i5a-p6-zqx"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="ssn-g0-uXw"/>
                     <connections>
                         <outlet property="Animoji" destination="qDn-jH-8wx" id="qAg-qa-BUM"/>
-                        <segue destination="f6K-Qr-AID" kind="show" identifier="Segue" id="wh2-ZV-fa2"/>
+                        <outlet property="StartButtonOutlet" destination="nLs-mM-Nop" id="SNQ-Eg-phR"/>
+                        <segue destination="f6K-Qr-AID" kind="show" identifier="SegueToGDPR" id="wh2-ZV-fa2"/>
+                        <segue destination="jBk-HQ-sDG" kind="show" identifier="PrivacyPolicySegue" id="92C-01-Z45"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="jNN-61-8wn">
-                    <connections>
-                        <action selector="Swipe:" destination="BYZ-38-t0r" id="cHo-h7-Kiv"/>
-                    </connections>
-                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="jNN-61-8wn"/>
             </objects>
-            <point key="canvasLocation" x="832.79648609077594" y="116.60156249999999"/>
+            <point key="canvasLocation" x="139" y="1709"/>
         </scene>
-        <!--View Controller2-->
+        <!--GDPR1-->
         <scene sceneID="uNb-ca-MCl">
             <objects>
-                <viewController restorationIdentifier="ViewController2" storyboardIdentifier="ViewController2" id="f6K-Qr-AID" customClass="ViewController2" customModule="Questio" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ViewController2" storyboardIdentifier="ViewController2" id="f6K-Qr-AID" customClass="GDPR1" customModule="Questio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HjW-Py-Tcd">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pCN-mO-yZW">
-                                <rect key="frame" x="286" y="159" width="794" height="681"/>
+                                <rect key="frame" x="353" y="179" width="660" height="581"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GDPR VIDEO1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jp0-z6-PwA">
+                                <rect key="frame" x="446" y="768" width="478" height="153"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="70"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="Ith-8J-sd6"/>
@@ -80,12 +94,11 @@
                     <navigationItem key="navigationItem" id="ipa-em-ac5"/>
                     <connections>
                         <outlet property="Animoji" destination="pCN-mO-yZW" id="AGb-w9-kEb"/>
-                        <segue destination="1BF-gd-ix1" kind="show" id="Zkz-lA-DNH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmf-V5-P72" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1542.6061493411419" y="116.60156249999999"/>
+            <point key="canvasLocation" x="-284" y="2551"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="gmD-m7-3PM">
@@ -98,28 +111,88 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ma9-Sk-B7N"/>
+                        <segue destination="mRm-HI-hlp" kind="relationship" relationship="rootViewController" id="mcU-Zb-zWA"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iy1-9l-Pna" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.79941434846265" y="116.60156249999999"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="y7p-sH-l8U">
+        <!--Privacy Policy-->
+        <scene sceneID="GH9-ee-RE3">
             <objects>
-                <viewController id="1BF-gd-ix1" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="sqe-d4-XkF">
+                <viewController id="jBk-HQ-sDG" customClass="PrivacyPolicy" customModule="Questio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kO1-5a-acV">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="t5M-ig-3s3"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kuv-NV-Roq">
+                                <rect key="frame" x="366" y="115" width="634" height="557"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qr-code-2" translatesAutoresizingMaskIntoConstraints="NO" id="MxR-IV-dqK">
+                                <rect key="frame" x="766" y="680" width="323" height="245"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qm-dV-To2">
+                                <rect key="frame" x="284" y="726" width="474" height="153"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="70"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="gCO-sT-Hed"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hcV-wk-KdC"/>
+                    <navigationItem key="navigationItem" id="39Z-kc-Yj2"/>
+                    <connections>
+                        <outlet property="Animoji" destination="kuv-NV-Roq" id="EIO-ct-c8Q"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kyh-wh-kCf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j5G-jF-wXT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2277" y="117"/>
+            <point key="canvasLocation" x="568" y="2551"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="xhY-Yc-fIQ">
+            <objects>
+                <viewController id="mRm-HI-hlp" customClass="Home" customModule="Questio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jdp-6C-PfL">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeWallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="QTL-uk-fjM">
+                                <rect key="frame" x="-47" y="-149" width="1420" height="1326"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aAn-q3-gbU">
+                                <rect key="frame" x="85" y="674" width="391" height="293"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g0e-17-lej">
+                                <rect key="frame" x="514" y="674" width="313" height="293"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="9ky-TI-eNm"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dZE-8e-inM"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="SegueToInitSetup" id="UMy-0m-hI1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gBu-ha-RoD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.79941434846265" y="830.859375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="HomeWallpaper" width="1373" height="997"/>
+        <image name="qr-code-2" width="299" height="299"/>
+    </resources>
+    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

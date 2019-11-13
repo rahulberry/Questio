@@ -15,22 +15,23 @@ struct cvData{
     var Gender = ""
 }
 
-
-class ViewController2: UIViewController {
+class GDPR1: UIViewController {
     
     let ref = Database.database().reference()
     let data = cvData(Mood: "", Age: "", Gender: "")
     var text:String = ""
     var uid:String = ""
+    
 
     @IBOutlet weak var Animoji: UIImageView!
     
     override func viewDidLoad() {
         navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewDidLoad()
-            
+        
+        print(text)
         //fix state management
-        self.Animoji.image = UIImage(named: "animoji-vos")
+        self.Animoji.image = UIImage(named: text)
         
     }
     

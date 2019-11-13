@@ -9,14 +9,25 @@
 /* Begin PBXBuildFile section */
 		2E038A7C236B53A200F79FC0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E038A7B236B53A200F79FC0 /* GoogleService-Info.plist */; };
 		2E04E9B9236F8C5300BA6349 /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E04E9B8236F8C5300BA6349 /* iOSDevCenters+GIF.swift */; };
-		2E04E9BB236F8D0F00BA6349 /* funny.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2E04E9BA236F8D0F00BA6349 /* funny.gif */; };
-		2E04E9C3236F9E4B00BA6349 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E04E9C2236F9E4B00BA6349 /* ViewController2.swift */; };
+		2E04E9C3236F9E4B00BA6349 /* GDPR1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E04E9C2236F9E4B00BA6349 /* GDPR1.swift */; };
+		2E84C299237C7443002D3665 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84C298237C7443002D3665 /* Home.swift */; };
 		2E85FBD2236B2BF600EDFF56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E85FBD1236B2BF600EDFF56 /* AppDelegate.swift */; };
 		2E85FBD4236B2BF600EDFF56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E85FBD3236B2BF600EDFF56 /* SceneDelegate.swift */; };
-		2E85FBD6236B2BF600EDFF56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E85FBD5236B2BF600EDFF56 /* ViewController.swift */; };
+		2E85FBD6236B2BF600EDFF56 /* SurveyHomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E85FBD5236B2BF600EDFF56 /* SurveyHomeScreen.swift */; };
 		2E85FBD9236B2BF600EDFF56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E85FBD7236B2BF600EDFF56 /* Main.storyboard */; };
 		2E85FBDB236B2BF900EDFF56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E85FBDA236B2BF900EDFF56 /* Assets.xcassets */; };
 		2E85FBDE236B2BF900EDFF56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E85FBDC236B2BF900EDFF56 /* LaunchScreen.storyboard */; };
+		2EC6B1C2237C57BA0085B560 /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC6B1C1237C57BA0085B560 /* PrivacyPolicy.swift */; };
+		2EE6070B237C2C02005E2D85 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EE60702237C2BE4005E2D85 /* OpenSans-Bold.ttf */; };
+		2EE6070C237C2C02005E2D85 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EE60701237C2BE4005E2D85 /* OpenSans-BoldItalic.ttf */; };
+		2EE6070D237C2C02005E2D85 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EE60705237C2BE4005E2D85 /* OpenSans-ExtraBold.ttf */; };
+		2EE6070E237C2C02005E2D85 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EE60704237C2BE4005E2D85 /* OpenSans-ExtraBoldItalic.ttf */; };
+		2EE6070F237C2C02005E2D85 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EE60703237C2BE4005E2D85 /* OpenSans-Italic.ttf */; };
+		2EE60710237C2C02005E2D85 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EE6070A237C2BE5005E2D85 /* OpenSans-Light.ttf */; };
+		2EE60711237C2C02005E2D85 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EE60706237C2BE4005E2D85 /* OpenSans-LightItalic.ttf */; };
+		2EE60712237C2C02005E2D85 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EE60709237C2BE4005E2D85 /* OpenSans-Regular.ttf */; };
+		2EE60713237C2C02005E2D85 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EE60708237C2BE4005E2D85 /* OpenSans-Semibold.ttf */; };
+		2EE60714237C2C02005E2D85 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EE60707237C2BE4005E2D85 /* OpenSans-SemiboldItalic.ttf */; };
 		2EF707AF237494D0008F73F9 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF707AE237494D0008F73F9 /* MainNavigationController.swift */; };
 		E750A660F707CCBDF28F6727 /* libPods-Questio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F479B915CB0A7FF771F35F /* libPods-Questio.a */; };
 /* End PBXBuildFile section */
@@ -25,16 +36,27 @@
 		1B1482C6B5EE2491B3A2286F /* Pods-Questio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Questio.release.xcconfig"; path = "Target Support Files/Pods-Questio/Pods-Questio.release.xcconfig"; sourceTree = "<group>"; };
 		2E038A7B236B53A200F79FC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2E04E9B8236F8C5300BA6349 /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "iOSDevCenters+GIF.swift"; path = "../../../Downloads/GIF-Swift-master/GIF-Swift/iOSDevCenters+GIF.swift"; sourceTree = "<group>"; };
-		2E04E9BA236F8D0F00BA6349 /* funny.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = funny.gif; path = "../../../Downloads/GIF-Swift-master/GIF-Swift/funny.gif"; sourceTree = "<group>"; };
-		2E04E9C2236F9E4B00BA6349 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		2E04E9C2236F9E4B00BA6349 /* GDPR1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDPR1.swift; sourceTree = "<group>"; };
+		2E84C298237C7443002D3665 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2E85FBCE236B2BF600EDFF56 /* Questio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Questio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E85FBD1236B2BF600EDFF56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E85FBD3236B2BF600EDFF56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2E85FBD5236B2BF600EDFF56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2E85FBD5236B2BF600EDFF56 /* SurveyHomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyHomeScreen.swift; sourceTree = "<group>"; };
 		2E85FBD8236B2BF600EDFF56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2E85FBDA236B2BF900EDFF56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E85FBDD236B2BF900EDFF56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E85FBDF236B2BF900EDFF56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EC6B1C1237C57BA0085B560 /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
+		2EE60701237C2BE4005E2D85 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		2EE60702237C2BE4005E2D85 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		2EE60703237C2BE4005E2D85 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		2EE60704237C2BE4005E2D85 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		2EE60705237C2BE4005E2D85 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		2EE60706237C2BE4005E2D85 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		2EE60707237C2BE4005E2D85 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		2EE60708237C2BE4005E2D85 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		2EE60709237C2BE4005E2D85 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		2EE6070A237C2BE5005E2D85 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		2EF707AE237494D0008F73F9 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		8C05E3C8773EB44672934D25 /* Pods-Questio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Questio.debug.xcconfig"; path = "Target Support Files/Pods-Questio/Pods-Questio.debug.xcconfig"; sourceTree = "<group>"; };
 		E9F479B915CB0A7FF771F35F /* libPods-Questio.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Questio.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,20 +95,39 @@
 		2E85FBD0236B2BF600EDFF56 /* Questio */ = {
 			isa = PBXGroup;
 			children = (
+				2EE60700237C2BAB005E2D85 /* Fonts */,
 				2E85FBD1236B2BF600EDFF56 /* AppDelegate.swift */,
 				2E85FBD3236B2BF600EDFF56 /* SceneDelegate.swift */,
-				2E85FBD5236B2BF600EDFF56 /* ViewController.swift */,
-				2E04E9C2236F9E4B00BA6349 /* ViewController2.swift */,
+				2E85FBD5236B2BF600EDFF56 /* SurveyHomeScreen.swift */,
+				2E04E9C2236F9E4B00BA6349 /* GDPR1.swift */,
 				2E04E9B8236F8C5300BA6349 /* iOSDevCenters+GIF.swift */,
 				2E85FBD7236B2BF600EDFF56 /* Main.storyboard */,
+				2E84C298237C7443002D3665 /* Home.swift */,
 				2E85FBDA236B2BF900EDFF56 /* Assets.xcassets */,
-				2E04E9BA236F8D0F00BA6349 /* funny.gif */,
+				2EC6B1C1237C57BA0085B560 /* PrivacyPolicy.swift */,
 				2E85FBDC236B2BF900EDFF56 /* LaunchScreen.storyboard */,
 				2E85FBDF236B2BF900EDFF56 /* Info.plist */,
 				2E038A7B236B53A200F79FC0 /* GoogleService-Info.plist */,
 				2EF707AE237494D0008F73F9 /* MainNavigationController.swift */,
 			);
 			path = Questio;
+			sourceTree = "<group>";
+		};
+		2EE60700237C2BAB005E2D85 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2EE60702237C2BE4005E2D85 /* OpenSans-Bold.ttf */,
+				2EE60701237C2BE4005E2D85 /* OpenSans-BoldItalic.ttf */,
+				2EE60705237C2BE4005E2D85 /* OpenSans-ExtraBold.ttf */,
+				2EE60704237C2BE4005E2D85 /* OpenSans-ExtraBoldItalic.ttf */,
+				2EE60703237C2BE4005E2D85 /* OpenSans-Italic.ttf */,
+				2EE6070A237C2BE5005E2D85 /* OpenSans-Light.ttf */,
+				2EE60706237C2BE4005E2D85 /* OpenSans-LightItalic.ttf */,
+				2EE60709237C2BE4005E2D85 /* OpenSans-Regular.ttf */,
+				2EE60708237C2BE4005E2D85 /* OpenSans-Semibold.ttf */,
+				2EE60707237C2BE4005E2D85 /* OpenSans-SemiboldItalic.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		6031382D25FCBBC7F7FC82D2 /* Pods */ = {
@@ -165,9 +206,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EE6070B237C2C02005E2D85 /* OpenSans-Bold.ttf in Resources */,
+				2EE6070C237C2C02005E2D85 /* OpenSans-BoldItalic.ttf in Resources */,
+				2EE6070D237C2C02005E2D85 /* OpenSans-ExtraBold.ttf in Resources */,
+				2EE6070E237C2C02005E2D85 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				2EE6070F237C2C02005E2D85 /* OpenSans-Italic.ttf in Resources */,
+				2EE60710237C2C02005E2D85 /* OpenSans-Light.ttf in Resources */,
+				2EE60711237C2C02005E2D85 /* OpenSans-LightItalic.ttf in Resources */,
+				2EE60712237C2C02005E2D85 /* OpenSans-Regular.ttf in Resources */,
+				2EE60713237C2C02005E2D85 /* OpenSans-Semibold.ttf in Resources */,
+				2EE60714237C2C02005E2D85 /* OpenSans-SemiboldItalic.ttf in Resources */,
 				2E85FBDE236B2BF900EDFF56 /* LaunchScreen.storyboard in Resources */,
 				2E038A7C236B53A200F79FC0 /* GoogleService-Info.plist in Resources */,
-				2E04E9BB236F8D0F00BA6349 /* funny.gif in Resources */,
 				2E85FBDB236B2BF900EDFF56 /* Assets.xcassets in Resources */,
 				2E85FBD9236B2BF600EDFF56 /* Main.storyboard in Resources */,
 			);
@@ -205,11 +255,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E04E9C3236F9E4B00BA6349 /* ViewController2.swift in Sources */,
-				2E85FBD6236B2BF600EDFF56 /* ViewController.swift in Sources */,
+				2E04E9C3236F9E4B00BA6349 /* GDPR1.swift in Sources */,
+				2E85FBD6236B2BF600EDFF56 /* SurveyHomeScreen.swift in Sources */,
+				2EC6B1C2237C57BA0085B560 /* PrivacyPolicy.swift in Sources */,
 				2E04E9B9236F8C5300BA6349 /* iOSDevCenters+GIF.swift in Sources */,
 				2EF707AF237494D0008F73F9 /* MainNavigationController.swift in Sources */,
 				2E85FBD2236B2BF600EDFF56 /* AppDelegate.swift in Sources */,
+				2E84C299237C7443002D3665 /* Home.swift in Sources */,
 				2E85FBD4236B2BF600EDFF56 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

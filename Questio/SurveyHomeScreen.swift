@@ -10,9 +10,11 @@ import UIKit
 
 import Firebase
 
-class ViewController: UIViewController {
+class SurveyHomeScreen: UIViewController {
     
     @IBOutlet weak var Animoji: UIImageView!
+  
+    @IBOutlet weak var StartButtonOutlet: UIButton!
     
     var uid = ""
     var faceType = ""
@@ -35,20 +37,23 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        
+    self.StartButtonOutlet.layer.cornerRadius = 45
+        
         super.viewDidLoad()
         /*Hides navigation bar*/
         navigationController?.setNavigationBarHidden(true, animated: false)
 
-        // Do any additional setup after loading the view.
+        // Fetch face type
         ref.child("FaceType").observeSingleEvent(of: .value, with: { snapshot in
                   if let value = snapshot.value as? String{
                       if value == "Fox"{
                         //Change for real gif used
                         //self.Animoji.image = UIImage.gifImageWithName("funny")
                         self.Animoji.image = UIImage(named: "animoji-vos")
-                        self.faceType = "animji-vos"
+                        self.faceType = "animoji-vos"
                       }
-                  }
+                  } 
               })
         /*ref.child("TransitionState").child("Q1").observe(.value, with: {snapshot in
             print(snapshot)
@@ -60,13 +65,7 @@ class ViewController: UIViewController {
         })*/
     }
     
-    @IBAction func Swipe(_ gestureRecognizer : UISwipeGestureRecognizer) {
-        if(gestureRecognizer.direction == .left){
-        self.exitVC(segueIdentifier: "Segue")
-        }
-    }
-
-    /*Perform Segue*/
+  /*Perform Segue*/
     func exitVC(segueIdentifier:String){
         /*Set user ID*/
         uid = randomString(length:5);
@@ -78,12 +77,13 @@ class ViewController: UIViewController {
     
     /*Pass data across view controllers*/
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! ViewController2
+        let vc = segue.destination as! GDPR1
         vc.text = self.faceType
         vc.uid = self.uid
     }
     
     
- 
+
+    
     
 }
