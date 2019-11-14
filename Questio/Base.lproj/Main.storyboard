@@ -29,21 +29,21 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLs-mM-Nop">
-                                <rect key="frame" x="975" y="872" width="333" height="93"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qDn-jH-8wx">
+                                <rect key="frame" x="269" y="122" width="806" height="742"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bak-Fh-1d7">
+                                <rect key="frame" x="875" y="835" width="443" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="48"/>
-                                <state key="normal" title="Start Now">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="60"/>
+                                <state key="normal" title="Start  Now">
                                     <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="StartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fnF-1x-SgH"/>
+                                    <action selector="SurveyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iGL-Im-K9p"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qDn-jH-8wx">
-                                <rect key="frame" x="342" y="122" width="682" height="655"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
@@ -58,15 +58,15 @@
                     <navigationItem key="navigationItem" id="ssn-g0-uXw"/>
                     <connections>
                         <outlet property="Animoji" destination="qDn-jH-8wx" id="qAg-qa-BUM"/>
-                        <outlet property="StartButtonOutlet" destination="nLs-mM-Nop" id="SNQ-Eg-phR"/>
-                        <segue destination="f6K-Qr-AID" kind="show" identifier="SegueToGDPR" id="wh2-ZV-fa2"/>
-                        <segue destination="jBk-HQ-sDG" kind="show" identifier="PrivacyPolicySegue" id="92C-01-Z45"/>
+                        <outlet property="SurveyButtonOutlet" destination="Bak-Fh-1d7" id="kZp-K5-nRc"/>
+                        <segue destination="jBk-HQ-sDG" kind="show" identifier="PrivacySegue" id="ccH-6Z-1fd"/>
+                        <segue destination="f6K-Qr-AID" kind="show" identifier="GDPRSegue" id="lrE-5X-bAE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="jNN-61-8wn"/>
             </objects>
-            <point key="canvasLocation" x="139" y="1709"/>
+            <point key="canvasLocation" x="1660" y="176"/>
         </scene>
         <!--GDPR1-->
         <scene sceneID="uNb-ca-MCl">
@@ -94,11 +94,95 @@
                     <navigationItem key="navigationItem" id="ipa-em-ac5"/>
                     <connections>
                         <outlet property="Animoji" destination="pCN-mO-yZW" id="AGb-w9-kEb"/>
+                        <segue destination="1fB-6C-i8y" kind="show" id="nvE-5Q-0Pp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmf-V5-P72" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-284" y="2551"/>
+            <point key="canvasLocation" x="2529" y="728"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="e4R-d0-IPD">
+            <objects>
+                <viewController id="1fB-6C-i8y" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oab-Av-K6N">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0q-e9-adv">
+                                <rect key="frame" x="446" y="606" width="474" height="153"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="70"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JS1-ZU-akK">
+                                <rect key="frame" x="136" y="739" width="516" height="144"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="60"/>
+                                <state key="normal" title="Decline">
+                                    <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="SurveyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="69A-fB-q0K"/>
+                                    <segue destination="9dD-rl-8XL" kind="show" id="Xgj-2W-kIQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iqa-Rh-Xi9">
+                                <rect key="frame" x="718" y="739" width="516" height="144"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="60"/>
+                                <state key="normal" title="Accept">
+                                    <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="SurveyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O7C-UY-YLz"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K3J-mP-1cr">
+                                <rect key="frame" x="406" y="78" width="554" height="520"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="d7N-cx-wtW"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bmj-F2-5MY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZlA-IK-Q4Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3359.7364568081989" y="175.78125"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="POT-7I-TO2">
+            <objects>
+                <viewController id="9dD-rl-8XL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="97X-hp-XMz">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vSn-jo-4Wo">
+                                <rect key="frame" x="457" y="69" width="452" height="457"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="We are sorry, but to partake in this survey you need to accept our Privacy Policy." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNh-0i-YlJ">
+                                <rect key="frame" x="82" y="500" width="1264" height="504"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="70"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="qLx-s6-bat"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bsr-Ga-VKs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pPa-Ic-nZg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3359.7364568081989" y="1296.6796875"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="gmD-m7-3PM">
@@ -116,7 +200,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iy1-9l-Pna" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.79941434846265" y="116.60156249999999"/>
+            <point key="canvasLocation" x="20" y="-538"/>
         </scene>
         <!--Privacy Policy-->
         <scene sceneID="GH9-ee-RE3">
@@ -148,11 +232,12 @@
                     <navigationItem key="navigationItem" id="39Z-kc-Yj2"/>
                     <connections>
                         <outlet property="Animoji" destination="kuv-NV-Roq" id="EIO-ct-c8Q"/>
+                        <segue destination="1fB-6C-i8y" kind="show" id="ZuX-KE-OrH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5G-jF-wXT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="568" y="2551"/>
+            <point key="canvasLocation" x="2529" y="-396"/>
         </scene>
         <!--Home-->
         <scene sceneID="xhY-Yc-fIQ">
@@ -169,30 +254,307 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aAn-q3-gbU">
                                 <rect key="frame" x="85" y="674" width="391" height="293"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHj-nX-iIo">
+                                        <rect key="frame" x="122" y="39" width="232" height="215"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="70"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="33">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="SurveyCountButton:" destination="mRm-HI-hlp" eventType="touchUpInside" id="rNv-UQ-hNt"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="# Surveys" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRY-7w-Ee8">
+                                        <rect key="frame" x="-32" y="122" width="171" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="29"/>
+                                        <color key="textColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGY-hL-0U3">
+                                        <rect key="frame" x="34" y="136" width="94" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="18"/>
+                                        <color key="textColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g0e-17-lej">
                                 <rect key="frame" x="514" y="674" width="313" height="293"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qZ-Mq-L9A">
+                                        <rect key="frame" x="40" y="39" width="232" height="215"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.46052253250000003" green="0.72025918960000002" blue="0.78432887790000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="20"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="contentEdgeInsets" minX="16" minY="8" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Setups">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="SetupsButton:" destination="mRm-HI-hlp" eventType="touchUpInside" id="LD7-fR-eD1"/>
+                                            <action selector="SurveyCountButton:" destination="mRm-HI-hlp" eventType="touchUpInside" id="Ji7-be-Sll"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Setup_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="S1T-1E-yVM">
+                                        <rect key="frame" x="137" y="118" width="138" height="136"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpb-FZ-nYe">
+                                <rect key="frame" x="145" y="103" width="290" height="292"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="70"/>
+                                <color key="tintColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="START">
+                                    <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="StartButton:" destination="mRm-HI-hlp" eventType="touchUpInside" id="s6U-7O-bdk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="9ky-TI-eNm"/>
                     </view>
                     <navigationItem key="navigationItem" id="dZE-8e-inM"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="SegueToInitSetup" id="UMy-0m-hI1"/>
+                        <outlet property="CSContainer" destination="aAn-q3-gbU" id="Ezm-Q3-ExZ"/>
+                        <outlet property="CompletedLabel" destination="lGY-hL-0U3" id="2Iw-lf-cqE"/>
+                        <outlet property="SetupsContainer" destination="g0e-17-lej" id="MJv-r1-uwM"/>
+                        <outlet property="SetupsOutlet" destination="3qZ-Mq-L9A" id="3A4-Ww-BaM"/>
+                        <outlet property="StartButtonOutlet" destination="qpb-FZ-nYe" id="DVw-pT-QIG"/>
+                        <outlet property="SurveyCountButtonOutlet" destination="qHj-nX-iIo" id="SjJ-Dn-82Y"/>
+                        <outlet property="SurveyLabel" destination="kRY-7w-Ee8" id="50h-F0-pKz"/>
+                        <segue destination="21s-QC-VSQ" kind="show" identifier="SegueToSurveyForm" id="Oz8-uL-fLu"/>
+                        <segue destination="2sU-Lw-DaR" kind="show" identifier="SetupSegue" id="baf-Tj-eUG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBu-ha-RoD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.79941434846265" y="830.859375"/>
+            <point key="canvasLocation" x="20" y="176"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="18W-S5-IT8">
+            <objects>
+                <viewController id="2sU-Lw-DaR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ein-5h-on4">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qo8-el-q7P">
+                                <rect key="frame" x="660" y="497" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="2fN-cM-Ryv"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="01v-fH-QWB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qcb-sr-KFu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21" y="967"/>
+        </scene>
+        <!--Survey Setup Form-->
+        <scene sceneID="VLk-TE-bSa">
+            <objects>
+                <viewController id="21s-QC-VSQ" customClass="SurveySetupForm" customModule="Questio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4xU-pG-plV">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e1H-NT-iXh">
+                                <rect key="frame" x="108" y="178" width="699" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Test" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DYZ-xw-x3v">
+                                        <rect key="frame" x="50" y="10" width="605" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <inset key="scrollIndicatorInsets" minX="0.0" minY="13" maxX="0.0" maxY="0.0"/>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="30"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YO3-fy-dwn">
+                                <rect key="frame" x="108" y="352" width="699" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Test" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Gp0-1B-bG8">
+                                        <rect key="frame" x="50" y="8" width="607" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <inset key="scrollIndicatorInsets" minX="0.0" minY="13" maxX="0.0" maxY="0.0"/>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="30"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHs-Cm-nvh">
+                                        <rect key="frame" x="623" y="13" width="68" height="77"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <state key="normal" image="location.fill" catalog="system"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HhN-L5-P7y">
+                                <rect key="frame" x="848" y="178" width="375" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bef-zw-FnS">
+                                        <rect key="frame" x="40" y="8" width="294" height="86"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="trw-OS-hUP">
+                                <rect key="frame" x="848" y="352" width="375" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Test" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YOG-4n-khD">
+                                        <rect key="frame" x="38" y="8" width="279" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <inset key="scrollIndicatorInsets" minX="0.0" minY="13" maxX="0.0" maxY="0.0"/>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="30"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DpV-0U-IYM">
+                                <rect key="frame" x="108" y="573" width="699" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Test" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AJD-WF-T23">
+                                        <rect key="frame" x="50" y="8" width="605" height="359"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <inset key="scrollIndicatorInsets" minX="0.0" minY="13" maxX="0.0" maxY="0.0"/>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="30"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="robotHome" translatesAutoresizingMaskIntoConstraints="NO" id="ECJ-SS-t0q">
+                                <rect key="frame" x="639" y="520" width="1020" height="919"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bM-uK-2kq">
+                                <rect key="frame" x="889" y="129" width="358" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Survey Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4a-Nc-JeO">
+                                <rect key="frame" x="168" y="129" width="175" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNO-ab-WPZ">
+                                <rect key="frame" x="168" y="303" width="175" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpu-gG-iF0">
+                                <rect key="frame" x="168" y="514" width="175" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nF-lv-itX">
+                                <rect key="frame" x="889" y="303" width="175" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qy0-uZ-0yk">
+                                <rect key="frame" x="41" y="955" width="47" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="back_arrow"/>
+                                <connections>
+                                    <action selector="BackButton:" destination="21s-QC-VSQ" eventType="touchUpInside" id="2je-kL-eOU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="be2-EU-4vB">
+                                <rect key="frame" x="993" y="596" width="313" height="308"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="ArrowRight">
+                                    <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="StartButton:" destination="21s-QC-VSQ" eventType="touchUpInside" id="9Y4-Hk-38N"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="YqJ-ps-C0W"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NSF-m2-Wco"/>
+                    <connections>
+                        <outlet property="Duration" destination="trw-OS-hUP" id="uro-VC-BUp"/>
+                        <outlet property="DurationTB" destination="YOG-4n-khD" id="Agd-gG-iL4"/>
+                        <outlet property="IDBox" destination="HhN-L5-P7y" id="HUR-re-vTz"/>
+                        <outlet property="IDLabel" destination="bef-zw-FnS" id="uTO-fk-g6v"/>
+                        <outlet property="LocationBox" destination="YO3-fy-dwn" id="9Y5-cI-BqV"/>
+                        <outlet property="LocationTB" destination="Gp0-1B-bG8" id="Wq0-ct-9q3"/>
+                        <outlet property="NotesBox" destination="DpV-0U-IYM" id="gRU-s3-R04"/>
+                        <outlet property="NotesTB" destination="AJD-WF-T23" id="iQ3-Io-FZM"/>
+                        <outlet property="StartButtonOutlet" destination="be2-EU-4vB" id="Uoi-yb-XK3"/>
+                        <outlet property="SurveyTitleBox" destination="e1H-NT-iXh" id="3au-pp-xfv"/>
+                        <outlet property="TitleTB" destination="DYZ-xw-x3v" id="x88-2K-5il"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="SegueToSurvey" id="6bX-su-Y70"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x15-w8-qPW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="176"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ArrowRight" width="130" height="137"/>
         <image name="HomeWallpaper" width="1373" height="997"/>
+        <image name="Setup_Icon" width="130" height="130"/>
+        <image name="back_arrow" width="47" height="47"/>
+        <image name="location.fill" catalog="system" width="64" height="56"/>
         <image name="qr-code-2" width="299" height="299"/>
+        <image name="robotHome" width="840" height="840"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="nvE-5Q-0Pp"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

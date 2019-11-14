@@ -13,13 +13,12 @@ import Firebase
 class SurveyHomeScreen: UIViewController {
     
     @IBOutlet weak var Animoji: UIImageView!
-  
-    @IBOutlet weak var StartButtonOutlet: UIButton!
+    @IBOutlet weak var SurveyButtonOutlet: UIButton!
     
     var uid = ""
     var faceType = ""
     var fourDigitNumber: String {
-     var result = ""
+    var result = ""
      repeat {
          // Create a string with a random number 0...9999
          result = String(format:"%04d", arc4random_uniform(10000) )
@@ -38,7 +37,7 @@ class SurveyHomeScreen: UIViewController {
     
     override func viewDidLoad() {
         
-    self.StartButtonOutlet.layer.cornerRadius = 45
+    self.SurveyButtonOutlet.layer.cornerRadius = 45
         
         super.viewDidLoad()
         /*Hides navigation bar*/
@@ -77,13 +76,12 @@ class SurveyHomeScreen: UIViewController {
     
     /*Pass data across view controllers*/
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! GDPR1
-        vc.text = self.faceType
-        vc.uid = self.uid
+       // let vc = segue.destination as! GDPR1
+        //vc.text = self.faceType
+        //vc.uid = self.uid
     }
     
-    
-
-    
-    
+    @IBAction func SurveyButton(_ sender: Any) {
+        self.exitVC(segueIdentifier: "PrivacySegue")
+    }
 }
