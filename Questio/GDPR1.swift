@@ -19,7 +19,7 @@ class GDPR1: UIViewController {
     
     let ref = Database.database().reference()
     let data = cvData(Mood: "", Age: "", Gender: "")
-    var text:String = ""
+    var Face_Type:String = "animoji-vos"
     var uid:String = ""
     
 
@@ -29,9 +29,8 @@ class GDPR1: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewDidLoad()
         
-        print(text)
         //fix state management
-        self.Animoji.image = UIImage(named: text)
+        self.Animoji.image = UIImage(named: Face_Type)
         
     }
     

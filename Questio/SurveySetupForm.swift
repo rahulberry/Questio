@@ -45,7 +45,7 @@ class SurveySetupForm: UIViewController{
     }
     
     func exitVC(segueIdentifier:String){
-        self.uploadData()
+       // self.uploadData()
         self.performSegue(withIdentifier: segueIdentifier, sender: self)
     }
     
@@ -60,7 +60,7 @@ class SurveySetupForm: UIViewController{
         self.exitVC(segueIdentifier: "SegueToSurvey")
     }
      @IBAction func BackButton(_ sender: Any) {
-        self.exitVC(segueIdentifier: "SegueToSurvey")
+        self.navigationController?.popViewController(animated: true)      
     }
 }
 

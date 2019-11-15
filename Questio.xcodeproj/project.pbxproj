@@ -31,6 +31,8 @@
 		2E85FBDB236B2BF900EDFF56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E85FBDA236B2BF900EDFF56 /* Assets.xcassets */; };
 		2E85FBDE236B2BF900EDFF56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E85FBDC236B2BF900EDFF56 /* LaunchScreen.storyboard */; };
 		2EC6B1C2237C57BA0085B560 /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC6B1C1237C57BA0085B560 /* PrivacyPolicy.swift */; };
+		2ED6FECF237ECF6A00380C5A /* PrivacyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6FECE237ECF6A00380C5A /* PrivacyResponse.swift */; };
+		2ED6FED1237ED09E00380C5A /* PrivacyDeclined.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6FED0237ED09E00380C5A /* PrivacyDeclined.swift */; };
 		2EF707AF237494D0008F73F9 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF707AE237494D0008F73F9 /* MainNavigationController.swift */; };
 		E750A660F707CCBDF28F6727 /* libPods-Questio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F479B915CB0A7FF771F35F /* libPods-Questio.a */; };
 /* End PBXBuildFile section */
@@ -63,6 +65,8 @@
 		2E85FBDD236B2BF900EDFF56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E85FBDF236B2BF900EDFF56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EC6B1C1237C57BA0085B560 /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
+		2ED6FECE237ECF6A00380C5A /* PrivacyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyResponse.swift; sourceTree = "<group>"; };
+		2ED6FED0237ED09E00380C5A /* PrivacyDeclined.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyDeclined.swift; sourceTree = "<group>"; };
 		2EF707AE237494D0008F73F9 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		8C05E3C8773EB44672934D25 /* Pods-Questio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Questio.debug.xcconfig"; path = "Target Support Files/Pods-Questio/Pods-Questio.debug.xcconfig"; sourceTree = "<group>"; };
 		E9F479B915CB0A7FF771F35F /* libPods-Questio.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Questio.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +117,8 @@
 				2E84C298237C7443002D3665 /* Home.swift */,
 				2E85FBDA236B2BF900EDFF56 /* Assets.xcassets */,
 				2EC6B1C1237C57BA0085B560 /* PrivacyPolicy.swift */,
+				2ED6FECE237ECF6A00380C5A /* PrivacyResponse.swift */,
+				2ED6FED0237ED09E00380C5A /* PrivacyDeclined.swift */,
 				2E85FBDC236B2BF900EDFF56 /* LaunchScreen.storyboard */,
 				2E85FBDF236B2BF900EDFF56 /* Info.plist */,
 				2E038A7B236B53A200F79FC0 /* GoogleService-Info.plist */,
@@ -272,8 +278,10 @@
 				2E04E9B9236F8C5300BA6349 /* iOSDevCenters+GIF.swift in Sources */,
 				2EF707AF237494D0008F73F9 /* MainNavigationController.swift in Sources */,
 				2E193BDB237DBA1400FCC545 /* SetupVC.swift in Sources */,
+				2ED6FECF237ECF6A00380C5A /* PrivacyResponse.swift in Sources */,
 				2E85FBD2236B2BF600EDFF56 /* AppDelegate.swift in Sources */,
 				2E84C299237C7443002D3665 /* Home.swift in Sources */,
+				2ED6FED1237ED09E00380C5A /* PrivacyDeclined.swift in Sources */,
 				2E85FBD4236B2BF600EDFF56 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -94,17 +94,17 @@
                     <navigationItem key="navigationItem" id="ipa-em-ac5"/>
                     <connections>
                         <outlet property="Animoji" destination="pCN-mO-yZW" id="AGb-w9-kEb"/>
-                        <segue destination="1fB-6C-i8y" kind="show" id="nvE-5Q-0Pp"/>
+                        <segue destination="1fB-6C-i8y" kind="show" identifier="PrivacyResponse2" id="nvE-5Q-0Pp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmf-V5-P72" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2529" y="728"/>
         </scene>
-        <!--View Controller-->
+        <!--Privacy Response-->
         <scene sceneID="e4R-d0-IPD">
             <objects>
-                <viewController id="1fB-6C-i8y" sceneMemberID="viewController">
+                <viewController id="1fB-6C-i8y" customClass="PrivacyResponse" customModule="Questio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oab-Av-K6N">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,8 +125,9 @@
                                     <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
+                                    <action selector="DeclineButton:" destination="1fB-6C-i8y" eventType="touchUpInside" id="ujz-uT-W4p"/>
                                     <action selector="SurveyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="69A-fB-q0K"/>
-                                    <segue destination="9dD-rl-8XL" kind="show" id="Xgj-2W-kIQ"/>
+                                    <segue destination="9dD-rl-8XL" kind="show" identifier="DeclinedSegue" id="Xgj-2W-kIQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iqa-Rh-Xi9">
@@ -138,6 +139,7 @@
                                     <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
+                                    <action selector="AcceptButton:" destination="1fB-6C-i8y" eventType="touchUpInside" id="Bzz-Ha-GxM"/>
                                     <action selector="SurveyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O7C-UY-YLz"/>
                                 </connections>
                             </button>
@@ -150,15 +152,37 @@
                         <viewLayoutGuide key="safeArea" id="d7N-cx-wtW"/>
                     </view>
                     <navigationItem key="navigationItem" id="bmj-F2-5MY"/>
+                    <connections>
+                        <outlet property="AcceptButtonOutlet" destination="Iqa-Rh-Xi9" id="oqX-4E-XbW"/>
+                        <outlet property="Animoji" destination="K3J-mP-1cr" id="w6O-9F-eRd"/>
+                        <outlet property="DeclineButtonOutlet" destination="JS1-ZU-akK" id="OE2-Ow-QEC"/>
+                        <segue destination="C8z-JI-mx5" kind="show" identifier="StartSurvey" id="4FQ-5J-RLz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZlA-IK-Q4Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3359.7364568081989" y="175.78125"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="fIB-Oe-K7z">
+            <objects>
+                <viewController id="C8z-JI-mx5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8WL-1K-w9z">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="uW7-pe-fKQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1eJ-el-ycl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="knR-f1-Xdm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4184" y="176"/>
+        </scene>
+        <!--Privacy Declined-->
         <scene sceneID="POT-7I-TO2">
             <objects>
-                <viewController id="9dD-rl-8XL" sceneMemberID="viewController">
+                <viewController id="9dD-rl-8XL" customClass="PrivacyDeclined" customModule="Questio" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="97X-hp-XMz">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,17 +192,28 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="We are sorry, but to partake in this survey you need to accept our Privacy Policy." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNh-0i-YlJ">
-                                <rect key="frame" x="82" y="500" width="1264" height="504"/>
+                                <rect key="frame" x="82" y="534" width="1264" height="470"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="70"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o62-QS-FDy">
+                                <rect key="frame" x="1065" y="902" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="ExitButton:" destination="9dD-rl-8XL" eventType="touchUpInside" id="ArW-H0-tEg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="qLx-s6-bat"/>
                     </view>
                     <navigationItem key="navigationItem" id="Bsr-Ga-VKs"/>
+                    <connections>
+                        <outlet property="Animoji" destination="vSn-jo-4Wo" id="6XD-xY-Z0f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPa-Ic-nZg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -225,6 +260,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUl-Vi-FyY">
+                                <rect key="frame" x="1228" y="895" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="NextButton:" destination="jBk-HQ-sDG" eventType="touchUpInside" id="utO-qq-XjQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="gCO-sT-Hed"/>
@@ -232,7 +275,8 @@
                     <navigationItem key="navigationItem" id="39Z-kc-Yj2"/>
                     <connections>
                         <outlet property="Animoji" destination="kuv-NV-Roq" id="EIO-ct-c8Q"/>
-                        <segue destination="1fB-6C-i8y" kind="show" id="ZuX-KE-OrH"/>
+                        <outlet property="NextButtonOutlet" destination="FUl-Vi-FyY" id="T9x-Ek-5OR"/>
+                        <segue destination="1fB-6C-i8y" kind="show" identifier="PrivacyResponse" id="ZuX-KE-OrH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5G-jF-wXT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -554,7 +598,7 @@
         <image name="robotHome" width="840" height="840"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nvE-5Q-0Pp"/>
+        <segue reference="ZuX-KE-OrH"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

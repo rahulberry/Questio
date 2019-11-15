@@ -10,10 +10,11 @@ import UIKit
 import Firebase
 
 
-var text = ""
 
 class PrivacyPolicy: UIViewController {
-    
+    var Face_Type = "animoji-vos"
+
+    @IBOutlet weak var NextButtonOutlet: UIButton!
     @IBOutlet weak var Animoji: UIImageView!
 
    override func viewDidLoad() {
@@ -21,7 +22,18 @@ class PrivacyPolicy: UIViewController {
         super.viewDidLoad()
         
         //fix state management
-        self.Animoji.image = UIImage(named: text)
+        self.Animoji.image = UIImage(named: Face_Type)
         
+    }
+    
+    func exitVC(segueIdentifier:String){
+        self.performSegue(withIdentifier: segueIdentifier, sender: self)
+    }
+              
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    }
+    
+    @IBAction func NextButton(_ sender: Any) {
+        self.exitVC(segueIdentifier: "PrivacyResponse")
     }
 }
