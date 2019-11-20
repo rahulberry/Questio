@@ -21,6 +21,21 @@ class GDPR1: UIViewController {
     let data = cvData(Mood: "", Age: "", Gender: "")
     var Face_Type:String = "animoji-vos"
     var uid:String = ""
+    var config = config_data(
+        Data_Notice: "",
+        Experiment_Type: "",
+        Face_Type: "",
+        Hypothesis: "",
+        Personal_Limit: 0,
+        Personal_Timed: false,
+        Privacy_Code: false,
+        Short_Limit: 50,
+        Short_Timed: false,
+        Time_Creted: "",
+        Title: "",
+        shuffled: false
+    )
+
     
 
     @IBOutlet weak var Animoji: UIImageView!
@@ -34,10 +49,7 @@ class GDPR1: UIViewController {
         
     }
     
-    func exitVC(segueIdentifier:String){
-        self.postData()
-        self.performSegue(withIdentifier: segueIdentifier, sender: self)
-    }
+   
     
     /*Pass data across view controllers*/
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -46,10 +58,13 @@ class GDPR1: UIViewController {
         //vc.text = self.faceType
     }
     
-    func postData(){
-        self.ref.child("Data").setValue("Test")
+    class func postData(){
+       // self.ref.child("Data").setValue("Test")
     }
-    
+    func exitVC(segueIdentifier:String){
+          // self.postData()
+           self.performSegue(withIdentifier: segueIdentifier, sender: self)
+       }
     func compVision() -> cvData{
         /*Obtain CV results*/
         let data = cvData(Mood: "Angry", Age: "18-25", Gender: "Male")

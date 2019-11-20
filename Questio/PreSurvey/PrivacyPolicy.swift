@@ -13,7 +13,20 @@ import Firebase
 
 class PrivacyPolicy: UIViewController {
     var Face_Type = "animoji-vos"
-
+    var config = config_data(
+         Data_Notice: "",
+         Experiment_Type: "",
+         Face_Type: "",
+         Hypothesis: "",
+         Personal_Limit: 0,
+         Personal_Timed: false,
+         Privacy_Code: false,
+         Short_Limit: 50,
+         Short_Timed: false,
+         Time_Creted: "",
+         Title: "",
+         shuffled: false
+     )
     @IBOutlet weak var NextButtonOutlet: UIButton!
     @IBOutlet weak var Animoji: UIImageView!
 
@@ -31,6 +44,9 @@ class PrivacyPolicy: UIViewController {
     }
               
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let vc = segue.destination as! PrivacyResponse
+        vc.config = self.config
     }
     
     @IBAction func NextButton(_ sender: Any) {

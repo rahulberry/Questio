@@ -14,14 +14,30 @@ class PrivacyResponse:UIViewController{
     @IBOutlet weak var AcceptButtonOutlet: UIButton!
     @IBOutlet weak var Animoji: UIImageView!
     
-    var Face_Type = "animoji-vos"
     var uid = ""
+    var AcceptPressed = false
+     var config = config_data(
+           Data_Notice: "",
+           Experiment_Type: "",
+           Face_Type: "",
+           Hypothesis: "",
+           Personal_Limit: 0,
+           Personal_Timed: false,
+           Privacy_Code: false,
+           Short_Limit: 50,
+           Short_Timed: false,
+           Time_Creted: "",
+           Title: "",
+           shuffled: false,
+           surveySetID: "",
+           surveyID: ""
+        )
 
     let ref = Database.database().reference()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.Animoji.image = UIImage(named: Face_Type)
+        self.Animoji.image = UIImage(named: self.config.Face_Type)
         self.AcceptButtonOutlet.layer.cornerRadius = 45
         self.DeclineButtonOutlet.layer.cornerRadius = 45
     }
@@ -36,6 +52,10 @@ class PrivacyResponse:UIViewController{
     }
                  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(self.AcceptPressed){
+            let vc = segue.destination as! Question1
+            vc.config = self.config
+        }
     }
     
     @IBAction func DeclineButton(_ sender: Any) {
@@ -43,10 +63,12 @@ class PrivacyResponse:UIViewController{
     }
      @IBAction func AcceptButton(_ sender: Any) {
         /*Set user ID & transition*/
-        uid = randomString(length: 6)
-        self.ref.child("Data").child(self.uid).child("Age").setValue("X")
-        self.ref.child("Data").child(self.uid).child("Mood").setValue("X")
-        self.ref.child("Data").child(self.uid).child("Gender").setValue("X")
+        self.config.surveyID = randomString(length: 6)
+        self.ref.child("Data").child(self.config.surveySetID).child(self.config.surveyID).child("Age").setValue("X")
+        self.ref.child("Data").child(self.config.surveySetID).child(self.config.surveyID).child("Mood_Start").setValue("X")
+        self.ref.child("Data").child(self.config.surveySetID).child(self.config.surveyID).child("Gender").setValue("X")
+       
+        self.AcceptPressed = true
         self.exitVC(segueIdentifier: "StartSurvey")
     }
     
