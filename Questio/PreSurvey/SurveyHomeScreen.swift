@@ -45,16 +45,7 @@ class SurveyHomeScreen: UIViewController {
         //Change for real gif used
         //self.Animoji.image = UIImage.gifImageWithName("funny")
         self.Animoji.image = UIImage(named: self.config.Face_Type)
-        
-            
-        /*ref.child("TransitionState").child("Q1").observe(.value, with: {snapshot in
-            print(snapshot)
-             if let value = snapshot.value as? Int{
-                if value == 1{
-                    self.executeSegue(segueIdentifier: "Segue")
-                }
-            }
-        })*/
+
     }
     
   /*Perform Segue*/

@@ -73,7 +73,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R3a-nf-awX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1002" y="-351"/>
+            <point key="canvasLocation" x="1393" y="-305"/>
         </scene>
         <!--GDPR1-->
         <scene sceneID="uNb-ca-MCl">
@@ -466,10 +466,14 @@
                                 <rect key="frame" x="982" y="0.0" width="364" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rLF-JM-cQC">
-                                <rect key="frame" x="907" y="185" width="315" height="270"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="asdf" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iKX-QJ-uua">
+                                <rect key="frame" x="744" y="239" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="9ky-TI-eNm"/>
@@ -483,7 +487,7 @@
                         <outlet property="StartButtonOutlet" destination="qpb-FZ-nYe" id="DVw-pT-QIG"/>
                         <outlet property="SurveyCountButtonOutlet" destination="qHj-nX-iIo" id="SjJ-Dn-82Y"/>
                         <outlet property="SurveyLabel" destination="kRY-7w-Ee8" id="50h-F0-pKz"/>
-                        <outlet property="picture" destination="rLF-JM-cQC" id="fHF-YG-42N"/>
+                        <outlet property="textSR" destination="iKX-QJ-uua" id="UFP-Yz-RNb"/>
                         <segue destination="2sU-Lw-DaR" kind="show" identifier="SetupSegue" id="baf-Tj-eUG"/>
                         <segue destination="urr-2Z-f0s" kind="show" identifier="SegueToSetup" id="xgU-xQ-h4f"/>
                     </connections>
@@ -718,7 +722,7 @@
                         <outlet property="SurveyTitleBox" destination="e1H-NT-iXh" id="3au-pp-xfv"/>
                         <outlet property="TitleTB" destination="DYZ-xw-x3v" id="x88-2K-5il"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="SegueToSurvey" id="6bX-su-Y70"/>
-                        <segue destination="dhn-zZ-rYv" kind="show" id="eeJ-gw-hDT"/>
+                        <segue destination="dhn-zZ-rYv" kind="show" identifier="MechanicalSegue" id="eeJ-gw-hDT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x15-w8-qPW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -835,9 +839,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UNI-6X-uyk">
-                                <rect key="frame" x="434" y="121" width="499" height="488"/>
+                                <rect key="frame" x="469" y="30" width="429" height="410"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Speak up!!!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RAi-uk-OLn">
+                                <rect key="frame" x="135" y="770" width="1097" height="218"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="60"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What role do you think Robots will play in the future?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9O1-Km-Cfq">
+                                <rect key="frame" x="161" y="459" width="1033" height="333"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crs-b0-ESZ">
+                                <rect key="frame" x="1202" y="880" width="155" height="134"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title=" Skip" image="ArrowRight-1"/>
+                                <connections>
+                                    <action selector="SkipButton:" destination="T2q-k0-5Fo" eventType="touchUpInside" id="42a-6Z-a0l"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SKIP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSF-p9-qYc">
+                                <rect key="frame" x="1236" y="931" width="53" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="21"/>
+                                <color key="textColor" red="0.1069932953" green="0.1125245616" blue="0.27844837309999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1029007509" green="0.10115081820000001" blue="0.25491762159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="IBZ-hY-qAf"/>
@@ -846,7 +879,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7R-fb-c0b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6491" y="176"/>
+            <point key="canvasLocation" x="6490.6295754026351" y="175.78125"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XrQ-au-OZK">
+            <objects>
+                <viewController id="XqE-g9-gaG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n6h-Qf-EWf">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Smg-NG-vbc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lOB-hD-Mx5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6816" y="1461"/>
         </scene>
     </scenes>
     <resources>
@@ -864,5 +912,4 @@
         <segue reference="7je-dI-lHc"/>
         <segue reference="nvE-5Q-0Pp"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

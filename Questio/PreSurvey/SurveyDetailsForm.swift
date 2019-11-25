@@ -77,8 +77,10 @@ class SurveyDetailsForm: UIViewController{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! SurveyHomeScreen
-        vc.config = self.config
+        if(self.config.Face_Type != "Mechanical_Face"){
+            let vc = segue.destination as! SurveyHomeScreen
+            vc.config = self.config
+        }
     }
     @IBAction func StartButton(_ sender: Any) {
         if(self.config.Face_Type == "Mechanical_Face"){

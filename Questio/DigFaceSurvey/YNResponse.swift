@@ -50,8 +50,8 @@ class YNResponse:UIViewController{
     
     /*Pass data across view controllers*/
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //let vc = segue.destination as! YNResponse
-        //vc.config = self.config
+        let vc = segue.destination as! Question2
+        vc.config = self.config
     }
     @IBAction func YesButton(_ sender: Any) {
         if(self.YesButtonOutlet.backgroundColor == UIColor.white){
@@ -89,7 +89,6 @@ class YNResponse:UIViewController{
       }
     
     @IBAction func SkipButton(_ sender: Any) {
-        self.exitVC(segueIdentifier: "Q2Segue")
         self.ref.child("Data")
             .child(self.config.surveySetID)
             .child(self.config.surveyID)
@@ -105,6 +104,8 @@ class YNResponse:UIViewController{
             .child(self.config.surveyID)
             .child("Q1").child("Time")
             .setValue(stringFromDate(Date()))
+        self.exitVC(segueIdentifier: "Q2Segue")
+
        }
     
 }

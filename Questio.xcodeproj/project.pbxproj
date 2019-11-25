@@ -23,6 +23,10 @@
 		2E193BD7237CC6A400FCC545 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E193BCC237CC6A400FCC545 /* OpenSans-Semibold.ttf */; };
 		2E193BD9237CC95100FCC545 /* SurveyDetailsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E193BD8237CC95100FCC545 /* SurveyDetailsForm.swift */; };
 		2E193BDB237DBA1400FCC545 /* SetupTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E193BDA237DBA1400FCC545 /* SetupTypes.swift */; };
+		2E2F2FFD23896321001798CF /* StructDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2F2FFC23896321001798CF /* StructDefinitions.swift */; };
+		2E2F2FFF238AF0CB001798CF /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2F2FFE238AF0CB001798CF /* functions.swift */; };
+		2E2F3003238AF1CA001798CF /* HCR-Questio-Questions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 2E2F3002238AF1CA001798CF /* HCR-Questio-Questions.csv */; };
+		2E56C4842386A35400286077 /* SpeechRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56C4832386A35400286077 /* SpeechRecognition.swift */; };
 		2E5F9E41237F2C8800D971B0 /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F9E40237F2C8800D971B0 /* Setup.swift */; };
 		2E5F9E432381AA6000D971B0 /* Question1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F9E422381AA6000D971B0 /* Question1.swift */; };
 		2E5F9E452381B10900D971B0 /* FiveScaleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F9E442381B10900D971B0 /* FiveScaleResponse.swift */; };
@@ -66,6 +70,10 @@
 		2E193BCC237CC6A400FCC545 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		2E193BD8237CC95100FCC545 /* SurveyDetailsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailsForm.swift; sourceTree = "<group>"; };
 		2E193BDA237DBA1400FCC545 /* SetupTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTypes.swift; sourceTree = "<group>"; };
+		2E2F2FFC23896321001798CF /* StructDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructDefinitions.swift; sourceTree = "<group>"; };
+		2E2F2FFE238AF0CB001798CF /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
+		2E2F3002238AF1CA001798CF /* HCR-Questio-Questions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HCR-Questio-Questions.csv"; sourceTree = "<group>"; };
+		2E56C4832386A35400286077 /* SpeechRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpeechRecognition.swift; path = /Users/rahulberry/Documents/Questio/Questio/Backend/SpeechRecognition.swift; sourceTree = "<absolute>"; };
 		2E5F9E40237F2C8800D971B0 /* Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
 		2E5F9E422381AA6000D971B0 /* Question1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question1.swift; sourceTree = "<group>"; };
 		2E5F9E442381B10900D971B0 /* FiveScaleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveScaleResponse.swift; sourceTree = "<group>"; };
@@ -143,6 +151,7 @@
 				2EEBC88123858F0F00D7334E /* MechFaceSurvey */,
 				2EEBC87B238577C200D7334E /* DigFaceSurvey */,
 				2EEBC87C2385785200D7334E /* Backend */,
+				2E2F3002238AF1CA001798CF /* HCR-Questio-Questions.csv */,
 				2E85FBD1236B2BF600EDFF56 /* AppDelegate.swift */,
 				2E85FBD3236B2BF600EDFF56 /* SceneDelegate.swift */,
 				2E04E9B8236F8C5300BA6349 /* iOSDevCenters+GIF.swift */,
@@ -204,8 +213,11 @@
 		2EEBC87C2385785200D7334E /* Backend */ = {
 			isa = PBXGroup;
 			children = (
-				2EF707AE237494D0008F73F9 /* MainNavigationController.swift */,
+				2E2F2FFE238AF0CB001798CF /* functions.swift */,
 				2E5F9E512382FDDE00D971B0 /* ComputerVision.swift */,
+				2EF707AE237494D0008F73F9 /* MainNavigationController.swift */,
+				2E56C4832386A35400286077 /* SpeechRecognition.swift */,
+				2E2F2FFC23896321001798CF /* StructDefinitions.swift */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
@@ -296,6 +308,7 @@
 			files = (
 				2E5F9E502382CED400D971B0 /* TestQuaestio3.mp4 in Resources */,
 				2E5F9E472381BF5400D971B0 /* TestQuaestio2.mp4 in Resources */,
+				2E2F3003238AF1CA001798CF /* HCR-Questio-Questions.csv in Resources */,
 				2E193BD5237CC6A400FCC545 /* OpenSans-Light.ttf in Resources */,
 				2E85FBDE236B2BF900EDFF56 /* LaunchScreen.storyboard in Resources */,
 				2E193BD4237CC6A400FCC545 /* Apache License.txt in Resources */,
@@ -358,6 +371,8 @@
 				2EF707AF237494D0008F73F9 /* MainNavigationController.swift in Sources */,
 				2E5F9E452381B10900D971B0 /* FiveScaleResponse.swift in Sources */,
 				2E193BDB237DBA1400FCC545 /* SetupTypes.swift in Sources */,
+				2E2F2FFF238AF0CB001798CF /* functions.swift in Sources */,
+				2E2F2FFD23896321001798CF /* StructDefinitions.swift in Sources */,
 				2ED6FECF237ECF6A00380C5A /* PrivacyResponse.swift in Sources */,
 				2E85FBD2236B2BF600EDFF56 /* AppDelegate.swift in Sources */,
 				2E5F9E4B2382CB6100D971B0 /* LongAnswer.swift in Sources */,
@@ -366,6 +381,7 @@
 				2E84C299237C7443002D3665 /* Home.swift in Sources */,
 				2E5F9E41237F2C8800D971B0 /* Setup.swift in Sources */,
 				2ED6FED1237ED09E00380C5A /* PrivacyDeclined.swift in Sources */,
+				2E56C4842386A35400286077 /* SpeechRecognition.swift in Sources */,
 				2E85FBD4236B2BF600EDFF56 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

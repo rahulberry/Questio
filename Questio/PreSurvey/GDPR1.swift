@@ -9,16 +9,10 @@
 import UIKit
 import Firebase
 
-struct cvData{
-    var Mood = ""
-    var Age = ""
-    var Gender = ""
-}
-
 class GDPR1: UIViewController {
     
     let ref = Database.database().reference()
-    let data = cvData(Mood: "", Age: "", Gender: "")
+    let data = cvData(Mood: "", Age: 0, Gender: "")
     var Face_Type:String = "animoji-vos"
     var uid:String = ""
     var config = config_data(
@@ -67,7 +61,7 @@ class GDPR1: UIViewController {
        }
     func compVision() -> cvData{
         /*Obtain CV results*/
-        let data = cvData(Mood: "Angry", Age: "18-25", Gender: "Male")
+        let data = cvData(Mood: "Angry", Age: 0, Gender: "Male")
         return data
     }
     

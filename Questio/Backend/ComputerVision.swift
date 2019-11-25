@@ -1,16 +1,17 @@
 //
-//  ViewController.swift
+//  tester.swift
 //  camera-fucker
 //
-//  Created by Prithvi Menon on 17/11/2019.
+//  Created by Rahul Berry on 23/11/2019.
 //  Copyright © 2019 Prithvi Menon. All rights reserved.
 //
-
-/*import UIKit
+import Foundation
+import UIKit
 import AVFoundation
-class ComputerVision: UIViewController {
+
+class ComputerVision:UIViewController {
     
-    var captureSession = AVCaptureSession()
+var captureSession = AVCaptureSession()
     var backCamera: AVCaptureDevice?
     var frontCamera: AVCaptureDevice?
     var currentCamrera: AVCaptureDevice?
@@ -22,14 +23,35 @@ class ComputerVision: UIViewController {
     
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
 
+    struct answer: Codable{
+        var age: Int
+        var gender: String
+        var emotion: String
+    }
+    
+    var final_answer =  answer(age:0,gender:"blah",emotion:"blah")
+
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        // Do any additional setup after loading the view.
+//        setupCaptureSession()
+//        setupDevice()
+//        setupInputOutput()
+//       // setupPreviewLayer()
+//        startRunningCaptureSession()
+//        image_output.image = self.image
+//
+//    }
+    
     func setupCaptureSession(){
         captureSession.sessionPreset = AVCaptureSession.Preset.photo
     }
     
     func setupDevice() {
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInTrueDepthCamera], mediaType: AVMediaType.video, position: AVCaptureDevice.Position.unspecified)
-        
+        print(deviceDiscoverySession)
         let devices = deviceDiscoverySession.devices
+        print(devices)
         
         for device in devices {
             if device.position == AVCaptureDevice.Position.back {
@@ -44,7 +66,6 @@ class ComputerVision: UIViewController {
     
     
     func setupInputOutput(){
-        
         do {
             let captureDeviceInput = try AVCaptureDeviceInput(device: currentCamrera!)
             captureSession.addInput(captureDeviceInput)
@@ -57,23 +78,61 @@ class ComputerVision: UIViewController {
         
     }
     
-    func startRunningCaptureSession(){
-        captureSession.startRunning()
-    }
     
-    func getResult() {
+    func startRunningCaptureSession(){
+        
+        captureSession.startRunning()
+        
+    }
+
+    func getResults(callBack: @escaping (_ answer: String) -> ()){
+        print("yes")
         let settings = AVCapturePhotoSettings()
         photoOutput?.capturePhoto(with: settings, delegate: self)
+    }
+    
+
+}
+extension UIImage {
+    func rotate(radians: Float) -> UIImage? {
+        var newSize = CGRect(origin: CGPoint.zero, size: self.size).applying(CGAffineTransform(rotationAngle: CGFloat(radians))).size
+        // Trim off the extremely small float value to prevent core graphics from rounding it up
+        newSize.width = floor(newSize.width)
+        newSize.height = floor(newSize.height)
+
+        UIGraphicsBeginImageContextWithOptions(newSize, false, self.scale)
+        let context = UIGraphicsGetCurrentContext()!
+
+        // Move origin to middle
+        context.translateBy(x: newSize.width/2, y: newSize.height/2)
+        // Rotate around middle
+        context.rotate(by: CGFloat(radians))
+        // Draw the image at its center
+        self.draw(in: CGRect(x: -self.size.width/2, y: -self.size.height/2, width: self.size.width, height: self.size.height))
+
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage
     }
 }
 
 extension ComputerVision: AVCapturePhotoCaptureDelegate {
-    public func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+    
+    func photoOutput(_ output: AVCapturePhotoOutput, callBack: @escaping (_ answer: String) -> (), didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        
+        struct User: Codable {
+            var faceID: String
+            var faceRectangle: String
+            var faceAttributes: String
+        }
+        
         if let imageData = photo.fileDataRepresentation() {
             image = UIImage(data:imageData)
-            let png_format = image?.jpegData(compressionQuality: 0.9)
-            print(png_format)
-            let url = URL(string: "https://surveybot12.cognitiveservices.azure.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false&returnFaceAttributes=gender,age,emotion&recognitionModel=recognition_01&returnRecognitionModel=false&detectionModel=detection_01")!
+            let newImage = image?.rotate(radians: .pi/2)
+            let png_format = newImage?.jpegData(compressionQuality: 0.6)
+            load_image = newImage
+            let url = URL(string: "https://surveybot12.cognitiveservices.azure.com/face/v1.0/detect?returnFaceAttributes=gender,emotion,age")!
                     var request = URLRequest(url: url)
                     request.setValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
                     request.setValue("240ca093ef6841c287611049c55a06f1", forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
@@ -93,12 +152,29 @@ extension ComputerVision: AVCapturePhotoCaptureDelegate {
                             print("statusCode should be 2xx, but is \(response.statusCode)")
                             print("response = \(response)")
                             let responseString = String(data: data, encoding: .utf8)
-                            print("responseString = \(responseString)")
                             return
                         }
-
                         let responseString = String(data: data, encoding: .utf8)
-                        print("responseString = \(responseString)")
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data, options: []) as! [[String:Any]]
+                            let save = json[0]
+                            
+                            let age = (save["faceAttributes"] as! [String:Any]) ["age"] as! Int
+                            let gender = (save["faceAttributes"] as! [String:Any]) ["gender"] as! String
+                            let emotion_dictionary: Dictionary<String,Double> = (save["faceAttributes"] as! [String:Any]) ["emotion"] as! Dictionary<String, Double>
+                            let max_value = emotion_dictionary.max{ a , b  in a.value < b.value }
+
+                            
+                            self.final_answer.age = age
+                            self.final_answer.gender = gender
+                            self.final_answer.emotion = max_value!.key
+                          //  print(self.final_answer)
+                            self.callBack(self.final_answer.emotion)
+                        }
+                        catch{
+                        print("Error")
+                        }
+
                     }
 
                     task.resume()
@@ -107,5 +183,3 @@ extension ComputerVision: AVCapturePhotoCaptureDelegate {
     
     }
 }
-*/
-
