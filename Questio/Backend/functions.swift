@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import Firebase
 
 public class functions {
     
@@ -48,4 +48,10 @@ public class functions {
         }
         return result
     }
+    
+    func faceReaction(value:String){
+        let ref = Database.database().reference()
+        ref.child("Hardware_Interface").child("face_state").setValue(value)
+    }
 }
+
