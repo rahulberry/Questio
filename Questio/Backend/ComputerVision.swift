@@ -1,10 +1,3 @@
-//
-//  tester.swift
-//  camera-fucker
-//
-//  Created by Rahul Berry on 23/11/2019.
-//  Copyright © 2019 Prithvi Menon. All rights reserved.
-//
 import Foundation
 import UIKit
 import AVFoundation
@@ -21,6 +14,8 @@ var captureSession = AVCaptureSession()
     
     var load_image : UIImage!
     
+    let group = DispatchGroup()
+    
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
 
     struct answer: Codable{
@@ -31,17 +26,6 @@ var captureSession = AVCaptureSession()
     
     var final_answer =  answer(age:0,gender:"blah",emotion:"blah")
 
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        // Do any additional setup after loading the view.
-//        setupCaptureSession()
-//        setupDevice()
-//        setupInputOutput()
-//       // setupPreviewLayer()
-//        startRunningCaptureSession()
-//        image_output.image = self.image
-//
-//    }
     
     func setupCaptureSession(){
         captureSession.sessionPreset = AVCaptureSession.Preset.photo
@@ -49,9 +33,8 @@ var captureSession = AVCaptureSession()
     
     func setupDevice() {
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInTrueDepthCamera], mediaType: AVMediaType.video, position: AVCaptureDevice.Position.unspecified)
-        print(deviceDiscoverySession)
         let devices = deviceDiscoverySession.devices
-        print(devices)
+      //  print(devices)
         
         for device in devices {
             if device.position == AVCaptureDevice.Position.back {
@@ -85,8 +68,8 @@ var captureSession = AVCaptureSession()
         
     }
 
-    func getResults(callBack: @escaping (_ answer: String) -> ()){
-        print("yes")
+    func getResults(){
+        group.enter()
         let settings = AVCapturePhotoSettings()
         photoOutput?.capturePhoto(with: settings, delegate: self)
     }
@@ -119,7 +102,7 @@ extension UIImage {
 
 extension ComputerVision: AVCapturePhotoCaptureDelegate {
     
-    func photoOutput(_ output: AVCapturePhotoOutput, callBack: @escaping (_ answer: String) -> (), didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         
         struct User: Codable {
             var faceID: String
@@ -157,19 +140,24 @@ extension ComputerVision: AVCapturePhotoCaptureDelegate {
                         let responseString = String(data: data, encoding: .utf8)
                         do {
                             let json = try JSONSerialization.jsonObject(with: data, options: []) as! [[String:Any]]
-                            let save = json[0]
-                            
-                            let age = (save["faceAttributes"] as! [String:Any]) ["age"] as! Int
-                            let gender = (save["faceAttributes"] as! [String:Any]) ["gender"] as! String
-                            let emotion_dictionary: Dictionary<String,Double> = (save["faceAttributes"] as! [String:Any]) ["emotion"] as! Dictionary<String, Double>
-                            let max_value = emotion_dictionary.max{ a , b  in a.value < b.value }
-
-                            
-                            self.final_answer.age = age
-                            self.final_answer.gender = gender
-                            self.final_answer.emotion = max_value!.key
-                          //  print(self.final_answer)
-                            self.callBack(self.final_answer.emotion)
+                            let save = json[safe: 0]
+                            if (save == nil) {
+                                self.final_answer.age = 0
+                                self.final_answer.gender = "No gender"
+                                self.final_answer.emotion = "No emotion"
+                                self.group.leave()
+                            } else {
+                                let age = (save?["faceAttributes"] as! [String:Any]) ["age"] as! Int
+                                let gender = (save?["faceAttributes"] as! [String:Any]) ["gender"] as! String
+                                let emotion_dictionary: Dictionary<String,Double> = (save?["faceAttributes"] as! [String:Any]) ["emotion"] as! Dictionary<String, Double>
+                                let max_value = emotion_dictionary.max{ a , b  in a.value < b.value }
+                                
+                                self.final_answer.age = age
+                                self.final_answer.gender = gender
+                                self.final_answer.emotion = max_value!.key
+                                self.group.leave()
+                            }
+                          //  print("actual answer",self.final_answer)
                         }
                         catch{
                         print("Error")
@@ -181,5 +169,10 @@ extension ComputerVision: AVCapturePhotoCaptureDelegate {
             
         }
     
+    }
+}
+extension Collection {
+    subscript(safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
     }
 }

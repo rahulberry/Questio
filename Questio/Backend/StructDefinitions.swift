@@ -9,6 +9,7 @@ public struct cvData{
     var Mood = ""
     var Age = 0
     var Gender = ""
+    var Bracket = ""
 }
 
 public struct config_data{

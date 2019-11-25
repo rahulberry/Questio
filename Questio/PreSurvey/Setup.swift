@@ -38,7 +38,8 @@ class Setup:UIViewController{
         super.viewDidLoad()
         
         // Fetch face type
-        
+        self.config.Face_Type = "Mechanical_Face"
+
         self.reference.child("Test1").observeSingleEvent(of: .value, with: { snapshot in
             for child in snapshot.children {
                 /*fetch data here*/

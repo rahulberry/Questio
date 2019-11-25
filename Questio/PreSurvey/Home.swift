@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import AVFoundation
 
 var setupCheck = 0
 
@@ -20,7 +21,7 @@ class Home: UIViewController{
     @IBOutlet weak var SetupsOutlet: UIButton!
     @IBOutlet weak var SetupsContainer: UIView!
     @IBOutlet weak var textSR: UITextView!
-    @IBOutlet weak var picture: UIImageView!
+    @IBOutlet weak var p: UIImageView!
     
     let f = functions()
     
@@ -38,12 +39,11 @@ class Home: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        /*Computer Vision Setup*/
-       // cv.setupCaptureSession()
-       // cv.setupDevice()
-      //  cv.setupInputOutput()
+        cv.setupCaptureSession()
+        cv.setupDevice()
+        cv.setupInputOutput()
         cv.startRunningCaptureSession()
+        navigationController?.setNavigationBarHidden(true, animated: false)
         sr.initialize()
         sr.sharedVars(textSR!)
         //sr.beginLongAnswer(callBack: giveKeyWord)
@@ -71,7 +71,12 @@ class Home: UIViewController{
         }
            
         @IBAction func SetupsButton(_ sender: Any) {
-            cv.getResults(callBack: giveKeyWord)
+            cv.getResults()
+            cv.group.notify(queue: .main){
+                print(self.cv.final_answer)
+                self.p.image = self.cv.load_image
+            }
+            
         }
         
         @IBAction func SurveyCountButton(_ sender: Any) {
@@ -91,7 +96,3 @@ class Home: UIViewController{
         
 
     }
-
-
-
-

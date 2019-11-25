@@ -474,6 +474,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9km-LC-xiY">
+                                <rect key="frame" x="744" y="421" width="240" height="162"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="9ky-TI-eNm"/>
@@ -487,6 +491,7 @@
                         <outlet property="StartButtonOutlet" destination="qpb-FZ-nYe" id="DVw-pT-QIG"/>
                         <outlet property="SurveyCountButtonOutlet" destination="qHj-nX-iIo" id="SjJ-Dn-82Y"/>
                         <outlet property="SurveyLabel" destination="kRY-7w-Ee8" id="50h-F0-pKz"/>
+                        <outlet property="p" destination="9km-LC-xiY" id="fjx-Za-8iS"/>
                         <outlet property="textSR" destination="iKX-QJ-uua" id="UFP-Yz-RNb"/>
                         <segue destination="2sU-Lw-DaR" kind="show" identifier="SetupSegue" id="baf-Tj-eUG"/>
                         <segue destination="urr-2Z-f0s" kind="show" identifier="SegueToSetup" id="xgU-xQ-h4f"/>

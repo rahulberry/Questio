@@ -36,6 +36,7 @@
 		2E5F9E4D2382CBBA00D971B0 /* Question2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F9E4C2382CBBA00D971B0 /* Question2.swift */; };
 		2E5F9E502382CED400D971B0 /* TestQuaestio3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2E5F9E4E2382CDBA00D971B0 /* TestQuaestio3.mp4 */; };
 		2E5F9E522382FDDE00D971B0 /* ComputerVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F9E512382FDDE00D971B0 /* ComputerVision.swift */; };
+		2E67B935238C4E8300446D77 /* PrivacyM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E67B934238C4E8300446D77 /* PrivacyM.swift */; };
 		2E84C299237C7443002D3665 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84C298237C7443002D3665 /* Home.swift */; };
 		2E85FBD2236B2BF600EDFF56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E85FBD1236B2BF600EDFF56 /* AppDelegate.swift */; };
 		2E85FBD4236B2BF600EDFF56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E85FBD3236B2BF600EDFF56 /* SceneDelegate.swift */; };
@@ -83,6 +84,7 @@
 		2E5F9E4C2382CBBA00D971B0 /* Question2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question2.swift; sourceTree = "<group>"; };
 		2E5F9E4E2382CDBA00D971B0 /* TestQuaestio3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = TestQuaestio3.mp4; sourceTree = "<group>"; };
 		2E5F9E512382FDDE00D971B0 /* ComputerVision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputerVision.swift; sourceTree = "<group>"; };
+		2E67B934238C4E8300446D77 /* PrivacyM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PrivacyM.swift; path = /Users/rahulberry/Documents/Questio/Questio/MechFaceSurvey/PrivacyM.swift; sourceTree = "<absolute>"; };
 		2E84C298237C7443002D3665 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2E85FBCE236B2BF600EDFF56 /* Questio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Questio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E85FBD1236B2BF600EDFF56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				2EEBC882238590F700D7334E /* SurveyStartM.swift */,
+				2E67B934238C4E8300446D77 /* PrivacyM.swift */,
 			);
 			path = MechFaceSurvey;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				2E5F9E492382045200D971B0 /* YNResponse.swift in Sources */,
 				2E85FBD6236B2BF600EDFF56 /* SurveyHomeScreen.swift in Sources */,
 				2EC6B1C2237C57BA0085B560 /* PrivacyPolicy.swift in Sources */,
+				2E67B935238C4E8300446D77 /* PrivacyM.swift in Sources */,
 				2E193BD9237CC95100FCC545 /* SurveyDetailsForm.swift in Sources */,
 				2E5F9E522382FDDE00D971B0 /* ComputerVision.swift in Sources */,
 				2E04E9B9236F8C5300BA6349 /* iOSDevCenters+GIF.swift in Sources */,
