@@ -12,22 +12,8 @@ import Firebase
 class SurveyDetailsForm: UIViewController{
     
     let ref = Database.database().reference()
-     var config = config_data(
-           Data_Notice: "",
-           Experiment_Type: "",
-           Face_Type: "",
-           Hypothesis: "",
-           Personal_Limit: 0,
-           Personal_Timed: false,
-           Privacy_Code: false,
-           Short_Limit: 50,
-           Short_Timed: false,
-           Time_Creted: "",
-           Title: "",
-           shuffled: false,
-           surveySetID: "",
-           surveyID: ""
-        )
+         var config = config_data()
+
     /*used to set survey ID*/
     func randomString(length: Int) -> String {
         /*Code needs to be added to make sure no 2 IDs are the same*/
@@ -66,8 +52,19 @@ class SurveyDetailsForm: UIViewController{
     }
     
     func uploadData(){
-        self.ref.child("Data").child(self.config.surveySetID).child("Additional_Information").setValue(self.TitleTB.text!)
-        self.ref.child("Data").child(self.config.surveySetID).child("Creation_Time").setValue(stringFromDate(Date()))
+        self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Additional_Information").setValue(self.TitleTB.text!)
+        self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Data_Notice").setValue(self.config.Data_Notice)
+        self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Experiment_Type").setValue(self.config.Experiment_Type)
+        self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Face_Type").setValue(self.config.Face_Type)
+        self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Hypothesis").setValue(self.config.Hypothesis)
+        self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Personal_Limit").setValue(self.config.Personal_Limit)
+        self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Personal_Timed").setValue(self.config.Personal_Timed)
+        self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Privacy_Code").setValue(self.config.Privacy_Code)
+        self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Short_Limit").setValue(self.config.Short_Limit)
+        self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Short_Timed").setValue(self.config.Short_Timed)
+        self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Title").setValue(self.config.Title)
+        self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("shuffled").setValue(self.config.shuffled)
+        self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Creation_Time").setValue(stringFromDate(Date()))
     }
               
     func stringFromDate(_ date: Date) -> String {
@@ -83,7 +80,7 @@ class SurveyDetailsForm: UIViewController{
         }
     }
     @IBAction func StartButton(_ sender: Any) {
-        if(self.config.Face_Type == "Mechanical_Face"){
+        if(self.config.Face_Type == "Mechanical"){
             self.exitVC(segueIdentifier:"MechanicalSegue")
         }
         else{

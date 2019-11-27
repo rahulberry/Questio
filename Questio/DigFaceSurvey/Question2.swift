@@ -12,20 +12,8 @@ import AVFoundation
 import AVKit
 
 class Question2:UIViewController{
-   var config = config_data(
-       Data_Notice: "",
-       Experiment_Type: "",
-       Face_Type: "",
-       Hypothesis: "",
-       Personal_Limit: 0,
-       Personal_Timed: false,
-       Privacy_Code: false,
-       Short_Limit: 50,
-       Short_Timed: false,
-       Time_Creted: "",
-       Title: "",
-       shuffled: false
-   )
+       var config = config_data()
+
     
     
     @IBOutlet weak var videoView: UIView!
@@ -33,12 +21,10 @@ class Question2:UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.Animoji.image = UIImage(named: self.config.Face_Type)
-        let pathURL = URL.init(fileURLWithPath:  Bundle.main.path(forResource: "TestQuaestio3", ofType: "mp4")!)
+        let pathURL = URL.init(fileURLWithPath:  Bundle.main.path(forResource: "Q2"+self.config.Face_Type, ofType: "mp4")!)
         let player = AVPlayer(playerItem: AVPlayerItem(url: pathURL))
         let playerLayer = AVPlayerLayer(player: player)
-
         NotificationCenter.default.addObserver(self, selector: #selector(finishVideo), name: .AVPlayerItemDidPlayToEndTime, object: nil)
-
         playerLayer.frame = .init(x: 0, y: 0, width: videoView.frame.width, height: videoView.frame.height)
         self.videoView.layer.addSublayer(playerLayer)
         player.play()
@@ -50,15 +36,19 @@ class Question2:UIViewController{
        
        /*Pass data across view controllers*/
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           let vc = segue.destination as! LongAnswer
+           let vc = segue.destination as! Q2Response
            vc.config = self.config
        }
     @objc func finishVideo(note: NSNotification){
-        DispatchQueue.main.asyncAfter(deadline:.now() + 0.5, execute: {
+        DispatchQueue.main.asyncAfter(deadline:.now() + 1, execute: {
             print("video fin")
             self.exitVC(segueIdentifier: "Q2ResponseSegue")
         })
       }
-    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+
 
 }

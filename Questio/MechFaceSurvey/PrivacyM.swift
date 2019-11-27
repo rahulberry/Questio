@@ -23,7 +23,7 @@ class PrivacyM:UIViewController{
                 }
                 else if (value == "No") {
                 self.ref.child("Hardware_Interface").child("Privacy").setValue("rest")
-                                    self.exitVC(segueIdentifier:"PrivOutSegue")
+                                    self.exitVC(segueIdentifier:"PrivOutSegueM")
                 }
             }
     })

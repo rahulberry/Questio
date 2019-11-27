@@ -12,8 +12,20 @@ public struct cvData{
     var Bracket = ""
 }
 
+public struct questionData {
+    var optOne = ""
+    var optTwo = ""
+    var optThree = ""
+    var optFour = ""
+    var optFive = ""
+    var format = ""
+    var Question = ""
+    var QuestionNum = ""
+    
+}
+
 public struct config_data{
-    var Data_Notice = ""
+    var Data_Notice = false
     var Experiment_Type = ""
     var Face_Type = ""
     var Hypothesis = ""
@@ -27,4 +39,5 @@ public struct config_data{
     var shuffled = false
     var surveySetID = ""
     var surveyID = ""
+    var Current_Question = ""
 }

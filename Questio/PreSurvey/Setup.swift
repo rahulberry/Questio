@@ -15,22 +15,8 @@ let ref = Database.database().reference()
 class Setup:UIViewController{
     let reference = ref.child("Configurations")
     
-    var config = config_data(
-        Data_Notice: "",
-        Experiment_Type: "",
-        Face_Type: "",
-        Hypothesis: "",
-        Personal_Limit: 0,
-        Personal_Timed: false,
-        Privacy_Code: false,
-        Short_Limit: 50,
-        Short_Timed: false,
-        Time_Creted: "",
-        Title: "",
-        shuffled: false,
-        surveySetID: "",
-        surveyID: ""
-     )
+        var config = config_data()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +24,7 @@ class Setup:UIViewController{
         super.viewDidLoad()
         
         // Fetch face type
-        self.config.Face_Type = "Mechanical_Face"
+        self.config.Face_Type = "animoji-vos"
 
         self.reference.child("Test1").observeSingleEvent(of: .value, with: { snapshot in
             for child in snapshot.children {

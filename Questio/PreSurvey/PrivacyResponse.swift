@@ -16,30 +16,20 @@ class PrivacyResponse:UIViewController{
     
     var uid = ""
     var AcceptPressed = false
-     var config = config_data(
-           Data_Notice: "",
-           Experiment_Type: "",
-           Face_Type: "",
-           Hypothesis: "",
-           Personal_Limit: 0,
-           Personal_Timed: false,
-           Privacy_Code: false,
-           Short_Limit: 50,
-           Short_Timed: false,
-           Time_Creted: "",
-           Title: "",
-           shuffled: false,
-           surveySetID: "",
-           surveyID: ""
-        )
+    var config = config_data()
 
     let ref = Database.database().reference()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.Animoji.image = UIImage(named: self.config.Face_Type)
-        self.AcceptButtonOutlet.layer.cornerRadius = 45
-        self.DeclineButtonOutlet.layer.cornerRadius = 45
+        if(self.config.Face_Type == "F"){
+            self.Animoji.image = UIImage(named: "animoji-vos")
+        }
+        else{
+            //setup
+        }
+        self.AcceptButtonOutlet.layer.cornerRadius = 55
+        self.DeclineButtonOutlet.layer.cornerRadius = 55
     }
     
     func randomString(length: Int) -> String {

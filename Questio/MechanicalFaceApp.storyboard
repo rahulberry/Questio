@@ -117,7 +117,7 @@
                         <outlet property="GreenButton" destination="R93-x9-mxg" id="y27-BZ-CGn"/>
                         <outlet property="RedButton" destination="447-1P-rfs" id="Q2r-OW-Cd4"/>
                         <segue destination="vWl-dT-qeO" kind="show" identifier="DeclinedM" id="z6G-Hq-CUq"/>
-                        <segue destination="Chf-ZD-WO0" kind="show" identifier="PrivOutSegue" id="8Pw-TP-JA9"/>
+                        <segue destination="PHb-M9-WT3" kind="show" identifier="PrivOutSegueM" id="7fr-FF-bLJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jcI-HL-iG6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -141,35 +141,6 @@
             <point key="canvasLocation" x="-1207" y="-618"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="qKe-bk-aJr">
-            <objects>
-                <viewController id="Chf-ZD-WO0" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3ue-K6-mLe">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPn-rw-JNK">
-                                <rect key="frame" x="660" y="497" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="PHb-M9-WT3" kind="show" id="cUj-NY-tjA"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.1069932953" green="0.1125245616" blue="0.27844837309999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <viewLayoutGuide key="safeArea" id="uoh-F1-9xK"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Roh-Up-8Zd"/>
-                    <connections>
-                        <segue destination="PHb-M9-WT3" kind="show" id="Fbq-vA-mhL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3kd-JM-SSn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="282" y="79"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="RGX-Wb-O8r">
             <objects>
                 <viewController id="PHb-M9-WT3" sceneMemberID="viewController">
@@ -183,13 +154,6 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Do you go to the gym ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pK-3s-9UT">
-                                <rect key="frame" x="157" y="167" width="1057" height="262"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="103"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nod-LH-XW8">
                                 <rect key="frame" x="779" y="766" width="436" height="210"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -226,6 +190,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Have you heard any news about robots recently?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pK-3s-9UT">
+                                <rect key="frame" x="4" y="166" width="1359" height="262"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="103"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1069932953" green="0.1125245616" blue="0.27844837309999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="ghY-mN-yZT"/>
@@ -237,7 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="52x-RC-PaM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1012.8843338213762" y="78.515625"/>
+            <point key="canvasLocation" x="361.49341142020495" y="78.515625"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="w7d-gw-CLp">
@@ -253,34 +224,28 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LUn-or-10b">
-                                <rect key="frame" x="399" y="578" width="89" height="82"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yeX-lF-Uhx">
+                                <rect key="frame" x="358" y="638" width="179" height="162"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ut-l4-eKO">
-                                <rect key="frame" x="633" y="578" width="89" height="82"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rhr-FL-pp5">
+                                <rect key="frame" x="594" y="638" width="179" height="162"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PAO-bq-vQ4">
+                                <rect key="frame" x="827" y="638" width="179" height="162"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wk0-M8-k0e">
+                                <rect key="frame" x="1065" y="638" width="179" height="162"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GpQ-jI-Ayb">
-                                <rect key="frame" x="161" y="578" width="89" height="82"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Vy-VK-TQP">
-                                <rect key="frame" x="201" y="610" width="987" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kix-Wl-HaU">
-                                <rect key="frame" x="1136" y="578" width="89" height="82"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I89-uk-90k">
-                                <rect key="frame" x="871" y="578" width="89" height="82"/>
+                                <rect key="frame" x="126" y="638" width="179" height="162"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -292,7 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jE6-tI-Ssl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1806.5885797950218" y="78.515625"/>
+            <point key="canvasLocation" x="1087.9941434846266" y="78.515625"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="9ZY-Q9-PgZ">
@@ -324,7 +289,4 @@
         <image name="Quaestio logo white text only" width="4843" height="1228"/>
         <image name="qr-code-2" width="299" height="299"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="cUj-NY-tjA"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -8,43 +8,31 @@
 
 import UIKit
 import Firebase
-
+import AVKit
+import AVFoundation
 
 
 class PrivacyPolicy: UIViewController {
-    var Face_Type = "animoji-vos"
-    var config = config_data(
-         Data_Notice: "",
-         Experiment_Type: "",
-         Face_Type: "",
-         Hypothesis: "",
-         Personal_Limit: 0,
-         Personal_Timed: false,
-         Privacy_Code: false,
-         Short_Limit: 50,
-         Short_Timed: false,
-         Time_Creted: "",
-         Title: "",
-         shuffled: false
-     )
+    var config = config_data()
     @IBOutlet weak var NextButtonOutlet: UIButton!
-    @IBOutlet weak var Animoji: UIImageView!
-
+    @IBOutlet weak var videoView: UIView!
+    
    override func viewDidLoad() {
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        super.viewDidLoad()
-        
-        //fix state management
-        self.Animoji.image = UIImage(named: Face_Type)
-        
-    }
+    navigationController?.setNavigationBarHidden(true, animated: false)
+    super.viewDidLoad()
+    var videoName = "L5" + self.config.Face_Type
+    let pathURL = URL.init(fileURLWithPath:  Bundle.main.path(forResource: videoName, ofType: "mp4")!)
+    let player = AVPlayer(playerItem: AVPlayerItem(url: pathURL))
+    let playerLayer = AVPlayerLayer(player: player)
+    playerLayer.frame = .init(x: 0, y: 0, width: self.videoView.frame.width, height: self.videoView.frame.height)
+                  self.videoView.layer.addSublayer(playerLayer)
+                  player.play()    }
     
     func exitVC(segueIdentifier:String){
         self.performSegue(withIdentifier: segueIdentifier, sender: self)
     }
               
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         let vc = segue.destination as! PrivacyResponse
         vc.config = self.config
     }

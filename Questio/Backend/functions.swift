@@ -37,8 +37,6 @@ public class functions {
         }
     }
     
-    
-    
     public func csv(data: String) -> [[String]] {
         var result: [[String]] = []
         let rows = data.components(separatedBy: "\n")
@@ -54,4 +52,3 @@ public class functions {
         ref.child("Hardware_Interface").child("face_state").setValue(value)
     }
 }
-

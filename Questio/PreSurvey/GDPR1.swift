@@ -15,23 +15,9 @@ class GDPR1: UIViewController {
     let data = cvData(Mood: "", Age: 0, Gender: "")
     var Face_Type:String = "animoji-vos"
     var uid:String = ""
-    var config = config_data(
-        Data_Notice: "",
-        Experiment_Type: "",
-        Face_Type: "",
-        Hypothesis: "",
-        Personal_Limit: 0,
-        Personal_Timed: false,
-        Privacy_Code: false,
-        Short_Limit: 50,
-        Short_Timed: false,
-        Time_Creted: "",
-        Title: "",
-        shuffled: false
-    )
+    var config = config_data()
 
     
-
     @IBOutlet weak var Animoji: UIImageView!
     
     override func viewDidLoad() {
@@ -47,26 +33,20 @@ class GDPR1: UIViewController {
     
     /*Pass data across view controllers*/
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        /*This is the segue from VC1 to this VC edit for further*/
-        //let vc = segue.destination as! ViewController2
-        //vc.text = self.faceType
+        let vc = segue.destination as! PrivacyResponse
+        vc.config = self.config
     }
-    
+
     class func postData(){
        // self.ref.child("Data").setValue("Test")
     }
     func exitVC(segueIdentifier:String){
           // self.postData()
            self.performSegue(withIdentifier: segueIdentifier, sender: self)
-       }
-    func compVision() -> cvData{
-        /*Obtain CV results*/
-        let data = cvData(Mood: "Angry", Age: 0, Gender: "Male")
-        return data
-    }
-    
-    func speechRecognition(){
         
     }
-    
+
+    @IBAction func NextButton(_ sender: Any) {
+        self.exitVC(segueIdentifier: "PrivacyResponse2")
+    }
 }

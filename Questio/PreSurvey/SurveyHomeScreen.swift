@@ -18,20 +18,8 @@ class SurveyHomeScreen: UIViewController {
     var uid = ""
     var faceType = ""
     let ref = Database.database().reference()
-    var config = config_data(
-         Data_Notice: "",
-         Experiment_Type: "",
-         Face_Type: "",
-         Hypothesis: "",
-         Personal_Limit: 0,
-         Personal_Timed: false,
-         Privacy_Code: false,
-         Short_Limit: 50,
-         Short_Timed: false,
-         Time_Creted: "",
-         Title: "",
-         shuffled: false
-     )    /*UID generator*/
+    var config = config_data()
+/*UID generator*/
     /*We will need to check against all nodes to make sure no id is repeated*/
     
     
@@ -40,35 +28,32 @@ class SurveyHomeScreen: UIViewController {
     self.SurveyButtonOutlet.layer.cornerRadius = 45
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
-
+    
         // Fetch face type
         //Change for real gif used
         //self.Animoji.image = UIImage.gifImageWithName("funny")
-        self.Animoji.image = UIImage(named: self.config.Face_Type)
+        if(self.config.Face_Type == "F"){
+            self.Animoji.image = UIImage(named: "animoji-vos")
+        }
+        else if(self.config.Face_Type == "S"){
+            //fill
+        }
 
     }
     
   /*Perform Segue*/
     func exitVC(segueIdentifier:String){
+        print(self.config.Data_Notice)
         self.performSegue(withIdentifier: segueIdentifier, sender: self)
     }
     
     /*Pass data across view controllers*/
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(self.config.Privacy_Code){
-            let vc = segue.destination as! GDPR1
+            let vc = segue.destination as! Welcome
             vc.config = self.config
-        }else{
-            let vc = segue.destination as! PrivacyPolicy
-            vc.config = self.config
-        }
     }
     
     @IBAction func SurveyButton(_ sender: Any) {
-        if(self.Privacy_Code){
-            self.exitVC(segueIdentifier: "GDPRSegue")
-        }else{
-            self.exitVC(segueIdentifier: "PrivacySegue")
-        }
+        self.exitVC(segueIdentifier: "WelcomeSegue")
     }
 }

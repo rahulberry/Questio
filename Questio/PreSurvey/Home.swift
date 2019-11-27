@@ -31,23 +31,16 @@ class Home: UIViewController{
     
     var word = ""
     
-    func giveKeyWord(keyWord: String){
-        self.word = keyWord
-        print("got answer bitches")
-        print(self.word)
-    }
-    
-    override func viewDidLoad() {
+override func viewDidLoad() {
         super.viewDidLoad()
-        cv.setupCaptureSession()
-        cv.setupDevice()
-        cv.setupInputOutput()
-        cv.startRunningCaptureSession()
+        //cv.setupCaptureSession()
+       // cv.setupDevice()
+       // cv.setupInputOutput()
+       // cv.startRunningCaptureSession()
         navigationController?.setNavigationBarHidden(true, animated: false)
         sr.initialize()
         sr.sharedVars(textSR!)
         //sr.beginLongAnswer(callBack: giveKeyWord)
-        sr.begin(keywords: ["Yes", "No"], callBack: giveKeyWord)
         
         self.StartButtonOutlet.layer.cornerRadius = 150
         self.SurveyCountButtonOutlet.layer.cornerRadius = 35
