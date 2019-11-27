@@ -37,7 +37,7 @@ class Question3:UIViewController{
        
        /*Pass data across view controllers*/
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           let vc = segue.destination as! Q2Response
+           let vc = segue.destination as! FiveScaleResponse
            vc.config = self.config
        }
     @objc func finishVideo(note: NSNotification){

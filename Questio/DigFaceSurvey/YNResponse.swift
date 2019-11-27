@@ -31,11 +31,10 @@ class YNResponse:UIViewController{
     @IBOutlet weak var textSR: UITextView!
     
     override func viewDidLoad() {
-        
-        sr.sharedVars(textSR!)
-
         super.viewDidLoad()
+        sr.sharedVars(textSR!)
         sr.begin(keywords: ["Yes", "No", "Skip"], callBack: giveKeyWord)
+
         if(self.config.Face_Type == "F"){
             self.Animoji.image = UIImage(named: "animoji-vos")
         }
@@ -47,6 +46,7 @@ class YNResponse:UIViewController{
     }
     
     func exitVC(segueIdentifier:String){
+        sr.cancelRecognition()
         self.ref.child("Data")
             .child(self.config.surveySetID)
             .child(self.config.surveyID)

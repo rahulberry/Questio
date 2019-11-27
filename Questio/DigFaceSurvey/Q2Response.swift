@@ -47,6 +47,7 @@ class Q2Response:UIViewController{
     }
     
     func exitVC(segueIdentifier:String){
+        sr.cancelRecognition()
         self.ref.child("Data")
             .child(self.config.surveySetID)
             .child(self.config.surveyID)

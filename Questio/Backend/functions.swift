@@ -21,6 +21,11 @@ public class functions {
         return cleanFile
     }
     
+    public func stringFromDate(_ date: Date) -> String {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd MMM yyyy HH:mm" //yyyy
+            return formatter.string(from: date)
+    }
     
     public func readDataFromCSV(fileName:String, fileType: String)-> String!{
         guard let filepath = Bundle.main.path(forResource: fileName, ofType: fileType)

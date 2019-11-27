@@ -40,6 +40,7 @@
 		2E40643C238DF037006894D2 /* Question3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E40643B238DF037006894D2 /* Question3.swift */; };
 		2E40643E238DF5A0006894D2 /* Question1M.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E40643D238DF5A0006894D2 /* Question1M.swift */; };
 		2E406440238DF689006894D2 /* DeclinedM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E40643F238DF689006894D2 /* DeclinedM.swift */; };
+		2E406442238DFF6F006894D2 /* Q1Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E406441238DFF6F006894D2 /* Q1Audio.swift */; };
 		2E56C4842386A35400286077 /* SpeechRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56C4832386A35400286077 /* SpeechRecognition.swift */; };
 		2E5F9E41237F2C8800D971B0 /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F9E40237F2C8800D971B0 /* Setup.swift */; };
 		2E5F9E432381AA6000D971B0 /* Question1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F9E422381AA6000D971B0 /* Question1.swift */; };
@@ -102,6 +103,7 @@
 		2E40643B238DF037006894D2 /* Question3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question3.swift; sourceTree = "<group>"; };
 		2E40643D238DF5A0006894D2 /* Question1M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question1M.swift; sourceTree = "<group>"; };
 		2E40643F238DF689006894D2 /* DeclinedM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclinedM.swift; sourceTree = "<group>"; };
+		2E406441238DFF6F006894D2 /* Q1Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q1Audio.swift; sourceTree = "<group>"; };
 		2E56C4832386A35400286077 /* SpeechRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpeechRecognition.swift; path = /Users/rahulberry/Documents/Questio/Questio/Backend/SpeechRecognition.swift; sourceTree = "<absolute>"; };
 		2E5F9E40237F2C8800D971B0 /* Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
 		2E5F9E422381AA6000D971B0 /* Question1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question1.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				2E67B934238C4E8300446D77 /* PrivacyM.swift */,
 				2E40643F238DF689006894D2 /* DeclinedM.swift */,
 				2E40643D238DF5A0006894D2 /* Question1M.swift */,
+				2E406441238DFF6F006894D2 /* Q1Audio.swift */,
 			);
 			path = MechFaceSurvey;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				2E85FBD6236B2BF600EDFF56 /* SurveyHomeScreen.swift in Sources */,
 				2EC6B1C2237C57BA0085B560 /* PrivacyPolicy.swift in Sources */,
 				2E67B935238C4E8300446D77 /* PrivacyM.swift in Sources */,
+				2E406442238DFF6F006894D2 /* Q1Audio.swift in Sources */,
 				2E193BD9237CC95100FCC545 /* SurveyDetailsForm.swift in Sources */,
 				2E5F9E522382FDDE00D971B0 /* ComputerVision.swift in Sources */,
 				2E406440238DF689006894D2 /* DeclinedM.swift in Sources */,

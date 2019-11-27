@@ -15,6 +15,7 @@ class SurveyStartM: UIViewController{
     var stringOne = "Press the green button to start"
     let stringTwo = "green"
     
+    var config = config_data()
     let ref = Database.database().reference()
     
 
@@ -45,8 +46,8 @@ class SurveyStartM: UIViewController{
        }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-          //let vc = segue.destination as! YNResponse
-          //vc.config = self.config
+          let vc = segue.destination as! PrivacyM
+          vc.config = self.config
       }
 }
 

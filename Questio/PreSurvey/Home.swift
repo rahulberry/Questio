@@ -31,6 +31,12 @@ class Home: UIViewController{
     
     var word = ""
     
+    func giveKeyWord(keyWord: String){
+        self.word = keyWord
+        print("got answer")
+       // sr.cancelRecognition()
+    }
+    
 override func viewDidLoad() {
         super.viewDidLoad()
         //cv.setupCaptureSession()
@@ -40,6 +46,7 @@ override func viewDidLoad() {
         navigationController?.setNavigationBarHidden(true, animated: false)
         sr.initialize()
         sr.sharedVars(textSR!)
+        sr.begin(keywords: ["Yes","No","Skip"], callBack: giveKeyWord)
         //sr.beginLongAnswer(callBack: giveKeyWord)
         
         self.StartButtonOutlet.layer.cornerRadius = 150
