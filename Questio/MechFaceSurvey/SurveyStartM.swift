@@ -30,11 +30,11 @@ class SurveyStartM: UIViewController{
         ref.child("Hardware_Interface").child("Current_State").setValue("Welcome")
         ref.child("Hardware_Interface").child("Welcome").observe(.value, with: {snapshot in
             print(snapshot)
-             if let value = snapshot.value as? Int{
+             if let value = snapshot.value as? String{
                 print(value)
-                if value == 1{
+                if value == "Yes"{
                     self.ref.child("Hardware_Interface").child("Welcome").setValue("rest")
-                    self.ref.child("Hardware_Interface").child("Face_State").setValue("2")
+                    self.ref.child("Hardware_Interface").child("Face_State").setValue("B")
                     self.exitVC(segueIdentifier:"PrivSegueM")
                 }
             }

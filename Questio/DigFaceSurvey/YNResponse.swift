@@ -13,15 +13,24 @@ class YNResponse:UIViewController{
     var word = ""
     let ref = Database.database().reference()
     var config = config_data()
+    var qData = questionData()
     var response = ""
     let sr = SpeechProcessing()
-
+    let cv = ComputerVision()
+    var repeated = 0
+    
     func giveKeyWord(keyWord: String){
         self.response = keyWord
-        print("got answer")
-        sr.cancelRecognition()
+        print("got answer " + keyWord)
         print(self.response)
-        exitVC(segueIdentifier: "Q2Segue")
+        if (keyWord == "") {
+            if (self.repeated < 10) {
+                self.repeated = self.repeated + 1
+                sr.begin(keywords: ["Yes", "No", "Know", "Skip"], callBack: giveKeyWord)
+                return
+            }
+        }
+        self.exitVC(segueIdentifier: "More")
     }
     
     @IBOutlet weak var Animoji: UIImageView!
@@ -29,12 +38,21 @@ class YNResponse:UIViewController{
     @IBOutlet weak var NoButtonOutlet: UIButton!
     @IBOutlet weak var SkipLabel: UILabel!
     @IBOutlet weak var textSR: UITextView!
+    @IBOutlet weak var QuestionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.QuestionLabel.text = self.qData.Question
+        self.QuestionLabel.center = self.view.center
+        self.QuestionLabel = UILabel(frame: CGRect(x: 40, y: 396, width: 1258, height: 330))
+        print(config)
+//        cv.setupCaptureSession()
+//        cv.setupDevice()
+//        cv.setupInputOutput()
+//        cv.startRunningCaptureSession()
         sr.sharedVars(textSR!)
-        sr.begin(keywords: ["Yes", "No", "Skip"], callBack: giveKeyWord)
-
+       // sr.begin(keywords: ["Yes", "No", "Know", "Skip"], callBack: giveKeyWord)
+        
         if(self.config.Face_Type == "F"){
             self.Animoji.image = UIImage(named: "animoji-vos")
         }
@@ -46,38 +64,60 @@ class YNResponse:UIViewController{
     }
     
     func exitVC(segueIdentifier:String){
-        sr.cancelRecognition()
-        self.ref.child("Data")
-            .child(self.config.surveySetID)
-            .child(self.config.surveyID)
-            .child("Q1").child("Response")
-            .setValue(self.response)
-        self.ref.child("Data")
-            .child(self.config.surveySetID)
-            .child(self.config.surveyID)
-            .child("Q1").child("Mood")
-            .setValue("XX")
-        self.ref.child("Data")
-            .child(self.config.surveySetID)
-            .child(self.config.surveyID)
-            .child("Q1").child("Time")
-            .setValue(stringFromDate(Date()))
         self.performSegue(withIdentifier: segueIdentifier, sender: self)
+
+}
+    func nextVC(){
+        print(self.cv.final_answer)
+        print(self.config.Current_Question)
+         // cv.getResults()
+        //        cv.group.notify(queue: .main){
+                    self.ref.child("Data")
+                        .child(self.config.surveySetID)
+                        .child(self.config.surveyID)
+                        .child("Q"+self.config.Current_Question).child("Response")
+                       .setValue(self.response)
+                     self.ref.child("Data")
+                        .child(self.config.surveySetID)
+                        .child(self.config.surveyID)
+                        .child("Q"+self.config.Current_Question).child("Mood")
+                        .setValue(self.cv.final_answer.emotion)
+                    self.ref.child("Data")
+                        .child(self.config.surveySetID)
+                        .child(self.config.surveyID)
+                        .child("Q"+self.config.Current_Question).child("Time")
+                        .setValue(self.stringFromDate(Date()))
+                    
+        //        }
+        if(((Int(self.config.Current_Question) ?? 0) % 5) != 0){
+        self.ref.child("Current_Question").setValue((Int(self.config.Current_Question) ?? 0)+1)
+        for vc in (self.navigationController?.viewControllers ?? []) {
+                  if vc is Question {
+                  self.navigationController?.popToViewController(vc, animated: true)
+                  break
+            }
+        }
     }
+        else{
+            self.exitVC(segueIdentifier: "More")
+        }
+}
     
     /*Pass data across view controllers*/
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! Question2
+        let vc = segue.destination as! SurveyEnd
         vc.config = self.config
     }
+    
     @IBAction func YesButton(_ sender: Any) {
         self.response = "Yes"
-        self.exitVC(segueIdentifier: "Q2Segue")
+        self.nextVC()
     }
    
     @IBAction func NoButton(_ sender: Any) {
         self.response = "No"
-        self.exitVC(segueIdentifier: "Q2Segue")
+        self.nextVC()
+
     }
     
     func stringFromDate(_ date: Date) -> String {
@@ -87,8 +127,9 @@ class YNResponse:UIViewController{
       }
     
     @IBAction func SkipButton(_ sender: Any) {
-        self.response = "Skip"
-        self.exitVC(segueIdentifier: "Q2Segue")
+        self.response="Skip"
+        self.nextVC()
        }
     
 }
+

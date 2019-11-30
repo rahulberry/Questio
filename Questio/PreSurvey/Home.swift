@@ -24,7 +24,7 @@ class Home: UIViewController{
     @IBOutlet weak var p: UIImageView!
     
     let f = functions()
-    
+    let ref = Database.database().reference()
     var cvResults = cvData(Mood: "", Age: 0, Gender: "")
     let cv = ComputerVision()
     let sr = SpeechProcessing()
@@ -39,14 +39,10 @@ class Home: UIViewController{
     
 override func viewDidLoad() {
         super.viewDidLoad()
-        //cv.setupCaptureSession()
-       // cv.setupDevice()
-       // cv.setupInputOutput()
-       // cv.startRunningCaptureSession()
         navigationController?.setNavigationBarHidden(true, animated: false)
         sr.initialize()
         sr.sharedVars(textSR!)
-        sr.begin(keywords: ["Yes","No","Skip"], callBack: giveKeyWord)
+        //sr.begin(keywords: ["Yes","No","Skip"], callBack: giveKeyWord)
         //sr.beginLongAnswer(callBack: giveKeyWord)
         
         self.StartButtonOutlet.layer.cornerRadius = 150
@@ -71,12 +67,7 @@ override func viewDidLoad() {
         }
            
         @IBAction func SetupsButton(_ sender: Any) {
-            cv.getResults()
-            cv.group.notify(queue: .main){
-                print(self.cv.final_answer)
-                self.p.image = self.cv.load_image
-            }
-            
+           
         }
         
         @IBAction func SurveyCountButton(_ sender: Any) {

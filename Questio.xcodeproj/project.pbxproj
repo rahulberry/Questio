@@ -26,7 +26,6 @@
 		2E2D1902238DB4D700E2AE6C /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2D1901238DB4D700E2AE6C /* Welcome.swift */; };
 		2E2F2FFD23896321001798CF /* StructDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2F2FFC23896321001798CF /* StructDefinitions.swift */; };
 		2E2F2FFF238AF0CB001798CF /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2F2FFE238AF0CB001798CF /* functions.swift */; };
-		2E3CE52C238C965900FA7461 /* AnimojiQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3CE52B238C965900FA7461 /* AnimojiQuestion.swift */; };
 		2E406430238DB93D006894D2 /* L1F.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2E40642F238DB934006894D2 /* L1F.mp4 */; };
 		2E406431238DB93D006894D2 /* L2F.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2E406429238DB932006894D2 /* L2F.mp4 */; };
 		2E406432238DB93D006894D2 /* L3F.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2E406428238DB932006894D2 /* L3F.mp4 */; };
@@ -36,22 +35,25 @@
 		2E406436238DB93D006894D2 /* Q2F.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2E40642B238DB933006894D2 /* Q2F.mp4 */; };
 		2E406437238DB93D006894D2 /* Q3F.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2E40642D238DB934006894D2 /* Q3F.mp4 */; };
 		2E406438238DB93D006894D2 /* Q4F.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2E40642E238DB934006894D2 /* Q4F.mp4 */; };
-		2E40643A238DEDD3006894D2 /* Q2Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E406439238DEDD3006894D2 /* Q2Response.swift */; };
-		2E40643C238DF037006894D2 /* Question3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E40643B238DF037006894D2 /* Question3.swift */; };
 		2E40643E238DF5A0006894D2 /* Question1M.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E40643D238DF5A0006894D2 /* Question1M.swift */; };
 		2E406440238DF689006894D2 /* DeclinedM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E40643F238DF689006894D2 /* DeclinedM.swift */; };
-		2E406442238DFF6F006894D2 /* Q1Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E406441238DFF6F006894D2 /* Q1Audio.swift */; };
+		2E406444238EB1B3006894D2 /* L1A.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E406443238EB1B3006894D2 /* L1A.mp3 */; };
+		2E406446238EB294006894D2 /* Q1A.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E406445238EB294006894D2 /* Q1A.mp3 */; };
+		2E406448238EB383006894D2 /* Question2M.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E406447238EB383006894D2 /* Question2M.swift */; };
+		2E40644C238F3B19006894D2 /* surveyEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E40644B238F3B19006894D2 /* surveyEnd.swift */; };
+		2E40644E238F4392006894D2 /* SurveyEndMech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E40644D238F4392006894D2 /* SurveyEndMech.swift */; };
 		2E56C4842386A35400286077 /* SpeechRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E56C4832386A35400286077 /* SpeechRecognition.swift */; };
 		2E5F9E41237F2C8800D971B0 /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F9E40237F2C8800D971B0 /* Setup.swift */; };
-		2E5F9E432381AA6000D971B0 /* Question1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F9E422381AA6000D971B0 /* Question1.swift */; };
+		2E5F9E432381AA6000D971B0 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F9E422381AA6000D971B0 /* Question.swift */; };
 		2E5F9E452381B10900D971B0 /* FiveScaleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F9E442381B10900D971B0 /* FiveScaleResponse.swift */; };
 		2E5F9E472381BF5400D971B0 /* TestQuaestio2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2E5F9E462381BE7C00D971B0 /* TestQuaestio2.mp4 */; };
 		2E5F9E492382045200D971B0 /* YNResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F9E482382045200D971B0 /* YNResponse.swift */; };
 		2E5F9E4B2382CB6100D971B0 /* LongAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F9E4A2382CB6100D971B0 /* LongAnswer.swift */; };
-		2E5F9E4D2382CBBA00D971B0 /* Question2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F9E4C2382CBBA00D971B0 /* Question2.swift */; };
 		2E5F9E502382CED400D971B0 /* TestQuaestio3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2E5F9E4E2382CDBA00D971B0 /* TestQuaestio3.mp4 */; };
 		2E5F9E522382FDDE00D971B0 /* ComputerVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F9E512382FDDE00D971B0 /* ComputerVision.swift */; };
 		2E67B935238C4E8300446D77 /* PrivacyM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E67B934238C4E8300446D77 /* PrivacyM.swift */; };
+		2E6FADDF238FD7BC00FD6003 /* Q14A.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E6FADDE238FD7BC00FD6003 /* Q14A.mp3 */; };
+		2E6FADE1238FD88400FD6003 /* Q9A.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E6FADE0238FD88300FD6003 /* Q9A.mp3 */; };
 		2E84C299237C7443002D3665 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84C298237C7443002D3665 /* Home.swift */; };
 		2E85FBD2236B2BF600EDFF56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E85FBD1236B2BF600EDFF56 /* AppDelegate.swift */; };
 		2E85FBD4236B2BF600EDFF56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E85FBD3236B2BF600EDFF56 /* SceneDelegate.swift */; };
@@ -89,7 +91,6 @@
 		2E2D1901238DB4D700E2AE6C /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		2E2F2FFC23896321001798CF /* StructDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructDefinitions.swift; sourceTree = "<group>"; };
 		2E2F2FFE238AF0CB001798CF /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
-		2E3CE52B238C965900FA7461 /* AnimojiQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimojiQuestion.swift; sourceTree = "<group>"; };
 		2E406427238DB932006894D2 /* L5F.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = L5F.mp4; sourceTree = "<group>"; };
 		2E406428238DB932006894D2 /* L3F.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = L3F.mp4; sourceTree = "<group>"; };
 		2E406429238DB932006894D2 /* L2F.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = L2F.mp4; sourceTree = "<group>"; };
@@ -99,22 +100,25 @@
 		2E40642D238DB934006894D2 /* Q3F.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Q3F.mp4; sourceTree = "<group>"; };
 		2E40642E238DB934006894D2 /* Q4F.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Q4F.mp4; sourceTree = "<group>"; };
 		2E40642F238DB934006894D2 /* L1F.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = L1F.mp4; sourceTree = "<group>"; };
-		2E406439238DEDD3006894D2 /* Q2Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q2Response.swift; sourceTree = "<group>"; };
-		2E40643B238DF037006894D2 /* Question3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question3.swift; sourceTree = "<group>"; };
 		2E40643D238DF5A0006894D2 /* Question1M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question1M.swift; sourceTree = "<group>"; };
 		2E40643F238DF689006894D2 /* DeclinedM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclinedM.swift; sourceTree = "<group>"; };
-		2E406441238DFF6F006894D2 /* Q1Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q1Audio.swift; sourceTree = "<group>"; };
+		2E406443238EB1B3006894D2 /* L1A.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = L1A.mp3; sourceTree = "<group>"; };
+		2E406445238EB294006894D2 /* Q1A.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Q1A.mp3; sourceTree = "<group>"; };
+		2E406447238EB383006894D2 /* Question2M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question2M.swift; sourceTree = "<group>"; };
+		2E40644B238F3B19006894D2 /* surveyEnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = surveyEnd.swift; sourceTree = "<group>"; };
+		2E40644D238F4392006894D2 /* SurveyEndMech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyEndMech.swift; sourceTree = "<group>"; };
 		2E56C4832386A35400286077 /* SpeechRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpeechRecognition.swift; path = /Users/rahulberry/Documents/Questio/Questio/Backend/SpeechRecognition.swift; sourceTree = "<absolute>"; };
 		2E5F9E40237F2C8800D971B0 /* Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
-		2E5F9E422381AA6000D971B0 /* Question1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question1.swift; sourceTree = "<group>"; };
+		2E5F9E422381AA6000D971B0 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		2E5F9E442381B10900D971B0 /* FiveScaleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveScaleResponse.swift; sourceTree = "<group>"; };
 		2E5F9E462381BE7C00D971B0 /* TestQuaestio2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = TestQuaestio2.mp4; sourceTree = "<group>"; };
 		2E5F9E482382045200D971B0 /* YNResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNResponse.swift; sourceTree = "<group>"; };
 		2E5F9E4A2382CB6100D971B0 /* LongAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongAnswer.swift; sourceTree = "<group>"; };
-		2E5F9E4C2382CBBA00D971B0 /* Question2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question2.swift; sourceTree = "<group>"; };
 		2E5F9E4E2382CDBA00D971B0 /* TestQuaestio3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = TestQuaestio3.mp4; sourceTree = "<group>"; };
 		2E5F9E512382FDDE00D971B0 /* ComputerVision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputerVision.swift; sourceTree = "<group>"; };
 		2E67B934238C4E8300446D77 /* PrivacyM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PrivacyM.swift; path = /Users/rahulberry/Documents/Questio/Questio/MechFaceSurvey/PrivacyM.swift; sourceTree = "<absolute>"; };
+		2E6FADDE238FD7BC00FD6003 /* Q14A.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Q14A.mp3; sourceTree = "<group>"; };
+		2E6FADE0238FD88300FD6003 /* Q9A.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Q9A.mp3; path = "../../../Downloads/OneDrive_6_26-11-2019/Audio/Q9A.mp3"; sourceTree = "<group>"; };
 		2E84C298237C7443002D3665 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2E85FBCE236B2BF600EDFF56 /* Questio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Questio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E85FBD1236B2BF600EDFF56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 		2ED6FED0237ED09E00380C5A /* PrivacyDeclined.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyDeclined.swift; sourceTree = "<group>"; };
 		2EEBC8782385595800D7334E /* MechanicalFaceApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MechanicalFaceApp.storyboard; sourceTree = "<group>"; };
 		2EEBC882238590F700D7334E /* SurveyStartM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyStartM.swift; sourceTree = "<group>"; };
+		2EF62CAE2391C38700074437 /* Q9A.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Q9A.mp3; sourceTree = "<group>"; };
+		2EF62CAF2391C38A00074437 /* Q9A.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Q9A.mp3; path = "../../../../Downloads/OneDrive_6_26-11-2019/Audio/Q9A.mp3"; sourceTree = "<group>"; };
 		2EF707AE237494D0008F73F9 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		8C05E3C8773EB44672934D25 /* Pods-Questio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Questio.debug.xcconfig"; path = "Target Support Files/Pods-Questio/Pods-Questio.debug.xcconfig"; sourceTree = "<group>"; };
 		E9F479B915CB0A7FF771F35F /* libPods-Questio.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Questio.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +155,11 @@
 		2E5F9E4F2382CDBE00D971B0 /* VideoAssets */ = {
 			isa = PBXGroup;
 			children = (
+				2EF62CAF2391C38A00074437 /* Q9A.mp3 */,
+				2E406443238EB1B3006894D2 /* L1A.mp3 */,
+				2EF62CAE2391C38700074437 /* Q9A.mp3 */,
+				2E406445238EB294006894D2 /* Q1A.mp3 */,
+				2E6FADDE238FD7BC00FD6003 /* Q14A.mp3 */,
 				2E5F9E4E2382CDBA00D971B0 /* TestQuaestio3.mp4 */,
 				2E5F9E462381BE7C00D971B0 /* TestQuaestio2.mp4 */,
 				2E40642F238DB934006894D2 /* L1F.mp4 */,
@@ -186,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				2E85FBDA236B2BF900EDFF56 /* Assets.xcassets */,
+				2E6FADE0238FD88300FD6003 /* Q9A.mp3 */,
 				2E5F9E4F2382CDBE00D971B0 /* VideoAssets */,
 				2EE60700237C2BAB005E2D85 /* Fonts */,
 				2EEBC87A2385779300D7334E /* PreSurvey */,
@@ -243,13 +255,10 @@
 			isa = PBXGroup;
 			children = (
 				2E5F9E442381B10900D971B0 /* FiveScaleResponse.swift */,
-				2E3CE52B238C965900FA7461 /* AnimojiQuestion.swift */,
 				2E5F9E4A2382CB6100D971B0 /* LongAnswer.swift */,
 				2E5F9E482382045200D971B0 /* YNResponse.swift */,
-				2E5F9E422381AA6000D971B0 /* Question1.swift */,
-				2E5F9E4C2382CBBA00D971B0 /* Question2.swift */,
-				2E406439238DEDD3006894D2 /* Q2Response.swift */,
-				2E40643B238DF037006894D2 /* Question3.swift */,
+				2E5F9E422381AA6000D971B0 /* Question.swift */,
+				2E40644B238F3B19006894D2 /* surveyEnd.swift */,
 			);
 			path = DigFaceSurvey;
 			sourceTree = "<group>";
@@ -269,11 +278,12 @@
 		2EEBC88123858F0F00D7334E /* MechFaceSurvey */ = {
 			isa = PBXGroup;
 			children = (
+				2E40644D238F4392006894D2 /* SurveyEndMech.swift */,
 				2EEBC882238590F700D7334E /* SurveyStartM.swift */,
 				2E67B934238C4E8300446D77 /* PrivacyM.swift */,
 				2E40643F238DF689006894D2 /* DeclinedM.swift */,
 				2E40643D238DF5A0006894D2 /* Question1M.swift */,
-				2E406441238DFF6F006894D2 /* Q1Audio.swift */,
+				2E406447238EB383006894D2 /* Question2M.swift */,
 			);
 			path = MechFaceSurvey;
 			sourceTree = "<group>";
@@ -357,17 +367,20 @@
 				2E406430238DB93D006894D2 /* L1F.mp4 in Resources */,
 				2E406431238DB93D006894D2 /* L2F.mp4 in Resources */,
 				2E406432238DB93D006894D2 /* L3F.mp4 in Resources */,
+				2E6FADDF238FD7BC00FD6003 /* Q14A.mp3 in Resources */,
 				2E406433238DB93D006894D2 /* L4F.mp4 in Resources */,
 				2E406434238DB93D006894D2 /* L5F.mp4 in Resources */,
 				2E406435238DB93D006894D2 /* Q1F.mp4 in Resources */,
 				2E406436238DB93D006894D2 /* Q2F.mp4 in Resources */,
 				2E406437238DB93D006894D2 /* Q3F.mp4 in Resources */,
+				2E406446238EB294006894D2 /* Q1A.mp3 in Resources */,
 				2E406438238DB93D006894D2 /* Q4F.mp4 in Resources */,
 				2E5F9E502382CED400D971B0 /* TestQuaestio3.mp4 in Resources */,
 				2E5F9E472381BF5400D971B0 /* TestQuaestio2.mp4 in Resources */,
 				2E193BD5237CC6A400FCC545 /* OpenSans-Light.ttf in Resources */,
 				2E85FBDE236B2BF900EDFF56 /* LaunchScreen.storyboard in Resources */,
 				2E193BD4237CC6A400FCC545 /* Apache License.txt in Resources */,
+				2E6FADE1238FD88400FD6003 /* Q9A.mp3 in Resources */,
 				2E193BD3237CC6A400FCC545 /* OpenSans-Italic.ttf in Resources */,
 				2E193BCF237CC6A400FCC545 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				2E038A7C236B53A200F79FC0 /* GoogleService-Info.plist in Resources */,
@@ -377,6 +390,7 @@
 				2E193BD7237CC6A400FCC545 /* OpenSans-Semibold.ttf in Resources */,
 				2E193BD2237CC6A400FCC545 /* OpenSans-SemiboldItalic.ttf in Resources */,
 				2E193BD6237CC6A400FCC545 /* OpenSans-Regular.ttf in Resources */,
+				2E406444238EB1B3006894D2 /* L1A.mp3 in Resources */,
 				2E193BD0237CC6A400FCC545 /* OpenSans-BoldItalic.ttf in Resources */,
 				2E193BCE237CC6A400FCC545 /* OpenSans-ExtraBold.ttf in Resources */,
 				2EEBC8792385595800D7334E /* MechanicalFaceApp.storyboard in Resources */,
@@ -416,19 +430,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E3CE52C238C965900FA7461 /* AnimojiQuestion.swift in Sources */,
-				2E40643A238DEDD3006894D2 /* Q2Response.swift in Sources */,
 				2E04E9C3236F9E4B00BA6349 /* GDPR1.swift in Sources */,
 				2E5F9E492382045200D971B0 /* YNResponse.swift in Sources */,
 				2E85FBD6236B2BF600EDFF56 /* SurveyHomeScreen.swift in Sources */,
+				2E40644C238F3B19006894D2 /* surveyEnd.swift in Sources */,
+				2E40644E238F4392006894D2 /* SurveyEndMech.swift in Sources */,
 				2EC6B1C2237C57BA0085B560 /* PrivacyPolicy.swift in Sources */,
 				2E67B935238C4E8300446D77 /* PrivacyM.swift in Sources */,
-				2E406442238DFF6F006894D2 /* Q1Audio.swift in Sources */,
 				2E193BD9237CC95100FCC545 /* SurveyDetailsForm.swift in Sources */,
 				2E5F9E522382FDDE00D971B0 /* ComputerVision.swift in Sources */,
 				2E406440238DF689006894D2 /* DeclinedM.swift in Sources */,
 				2E04E9B9236F8C5300BA6349 /* iOSDevCenters+GIF.swift in Sources */,
-				2E5F9E4D2382CBBA00D971B0 /* Question2.swift in Sources */,
 				2EF707AF237494D0008F73F9 /* MainNavigationController.swift in Sources */,
 				2E5F9E452381B10900D971B0 /* FiveScaleResponse.swift in Sources */,
 				2E2D1900238D67DD00E2AE6C /* SetupListViewController.swift in Sources */,
@@ -438,13 +450,13 @@
 				2ED6FECF237ECF6A00380C5A /* PrivacyResponse.swift in Sources */,
 				2E85FBD2236B2BF600EDFF56 /* AppDelegate.swift in Sources */,
 				2E5F9E4B2382CB6100D971B0 /* LongAnswer.swift in Sources */,
+				2E406448238EB383006894D2 /* Question2M.swift in Sources */,
 				2E2D1902238DB4D700E2AE6C /* Welcome.swift in Sources */,
 				2EEBC883238590F700D7334E /* SurveyStartM.swift in Sources */,
-				2E5F9E432381AA6000D971B0 /* Question1.swift in Sources */,
+				2E5F9E432381AA6000D971B0 /* Question.swift in Sources */,
 				2E84C299237C7443002D3665 /* Home.swift in Sources */,
 				2E5F9E41237F2C8800D971B0 /* Setup.swift in Sources */,
 				2ED6FED1237ED09E00380C5A /* PrivacyDeclined.swift in Sources */,
-				2E40643C238DF037006894D2 /* Question3.swift in Sources */,
 				2E56C4842386A35400286077 /* SpeechRecognition.swift in Sources */,
 				2E85FBD4236B2BF600EDFF56 /* SceneDelegate.swift in Sources */,
 			);

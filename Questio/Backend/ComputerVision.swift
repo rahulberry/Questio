@@ -15,6 +15,7 @@ var captureSession = AVCaptureSession()
     var load_image : UIImage!
     
     let group = DispatchGroup()
+    let backGroundqueue = DispatchQueue.global(priority: .default)
     
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
 
@@ -72,6 +73,7 @@ var captureSession = AVCaptureSession()
         group.enter()
         let settings = AVCapturePhotoSettings()
         photoOutput?.capturePhoto(with: settings, delegate: self)
+        print(photoOutput == nil)
     }
     
 
@@ -141,11 +143,13 @@ extension ComputerVision: AVCapturePhotoCaptureDelegate {
                         do {
                             let json = try JSONSerialization.jsonObject(with: data, options: []) as! [[String:Any]]
                             let save = json[safe: 0]
+                            
+                            
                             if (save == nil) {
                                 self.final_answer.age = 0
                                 self.final_answer.gender = "No gender"
                                 self.final_answer.emotion = "No emotion"
-                                self.group.leave()
+                                
                             } else {
                                 let age = (save?["faceAttributes"] as! [String:Any]) ["age"] as! Int
                                 let gender = (save?["faceAttributes"] as! [String:Any]) ["gender"] as! String
@@ -155,8 +159,9 @@ extension ComputerVision: AVCapturePhotoCaptureDelegate {
                                 self.final_answer.age = age
                                 self.final_answer.gender = gender
                                 self.final_answer.emotion = max_value!.key
-                                self.group.leave()
                             }
+                            
+                            self.group.leave()
                           //  print("actual answer",self.final_answer)
                         }
                         catch{

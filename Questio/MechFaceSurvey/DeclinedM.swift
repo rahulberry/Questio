@@ -7,3 +7,13 @@
 //
 
 import Foundation
+import UIKit
+
+class DeclinedM:UIViewController{
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    @IBAction func BackButton(_ sender: Any) {
+        
+    }
+}

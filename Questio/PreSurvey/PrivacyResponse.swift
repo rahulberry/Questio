@@ -19,9 +19,15 @@ class PrivacyResponse:UIViewController{
     var config = config_data()
 
     let ref = Database.database().reference()
-
+    let cv = ComputerVision()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+//        cv.setupCaptureSession()
+//        cv.setupDevice()
+//        cv.setupInputOutput()
+//        cv.startRunningCaptureSession()
         if(self.config.Face_Type == "F"){
             self.Animoji.image = UIImage(named: "animoji-vos")
         }
@@ -43,7 +49,8 @@ class PrivacyResponse:UIViewController{
                  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(self.AcceptPressed){
-            let vc = segue.destination as! Question1
+            self.config.surveyID = self.randomString(length: 6)
+            let vc = segue.destination as! Question
             vc.config = self.config
         }
     }
@@ -53,13 +60,17 @@ class PrivacyResponse:UIViewController{
     }
      @IBAction func AcceptButton(_ sender: Any) {
         /*Set user ID & transition*/
-        self.config.surveyID = randomString(length: 6)
-        self.ref.child("Data").child(self.config.surveySetID).child(self.config.surveyID).child("Age").setValue("X")
-        self.ref.child("Data").child(self.config.surveySetID).child(self.config.surveyID).child("Mood_Start").setValue("X")
-        self.ref.child("Data").child(self.config.surveySetID).child(self.config.surveyID).child("Gender").setValue("X")
-       
         self.AcceptPressed = true
         self.exitVC(segueIdentifier: "StartSurvey")
+//        cv.getResults()
+//        cv.group.notify(queue: .main){
+//          //  self.config.surveyID = self.randomString(length: 6)
+//            print(self.cv.final_answer)
+//            self.ref.child("Data").child(self.config.surveySetID).child(self.config.surveyID).child("Age").setValue(self.cv.final_answer.age)
+        print(self.config)
+        self.ref.child("Data").child(self.config.surveySetID).child(self.config.surveyID).child("Mood_Start").setValue(self.cv.final_answer.emotion)
+            self.ref.child("Data").child(self.config.surveySetID).child(self.config.surveyID).child("Gender").setValue(self.cv.final_answer.gender)
+//        }
+      
     }
-    
 }

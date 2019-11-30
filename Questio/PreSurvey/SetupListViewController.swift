@@ -65,6 +65,7 @@ class SetupListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
 
@@ -119,7 +120,6 @@ class SetupListViewController: UIViewController, UITableViewDelegate, UITableVie
             
             self.keys_ordered = self.setups.allKeys as! [String]
             self.keys_ordered.sort(by: {(self.setups[$0]! as! [String: Any])[self.key_timeCreated]! as! Int > (self.setups[$1]! as! [String: Any])[self.key_timeCreated]! as! Int})
-            
             self.setupList.reloadData()
             self.setupList.selectRow(at: [0,index], animated: true, scrollPosition: .top)
             self.updateDetails(survey_index: index)

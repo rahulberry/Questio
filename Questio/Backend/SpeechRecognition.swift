@@ -2,9 +2,6 @@ import UIKit
 import Speech
 
 public class SpeechProcessing: NSObject, SFSpeechRecognizerDelegate {
-
-    typealias MethodHandler1 = (_ sampleParameter : String)  -> Void
-    typealias MethodHandler2 = ()  -> Void
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-UK"))!
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
@@ -12,6 +9,7 @@ public class SpeechProcessing: NSObject, SFSpeechRecognizerDelegate {
     private let audioEngine = AVAudioEngine()
     private var answer = ""
     private var foundAnswer = false
+    private var calledBack = false
     @IBOutlet var textView: UITextView!
 
     public func sharedVars(_ textView: UITextView!) {
@@ -53,7 +51,7 @@ public class SpeechProcessing: NSObject, SFSpeechRecognizerDelegate {
         // Configure the audio session for the app.
 
         let audioSession = AVAudioSession.sharedInstance()
-        try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
+        try audioSession.setCategory(AVAudioSession.Category.playAndRecord)
         try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
         let inputNode = audioEngine.inputNode
 
@@ -71,8 +69,10 @@ public class SpeechProcessing: NSObject, SFSpeechRecognizerDelegate {
         
         // Create a recognition task for the speech recognition session.
         // Keep a reference to the task so that it can be canceled.
+        calledBack = false
         recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { result, error in
             var isFinal = false
+            
             if let result = result {
 
                 // Update the text view with the results.
@@ -84,6 +84,7 @@ public class SpeechProcessing: NSObject, SFSpeechRecognizerDelegate {
                         self.textView.text = keyword
                         self.answer = keyword
                         self.foundAnswer = true
+                        self.recognitionTask?.cancel()
                         self.recognitionTask?.finish()
                         break
 
@@ -103,7 +104,10 @@ public class SpeechProcessing: NSObject, SFSpeechRecognizerDelegate {
                 self.recognitionRequest = nil
                 self.recognitionTask = nil
                 self.foundAnswer = true
-                callBack(self.answer)
+                if (!self.calledBack) {
+                    self.calledBack = true
+                    callBack(self.answer)
+                }
             }
         }
 
@@ -129,7 +133,7 @@ public class SpeechProcessing: NSObject, SFSpeechRecognizerDelegate {
         // Configure the audio session for the app.
 
         let audioSession = AVAudioSession.sharedInstance()
-        try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
+        try audioSession.setCategory(AVAudioSession.Category.playAndRecord)
         try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
         let inputNode = audioEngine.inputNode
         
@@ -144,6 +148,7 @@ public class SpeechProcessing: NSObject, SFSpeechRecognizerDelegate {
 
         // Create a recognition task for the speech recognition session.
         // Keep a reference to the task so that it can be canceled.
+        self.calledBack = false
         recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { result, error in
             var isFinal = false
             if let result = result {
@@ -156,6 +161,7 @@ public class SpeechProcessing: NSObject, SFSpeechRecognizerDelegate {
                     self.answer = String(self.answer.dropLast(5))
                     self.textView.text = self.answer
                     self.foundAnswer = true
+                    self.recognitionTask?.cancel()
                     self.recognitionTask?.finish()
                 }
             }
@@ -169,7 +175,10 @@ public class SpeechProcessing: NSObject, SFSpeechRecognizerDelegate {
                 self.recognitionRequest = nil
                 self.recognitionTask = nil
                 self.foundAnswer = true
-                callBack(self.answer)
+                if (!self.calledBack) {
+                    self.calledBack = true
+                    callBack(self.answer)
+                }
             }
         }
 
