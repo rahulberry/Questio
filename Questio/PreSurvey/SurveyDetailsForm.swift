@@ -52,7 +52,9 @@ class SurveyDetailsForm: UIViewController{
     }
     
     func uploadData(){
-        self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Additional_Information").setValue(self.TitleTB.text!)
+        self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Survey_Conductors").setValue(self.TitleTB.text!)
+        self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Location").setValue(self.LocationTB.text!)
+
         self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Data_Notice").setValue(self.config.Data_Notice)
         self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Experiment_Type").setValue(self.config.Experiment_Type)
         self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Face_Type").setValue(self.config.Face_Type)
@@ -64,14 +66,10 @@ class SurveyDetailsForm: UIViewController{
         self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Short_Timed").setValue(self.config.Short_Timed)
         self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Title").setValue(self.config.Title)
         self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("shuffled").setValue(self.config.shuffled)
-        self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Creation_Time").setValue(stringFromDate(Date()))
+        self.ref.child("Data").child(self.config.surveySetID).child("SurveySetInfo").child("Creation_Time").setValue(Date().timeIntervalSince1970)
     }
               
-    func stringFromDate(_ date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd MMM yyyy HH:mm" //yyyy
-        return formatter.string(from: date)
-    }
+   
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(self.config.Face_Type != "M"){

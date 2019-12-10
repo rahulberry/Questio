@@ -45,11 +45,13 @@ class YNResponse:UIViewController{
         self.QuestionLabel.text = self.qData.Question
         self.QuestionLabel.center = self.view.center
         self.QuestionLabel = UILabel(frame: CGRect(x: 40, y: 396, width: 1258, height: 330))
+        
         print(config)
-//        cv.setupCaptureSession()
-//        cv.setupDevice()
-//        cv.setupInputOutput()
-//        cv.startRunningCaptureSession()
+       
+        cv.setupCaptureSession()
+        cv.setupDevice()
+        cv.setupInputOutput()
+        cv.startRunningCaptureSession()
         sr.sharedVars(textSR!)
        // sr.begin(keywords: ["Yes", "No", "Know", "Skip"], callBack: giveKeyWord)
         
@@ -61,6 +63,14 @@ class YNResponse:UIViewController{
         }
         self.YesButtonOutlet.layer.cornerRadius = 50
         self.NoButtonOutlet.layer.cornerRadius = 50
+        
+        if(self.qData.format == "two"){
+            self.YesButtonOutlet.setTitle(qData.optOne, for: .normal)
+            self.NoButtonOutlet.setTitle(qData.optTwo, for: .normal)
+                      
+            self.YesButtonOutlet.titleLabel?.adjustsFontSizeToFitWidth = true;
+            self.NoButtonOutlet.titleLabel?.adjustsFontSizeToFitWidth = true;
+        }
     }
     
     func exitVC(segueIdentifier:String){
@@ -70,8 +80,8 @@ class YNResponse:UIViewController{
     func nextVC(){
         print(self.cv.final_answer)
         print(self.config.Current_Question)
-         // cv.getResults()
-        //        cv.group.notify(queue: .main){
+          cv.getResults()
+                cv.group.notify(queue: .main){
                     self.ref.child("Data")
                         .child(self.config.surveySetID)
                         .child(self.config.surveyID)
@@ -86,28 +96,41 @@ class YNResponse:UIViewController{
                         .child(self.config.surveySetID)
                         .child(self.config.surveyID)
                         .child("Q"+self.config.Current_Question).child("Time")
-                        .setValue(self.stringFromDate(Date()))
+                        .setValue(Date().timeIntervalSince1970)
                     
-        //        }
-        if(((Int(self.config.Current_Question) ?? 0) % 5) != 0){
+                }
+        print("THIS IS THE SHORT LIMIT")
+        print(self.config.Short_Limit)
+        if(self.config.Short_Limit == Int(self.config.Current_Question)){
+            self.ref.child("Current_Question").setValue(1)
+            self.exitVC(segueIdentifier: "EndSegueYN")
+        }
+        
+//        else if(((Int(self.config.Current_Question) ?? 0) % 5) != 0){
         self.ref.child("Current_Question").setValue((Int(self.config.Current_Question) ?? 0)+1)
         for vc in (self.navigationController?.viewControllers ?? []) {
                   if vc is Question {
                   self.navigationController?.popToViewController(vc, animated: true)
                   break
             }
-        }
-    }
-        else{
-            self.exitVC(segueIdentifier: "More")
-        }
+       }
+//    }
+        
+//        else{
+//            self.exitVC(segueIdentifier: "MoreSegueYN")
+//        }
 }
     
     /*Pass data across view controllers*/
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! SurveyEnd
-        vc.config = self.config
-    }
+            let vc = segue.destination as! SurveyEnd
+            vc.config = self.config
+        }
+//        else{
+//            let vc = segue.destination as! More
+//            vc.config = self.config
+//        }
+    
     
     @IBAction func YesButton(_ sender: Any) {
         self.response = "Yes"
@@ -117,19 +140,27 @@ class YNResponse:UIViewController{
     @IBAction func NoButton(_ sender: Any) {
         self.response = "No"
         self.nextVC()
-
     }
     
     func stringFromDate(_ date: Date) -> String {
-          let formatter = DateFormatter()
-          formatter.dateFormat = "dd MMM yyyy HH:mm" //yyyy
-          return formatter.string(from: date)
-      }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMM yyyy HH:mm" //yyyy
+        return formatter.string(from: date)
+    }
     
     @IBAction func SkipButton(_ sender: Any) {
         self.response="Skip"
         self.nextVC()
-       }
+    }
     
+    @IBAction func exitButton(_ sender: Any) {
+        self.response = "End"
+        self.exitVC(segueIdentifier: "EndSegueYN")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.dismiss(animated:true, completion: nil)
+    }
 }
+
 

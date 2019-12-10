@@ -45,13 +45,6 @@ class Welcome:UIViewController{
     @objc func finishVideo(note: NSNotification){
            DispatchQueue.main.asyncAfter(deadline:.now() + 0.5, execute: {
                print("video fin")
-               self.exitVC(segueIdentifier: "PrivacySegue")
-           })
-         }
-    
-    @objc func finishVideo1(note: NSNotification){
-           DispatchQueue.main.asyncAfter(deadline:.now() + 0.5, execute: {
-               print("video fin")
                  if(self.config.Data_Notice){
                          self.exitVC(segueIdentifier: "GDPRSegue")
                      }else{

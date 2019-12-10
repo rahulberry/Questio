@@ -29,15 +29,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey, can I ask you a few questions? " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NSz-R4-Gpd">
-                                <rect key="frame" x="269" y="627" width="829" height="416"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Quaestio logo white text only" translatesAutoresizingMaskIntoConstraints="NO" id="tYO-dS-wvp">
+                                <rect key="frame" x="0.0" y="7" width="336" height="114"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AlNile-Bold" family="Al Nile" pointSize="70"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bak-Fh-1d7">
-                                <rect key="frame" x="875" y="835" width="443" height="120"/>
+                                <rect key="frame" x="930" y="854" width="388" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="60"/>
@@ -48,62 +45,25 @@
                                     <action selector="SurveyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iGL-Im-K9p"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Quaestio logo white text only" translatesAutoresizingMaskIntoConstraints="NO" id="tYO-dS-wvp">
-                                <rect key="frame" x="0.0" y="7" width="336" height="114"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="animoji-vos" translatesAutoresizingMaskIntoConstraints="NO" id="Upf-hS-7oZ">
+                                <rect key="frame" x="364" y="208" width="639" height="608"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qDn-jH-8wx">
-                                <rect key="frame" x="269" y="129" width="806" height="742"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.1029007509" green="0.10115081820000001" blue="0.25491762159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="qDn-jH-8wx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="288" id="R8U-dj-Gue"/>
-                            <constraint firstItem="qDn-jH-8wx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="130" id="RLf-lf-rwT"/>
-                            <constraint firstItem="NSz-R4-Gpd" firstAttribute="top" secondItem="qDn-jH-8wx" secondAttribute="bottom" constant="27" id="USz-MW-23e"/>
-                            <constraint firstItem="qDn-jH-8wx" firstAttribute="centerX" secondItem="NSz-R4-Gpd" secondAttribute="centerX" id="lV8-YT-2Ab"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ssn-g0-uXw"/>
                     <connections>
-                        <outlet property="Animoji" destination="qDn-jH-8wx" id="qAg-qa-BUM"/>
                         <outlet property="SurveyButtonOutlet" destination="Bak-Fh-1d7" id="kZp-K5-nRc"/>
-                        <segue destination="h7O-uR-u8c" kind="show" identifier="WelcomeSegue" id="gJ9-po-si5"/>
+                        <segue destination="Z3F-eC-A1d" kind="show" identifier="WelcomeSegue" id="OLT-oh-k0t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="jNN-61-8wn"/>
             </objects>
-            <point key="canvasLocation" x="1690" y="176"/>
-        </scene>
-        <!--Welcome-->
-        <scene sceneID="Vkr-Zj-JDP">
-            <objects>
-                <viewController id="h7O-uR-u8c" customClass="Welcome" customModule="Questio" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="js4-kY-sKq">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4F8-eT-JQK">
-                                <rect key="frame" x="20" y="50" width="1326" height="974"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.1028315499" green="0.10565499220000001" blue="0.24707365040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <viewLayoutGuide key="safeArea" id="8Ml-om-Iuc"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="UXw-qU-xuh"/>
-                    <connections>
-                        <outlet property="videoView" destination="4F8-eT-JQK" id="w0c-ya-jEc"/>
-                        <segue destination="jBk-HQ-sDG" kind="show" identifier="PrivacySegue" id="cie-xI-dn3"/>
-                        <segue destination="f6K-Qr-AID" kind="show" identifier="GDPRSegue" id="k2b-Bs-8Xm"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aKJ-sZ-2pL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2352.5622254758418" y="175.78125"/>
+            <point key="canvasLocation" x="1658.5651537335284" y="175.78125"/>
         </scene>
         <!--MechanicalFaceApp-->
         <scene sceneID="JX0-w6-fWU">
@@ -123,33 +83,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pCN-mO-yZW">
-                                <rect key="frame" x="353" y="179" width="660" height="581"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Trd-i4-zTA">
+                                <rect key="frame" x="-54" y="-113" width="1505" height="1182"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GDPR VIDEO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jp0-z6-PwA">
-                                <rect key="frame" x="446" y="768" width="439" height="153"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="70"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1O-Jv-0vl">
-                                <rect key="frame" x="1215" y="890" width="131" height="114"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="ArrowRight-1"/>
-                                <connections>
-                                    <action selector="NextButton:" destination="jBk-HQ-sDG" eventType="touchUpInside" id="Kg4-po-JGf"/>
-                                    <action selector="NextButton:" destination="f6K-Qr-AID" eventType="touchUpInside" id="eIO-4D-nWY"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.1029007509" green="0.10115081820000001" blue="0.25491762159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="Ith-8J-sd6"/>
                     </view>
                     <navigationItem key="navigationItem" id="ipa-em-ac5"/>
                     <connections>
-                        <outlet property="Animoji" destination="pCN-mO-yZW" id="AGb-w9-kEb"/>
+                        <outlet property="videoView" destination="Trd-i4-zTA" id="NLX-QJ-61f"/>
                         <segue destination="1fB-6C-i8y" kind="show" identifier="PrivacyResponse2" id="nvE-5Q-0Pp"/>
                     </connections>
                 </viewController>
@@ -211,8 +155,8 @@
                         <outlet property="AcceptButtonOutlet" destination="Iqa-Rh-Xi9" id="oqX-4E-XbW"/>
                         <outlet property="Animoji" destination="K3J-mP-1cr" id="w6O-9F-eRd"/>
                         <outlet property="DeclineButtonOutlet" destination="JS1-ZU-akK" id="OE2-Ow-QEC"/>
-                        <segue destination="C8z-JI-mx5" kind="show" identifier="StartSurvey" id="4FQ-5J-RLz"/>
                         <segue destination="9dD-rl-8XL" kind="show" identifier="DeclinedSegue" id="Zmc-0p-CsG"/>
+                        <segue destination="C8z-JI-mx5" kind="show" identifier="StartSurvey" id="eLy-0h-4cD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZlA-IK-Q4Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -228,25 +172,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DQb-eN-7gm">
-                                <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                                <rect key="frame" x="123" y="-97" width="1121" height="827"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mmk-XR-HWV">
+                                <rect key="frame" x="1215" y="875" width="131" height="129"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ArrowRight-1"/>
+                                <connections>
+                                    <action selector="nextButton:" destination="Z3F-eC-A1d" eventType="touchUpInside" id="Epn-uu-Sgm"/>
+                                    <action selector="nextButton:" destination="C8z-JI-mx5" eventType="touchUpInside" id="av6-aA-Fug"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f60-8D-7Js">
+                                <rect key="frame" x="57" y="549" width="1266" height="359"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1029007509" green="0.10115081820000001" blue="0.25491762159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="uW7-pe-fKQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="1eJ-el-ycl"/>
                     <connections>
-                        <outlet property="videoView" destination="DQb-eN-7gm" id="Hqg-n6-17L"/>
+                        <outlet property="questionLabel" destination="f60-8D-7Js" id="UsH-HA-hdY"/>
+                        <outlet property="videoView" destination="DQb-eN-7gm" id="gBR-Lf-Wff"/>
                         <segue destination="T2q-k0-5Fo" kind="show" identifier="YNSegue" id="pPf-zh-oyV"/>
                         <segue destination="e35-sL-Ik1" kind="show" identifier="FiveScaleSegue" id="glF-8m-acz"/>
-                        <segue destination="LVI-QF-hqI" kind="show" identifier="LongAnswer" id="78B-Hz-5bk"/>
-                        <segue destination="KNu-0Q-xOA" kind="show" identifier="FourScaleResponse" id="qK5-AJ-qbC"/>
+                        <segue destination="LVI-QF-hqI" kind="show" identifier="LongSegue" id="78B-Hz-5bk"/>
+                        <segue destination="KNu-0Q-xOA" kind="show" identifier="FourScaleSegue" id="qXl-8K-Yrn"/>
+                        <segue destination="24R-Wh-nDI" kind="show" identifier="ThreeScaleSegue" id="tb5-B3-h2m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="knR-f1-Xdm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4694" y="195"/>
+            <point key="canvasLocation" x="4693.2650073206441" y="194.53125"/>
         </scene>
         <!--Five Scale Response-->
         <scene sceneID="qE9-75-v00">
@@ -256,9 +218,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="In how many years do you think will it be standard to have a robot in every home to clean the house?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Bo-Dn-18F">
-                                <rect key="frame" x="90" y="320" width="1186" height="342"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Bo-Dn-18F">
+                                <rect key="frame" x="40" y="280" width="1287" height="464"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text"> Have you heard any recent news about robots?Have you heard any recent news about robots?Have you heard any recent news about robots?</string>
                                 <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -267,7 +230,7 @@
                                 <rect key="frame" x="70" y="693" width="225" height="225"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="34"/>
                                 <state key="normal" title="Never">
                                     <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -280,25 +243,37 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title=" Skip" image="ArrowRight-1"/>
                                 <connections>
-                                    <action selector="SkipButton:" destination="T2q-k0-5Fo" eventType="touchUpInside" id="SpH-ef-98N"/>
+                                    <action selector="skipButton:" destination="e35-sL-Ik1" eventType="touchUpInside" id="FqP-0p-4Va"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SKIP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pg-7E-fpy">
-                                <rect key="frame" x="1262" y="957" width="53" height="33"/>
+                                <rect key="frame" x="1262" y="949" width="53" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="21"/>
                                 <color key="textColor" red="0.1069932953" green="0.1125245616" blue="0.27844837309999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="animoji-vos" translatesAutoresizingMaskIntoConstraints="NO" id="ddL-se-Xkv">
-                                <rect key="frame" x="457" y="19" width="453" height="400"/>
+                                <rect key="frame" x="457" y="-15" width="453" height="400"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="rYX-gH-Vrr">
+                                <rect key="frame" x="325" y="693" width="225" height="225"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="34"/>
+                                <state key="normal" title="Strongly Agree">
+                                    <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTwoAction:" destination="e35-sL-Ik1" eventType="touchUpInside" id="brx-jW-rf9"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wQS-HC-Hva">
                                 <rect key="frame" x="578" y="694" width="225" height="225"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="34"/>
                                 <state key="normal" title="Strongly Agree">
                                     <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -310,8 +285,8 @@
                                 <rect key="frame" x="826" y="693" width="225" height="225"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="40"/>
-                                <state key="normal" title="Strongly Agree">
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="34"/>
+                                <state key="normal" title="1h30mins - 3hh">
                                     <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
@@ -322,24 +297,24 @@
                                 <rect key="frame" x="1075" y="693" width="225" height="225"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="40"/>
-                                <state key="normal" title="Strongly Agree">
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="34"/>
+                                <state key="normal" title="Very Healthy and Balanced">
                                     <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonFiveAction:" destination="e35-sL-Ik1" eventType="touchUpInside" id="gdU-0x-xzj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="rYX-gH-Vrr">
-                                <rect key="frame" x="325" y="693" width="225" height="225"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sEG-ae-SSf">
+                                <rect key="frame" x="20" y="933" width="121" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="40"/>
-                                <state key="normal" title="Strongly Agree">
-                                    <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="17"/>
+                                <state key="normal" title="End Survey">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonTwoAction:" destination="e35-sL-Ik1" eventType="touchUpInside" id="brx-jW-rf9"/>
+                                    <action selector="exitButton:" destination="e35-sL-Ik1" eventType="touchUpInside" id="RLy-sU-a3P"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -355,12 +330,116 @@
                         <outlet property="buttonThree" destination="wQS-HC-Hva" id="DZa-uc-eow"/>
                         <outlet property="buttonTwo" destination="rYX-gH-Vrr" id="hwj-yf-5QE"/>
                         <outlet property="questionLabel" destination="3Bo-Dn-18F" id="g4q-P6-g2n"/>
-                        <segue destination="jjb-p3-NGS" kind="show" id="P8o-N5-cS5"/>
+                        <segue destination="jjb-p3-NGS" kind="show" identifier="MoreSegue5" id="P8o-N5-cS5"/>
+                        <segue destination="Fuz-kh-gJ0" kind="show" identifier="EndSegue5" id="X1O-FV-LUR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dd9-ap-JXR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5361" y="912"/>
+            <point key="canvasLocation" x="5360.907759882869" y="911.71874999999989"/>
+        </scene>
+        <!--Three Scale Response-->
+        <scene sceneID="uww-UK-bgy">
+            <objects>
+                <viewController id="24R-Wh-nDI" customClass="ThreeScaleResponse" customModule="Questio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cxg-mT-3wo">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JoZ-DP-EPY">
+                                <rect key="frame" x="27" y="307" width="1312" height="373"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <string key="text"> Have you heard any recent news about robots?Have you heard any recent news about robots?Have you heard any recent news about robots?</string>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="animoji-vos" translatesAutoresizingMaskIntoConstraints="NO" id="40M-QJ-TA2">
+                                <rect key="frame" x="458" y="-43" width="451" height="429"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Is-4s-vd2">
+                                <rect key="frame" x="215" y="688" width="258" height="241"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="34"/>
+                                <state key="normal" title="Yes">
+                                    <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttoneOneAction:" destination="24R-Wh-nDI" eventType="touchUpInside" id="cIO-QU-5wv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9G-Lk-aJe">
+                                <rect key="frame" x="554" y="686" width="258" height="241"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="34"/>
+                                <state key="normal" title="Yes">
+                                    <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTwoAction:" destination="24R-Wh-nDI" eventType="touchUpInside" id="Hv1-hI-1X9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjp-WR-QDD">
+                                <rect key="frame" x="893" y="686" width="258" height="241"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="34"/>
+                                <state key="normal" title="Yes">
+                                    <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonThree:" destination="24R-Wh-nDI" eventType="touchUpInside" id="b68-OT-0Yh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUv-TC-MEQ">
+                                <rect key="frame" x="1204" y="883" width="155" height="141"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title=" Skip" image="ArrowRight-1"/>
+                                <connections>
+                                    <action selector="SkipButton:" destination="T2q-k0-5Fo" eventType="touchUpInside" id="Gd7-EP-L9T"/>
+                                    <action selector="SkipButton:" destination="24R-Wh-nDI" eventType="touchUpInside" id="SSw-W7-t6A"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SKIP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxl-sI-vND">
+                                <rect key="frame" x="1238" y="937" width="53" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="21"/>
+                                <color key="textColor" red="0.1069932953" green="0.1125245616" blue="0.27844837309999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebb-Ye-fzx">
+                                <rect key="frame" x="27" y="926" width="121" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="17"/>
+                                <state key="normal" title="End Survey">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="exitButton:" destination="24R-Wh-nDI" eventType="touchUpInside" id="B02-Eh-l9c"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1029007509" green="0.10115081820000001" blue="0.25491762159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="hXv-Rd-Npi"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VU9-mf-UPV"/>
+                    <connections>
+                        <outlet property="Animoji" destination="40M-QJ-TA2" id="EZS-SO-B94"/>
+                        <outlet property="buttonOne" destination="4Is-4s-vd2" id="BEy-e5-gin"/>
+                        <outlet property="buttonThree" destination="Wjp-WR-QDD" id="UZ5-9X-YqZ"/>
+                        <outlet property="buttonTwo" destination="g9G-Lk-aJe" id="RIQ-PH-GWB"/>
+                        <outlet property="questionLabel" destination="JoZ-DP-EPY" id="kmO-mW-WZd"/>
+                        <segue destination="jjb-p3-NGS" kind="show" identifier="MoreSegue3" id="KUo-KB-nSi"/>
+                        <segue destination="Fuz-kh-gJ0" kind="show" identifier="EndSegue3" id="h43-9b-Sgq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1fI-Q3-5PN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5373.6456808199118" y="1599.609375"/>
         </scene>
         <!--Privacy Declined-->
         <scene sceneID="POT-7I-TO2">
@@ -428,7 +507,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qr-code-2" translatesAutoresizingMaskIntoConstraints="NO" id="MxR-IV-dqK">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="QR" translatesAutoresizingMaskIntoConstraints="NO" id="MxR-IV-dqK">
                                 <rect key="frame" x="766" y="680" width="323" height="245"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -555,14 +634,6 @@
                                 <rect key="frame" x="848" y="805" width="240" height="162"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="asdf" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iKX-QJ-uua">
-                                <rect key="frame" x="848" y="669" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="9ky-TI-eNm"/>
@@ -577,7 +648,6 @@
                         <outlet property="SurveyCountButtonOutlet" destination="qHj-nX-iIo" id="SjJ-Dn-82Y"/>
                         <outlet property="SurveyLabel" destination="kRY-7w-Ee8" id="50h-F0-pKz"/>
                         <outlet property="p" destination="9km-LC-xiY" id="fjx-Za-8iS"/>
-                        <outlet property="textSR" destination="iKX-QJ-uua" id="UFP-Yz-RNb"/>
                         <segue destination="ddN-x6-ke9" kind="show" identifier="SegueToSetup" id="AOe-gU-73c"/>
                     </connections>
                 </viewController>
@@ -613,7 +683,7 @@
                                 <rect key="frame" x="108" y="352" width="699" height="102"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Gp0-1B-bG8">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Test" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Gp0-1B-bG8">
                                         <rect key="frame" x="50" y="8" width="607" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -702,8 +772,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpu-gG-iF0">
-                                <rect key="frame" x="168" y="514" width="175" height="66"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Survey Conductors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpu-gG-iF0">
+                                <rect key="frame" x="168" y="514" width="277" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -774,18 +844,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="umi-0w-ddL">
-                                <rect key="frame" x="47" y="408" width="1258" height="330"/>
+                                <rect key="frame" x="116" y="350" width="1162" height="450"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                <string key="text"> Have you heard any recent news about robots?Have you heard any recent news about robots?Have you heard any recent news about robots?</string>
+                                <string key="text">Have you heard any recent news about robots?Have you heard any recent news about robots?Have you heard any recent news about robots?</string>
                                 <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMx-6H-rKC">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lMx-6H-rKC">
                                 <rect key="frame" x="281" y="748" width="356" height="187"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="80"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="50"/>
                                 <state key="normal" title="Yes">
                                     <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -793,11 +863,11 @@
                                     <action selector="YesButton:" destination="T2q-k0-5Fo" eventType="touchUpInside" id="AnT-cY-25v"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqf-86-gEN">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kqf-86-gEN">
                                 <rect key="frame" x="777" y="748" width="356" height="187"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="80"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="50"/>
                                 <state key="normal" title="No">
                                     <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -828,8 +898,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="animoji-vos" translatesAutoresizingMaskIntoConstraints="NO" id="aeK-bK-Wrp">
-                                <rect key="frame" x="426" y="-20" width="529" height="509"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHf-fg-9hJ">
+                                <rect key="frame" x="20" y="910" width="121" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="17"/>
+                                <state key="normal" title="End Survey">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="exitButton:" destination="T2q-k0-5Fo" eventType="touchUpInside" id="b4l-jY-Hb7"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="animoji-vos" translatesAutoresizingMaskIntoConstraints="NO" id="rdO-qE-xlb">
+                                <rect key="frame" x="469" y="-38" width="429" height="410"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -838,56 +920,38 @@
                     </view>
                     <navigationItem key="navigationItem" id="0RT-OW-Sz0"/>
                     <connections>
-                        <outlet property="Animoji" destination="aeK-bK-Wrp" id="OOQ-Im-110"/>
+                        <outlet property="Animoji" destination="rdO-qE-xlb" id="aeM-Vk-4MD"/>
                         <outlet property="NoButtonOutlet" destination="kqf-86-gEN" id="byU-Q1-moA"/>
                         <outlet property="QuestionLabel" destination="umi-0w-ddL" id="e9K-Cv-Lxl"/>
                         <outlet property="SkipLabel" destination="hW0-6s-WZI" id="zRA-cb-0GQ"/>
                         <outlet property="YesButtonOutlet" destination="lMx-6H-rKC" id="rHf-oJ-i2I"/>
                         <outlet property="textSR" destination="iEx-9o-VMO" id="3d7-5X-4go"/>
-                        <segue destination="jjb-p3-NGS" kind="show" identifier="More" id="RRZ-Q8-sh9"/>
+                        <segue destination="jjb-p3-NGS" kind="show" identifier="MoreSegueYN" id="RRZ-Q8-sh9"/>
+                        <segue destination="Fuz-kh-gJ0" kind="show" identifier="EndSegueYN" id="hKg-0C-Xjl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4D-Kz-2gq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5361" y="195"/>
+            <point key="canvasLocation" x="5360.907759882869" y="194.53125"/>
         </scene>
-        <!--Response-->
+        <!--Four Scale Response-->
         <scene sceneID="mp1-ST-mfG">
             <objects>
-                <viewController id="KNu-0Q-xOA" customClass="Q2Response" customModule="Questio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KNu-0Q-xOA" customClass="FourScaleResponse" customModule="Questio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lxO-Yd-ASQ">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cx-ES-fDp">
-                                <rect key="frame" x="1185" y="870" width="155" height="134"/>
+                                <rect key="frame" x="1185" y="890" width="155" height="134"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title=" Skip" image="ArrowRight-1"/>
-                                <connections>
-                                    <action selector="SkipButton:" destination="T2q-k0-5Fo" eventType="touchUpInside" id="VUj-Es-D2a"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SKIP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylE-5U-Alc">
-                                <rect key="frame" x="1218" y="921" width="53" height="33"/>
+                                <rect key="frame" x="1218" y="941" width="53" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="21"/>
                                 <color key="textColor" red="0.1069932953" green="0.1125245616" blue="0.27844837309999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="d3Y-KH-h8c">
-                                <rect key="frame" x="1031" y="290" width="240" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="In how many years do you think will it be standard to have a robot in every home to clean the house?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jaZ-Mf-czc">
-                                <rect key="frame" x="90" y="301" width="1186" height="395"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="50"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="animoji-vos" translatesAutoresizingMaskIntoConstraints="NO" id="nbL-58-d9r">
@@ -895,39 +959,39 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5ov-wO-lkW">
-                                <rect key="frame" x="133" y="651" width="243" height="235"/>
+                                <rect key="frame" x="133" y="675" width="243" height="235"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="34"/>
                                 <state key="normal" title="Never">
                                     <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonOneAction:" destination="e35-sL-Ik1" eventType="touchUpInside" id="ceZ-FD-aeV"/>
+                                    <action selector="buttoneOneAction:" destination="KNu-0Q-xOA" eventType="touchUpInside" id="5ZI-b8-hYc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="bXh-Qj-SQV">
-                                <rect key="frame" x="423" y="651" width="243" height="235"/>
+                                <rect key="frame" x="423" y="675" width="243" height="235"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="34"/>
                                 <state key="normal" title="Never">
                                     <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonOneAction:" destination="e35-sL-Ik1" eventType="touchUpInside" id="zec-ZO-6ig"/>
+                                    <action selector="buttonTwoAction:" destination="KNu-0Q-xOA" eventType="touchUpInside" id="3hS-In-3vl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="g2y-CQ-61h">
-                                <rect key="frame" x="713" y="651" width="243" height="235"/>
+                                <rect key="frame" x="713" y="675" width="243" height="235"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="34"/>
                                 <state key="normal" title="Never">
                                     <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonOneAction:" destination="e35-sL-Ik1" eventType="touchUpInside" id="Ehl-hi-hr0"/>
+                                    <action selector="buttonThree:" destination="KNu-0Q-xOA" eventType="touchUpInside" id="I5k-SH-JZg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6wi-VN-dXM">
@@ -967,16 +1031,33 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="bYl-cG-e3E">
-                                <rect key="frame" x="1007" y="651" width="243" height="235"/>
+                                <rect key="frame" x="1007" y="675" width="243" height="235"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="34"/>
                                 <state key="normal" title="Never">
                                     <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonOneAction:" destination="e35-sL-Ik1" eventType="touchUpInside" id="lCZ-eU-NV1"/>
+                                    <action selector="buttonFourAction:" destination="KNu-0Q-xOA" eventType="touchUpInside" id="FNm-nc-por"/>
                                 </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jaZ-Mf-czc">
+                                <rect key="frame" x="104" y="221" width="1158" height="616"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text"> Have you heard any recent news about robots?Have you heard any recent news about robots?Have you heard any recent news about robots?</string>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2Q-bq-9Bf">
+                                <rect key="frame" x="20" y="930" width="121" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="17"/>
+                                <state key="normal" title="End Survey">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1029007509" green="0.10115081820000001" blue="0.25491762159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -984,25 +1065,73 @@
                     </view>
                     <navigationItem key="navigationItem" id="zqE-fG-YmM"/>
                     <connections>
-                        <outlet property="textSR" destination="d3Y-KH-h8c" id="Vrb-OO-vhC"/>
-                        <segue destination="jjb-p3-NGS" kind="show" id="743-gJ-toP"/>
+                        <outlet property="Animoji" destination="nbL-58-d9r" id="XIb-3t-mnv"/>
+                        <outlet property="buttonFour" destination="bYl-cG-e3E" id="Qtg-m5-nPD"/>
+                        <outlet property="buttonOne" destination="5ov-wO-lkW" id="cRG-bQ-owN"/>
+                        <outlet property="buttonThree" destination="g2y-CQ-61h" id="09G-sg-vJ4"/>
+                        <outlet property="buttonTwo" destination="bXh-Qj-SQV" id="jpd-Sl-NAw"/>
+                        <outlet property="questionLabel" destination="jaZ-Mf-czc" id="GEv-7g-d0Q"/>
+                        <segue destination="jjb-p3-NGS" kind="show" identifier="MoreSegue3" id="743-gJ-toP"/>
+                        <segue destination="Fuz-kh-gJ0" kind="show" identifier="EndSegue4" id="f3y-4e-01Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwU-oY-Wm3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5360.907759882869" y="-1165.4296875"/>
         </scene>
-        <!--Question3-->
+        <!--More-->
         <scene sceneID="9EA-Ky-ujU">
             <objects>
-                <viewController id="jjb-p3-NGS" customClass="Question3" customModule="Questio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jjb-p3-NGS" customClass="More" customModule="Questio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kgl-Iy-Y7r">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Can I ask you five more questions?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="b9m-xp-ZJh">
+                                <rect key="frame" x="54" y="436" width="1258" height="330"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yco-Ea-Qo4">
+                                <rect key="frame" x="272" y="692" width="356" height="187"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="80"/>
+                                <state key="normal" title="Yes">
+                                    <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="YesButton:" destination="jjb-p3-NGS" eventType="touchUpInside" id="JVx-QD-tyV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyK-UQ-n8Y">
+                                <rect key="frame" x="760" y="692" width="356" height="187"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="80"/>
+                                <state key="normal" title="No">
+                                    <color key="titleColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="NoButton:" destination="jjb-p3-NGS" eventType="touchUpInside" id="RPb-CM-1g5"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="animoji-vos" translatesAutoresizingMaskIntoConstraints="NO" id="a75-Hx-zdA">
+                                <rect key="frame" x="419" y="0.0" width="529" height="509"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="0.1028315499" green="0.10565499220000001" blue="0.24707365040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="73G-ef-ANt"/>
                     </view>
-                    <navigationItem key="navigationItem" id="edz-bz-ib0"/>
+                    <navigationItem key="navigationItem" id="YLH-le-stY"/>
+                    <connections>
+                        <outlet property="NoButtonOutlet" destination="vyK-UQ-n8Y" id="mlZ-qp-X7y"/>
+                        <outlet property="YesButtonOutlet" destination="Yco-Ea-Qo4" id="Jyq-pc-NNl"/>
+                        <segue destination="Fuz-kh-gJ0" kind="show" identifier="SurveyEndSegue" id="tvr-mB-fXn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKH-y8-3gg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1034,8 +1163,8 @@
                                 <rect key="frame" x="438" y="623" width="506" height="169"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="quaestio.io" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJi-zh-rqb">
-                                        <rect key="frame" x="42" y="0.0" width="423" height="175"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="quaestio.cc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJi-zh-rqb">
+                                        <rect key="frame" x="29" y="0.0" width="441" height="175"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="80"/>
                                         <nil key="textColor"/>
@@ -1082,7 +1211,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xi0-Uq-QBb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8187.8477306002924" y="194.53125"/>
+            <point key="canvasLocation" x="7123" y="195"/>
         </scene>
         <!--Long Answer-->
         <scene sceneID="21p-a8-cvz">
@@ -1092,19 +1221,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UNI-6X-uyk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="animoji-vos" translatesAutoresizingMaskIntoConstraints="NO" id="UNI-6X-uyk">
                                 <rect key="frame" x="469" y="30" width="429" height="410"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Speak up!!!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RAi-uk-OLn">
-                                <rect key="frame" x="135" y="770" width="1097" height="218"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="60"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What role do you think Robots will play in the future?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9O1-Km-Cfq">
-                                <rect key="frame" x="161" y="459" width="1033" height="333"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;My last question is, what how do you feel about this survey experience?&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9O1-Km-Cfq">
+                                <rect key="frame" x="78" y="346" width="1211" height="333"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1115,11 +1237,30 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title=" Skip" image="ArrowRight-1"/>
                                 <connections>
-                                    <action selector="SkipButton:" destination="T2q-k0-5Fo" eventType="touchUpInside" id="42a-6Z-a0l"/>
+                                    <action selector="nextQ:" destination="LVI-QF-hqI" eventType="touchUpInside" id="3u7-yc-rBa"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SKIP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSF-p9-qYc">
-                                <rect key="frame" x="1236" y="931" width="53" height="33"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Speak up" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eKy-g8-8qT">
+                                <rect key="frame" x="184" y="687" width="1010" height="194"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D58-8n-PYZ">
+                                <rect key="frame" x="45" y="936" width="121" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="17"/>
+                                <state key="normal" title="End Survey">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="endButton:" destination="LVI-QF-hqI" eventType="touchUpInside" id="5gr-zE-2rU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Next" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSF-p9-qYc">
+                                <rect key="frame" x="1236" y="925" width="53" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="NotoSansMyanmar-Bold" family="Noto Sans Myanmar" pointSize="21"/>
                                 <color key="textColor" red="0.1069932953" green="0.1125245616" blue="0.27844837309999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1131,12 +1272,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="F0J-lV-h6D"/>
                     <connections>
-                        <segue destination="jjb-p3-NGS" kind="show" id="XyC-uK-Q8i"/>
+                        <outlet property="Animoji" destination="UNI-6X-uyk" id="rXM-1e-y1e"/>
+                        <outlet property="QuestionLabel" destination="9O1-Km-Cfq" id="Ky0-dM-Ast"/>
+                        <outlet property="SkipLabel" destination="pSF-p9-qYc" id="RQA-UM-aeP"/>
+                        <outlet property="textSR" destination="eKy-g8-8qT" id="WK8-hU-Lxd"/>
+                        <segue destination="jjb-p3-NGS" kind="show" identifier="MoreSegueLong" id="XyC-uK-Q8i"/>
+                        <segue destination="Fuz-kh-gJ0" kind="show" identifier="EndSegueLong" id="bR5-rF-eLR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7R-fb-c0b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5361" y="-506"/>
+            <point key="canvasLocation" x="5360.907759882869" y="-506.24999999999994"/>
         </scene>
         <!--Setup List View Controller-->
         <scene sceneID="owL-TE-xUo">
@@ -1566,22 +1712,60 @@
             </objects>
             <point key="canvasLocation" x="336" y="176"/>
         </scene>
+        <!--Introduction-->
+        <scene sceneID="ZEa-pa-CMq">
+            <objects>
+                <viewController id="Z3F-eC-A1d" customClass="Introduction" customModule="Questio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5hm-uO-xq9">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sNd-sc-czr">
+                                <rect key="frame" x="15" y="50" width="1326" height="974"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8T0-lJ-Qoj">
+                                        <rect key="frame" x="1221" y="845" width="131" height="129"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="ArrowRight-1"/>
+                                        <connections>
+                                            <action selector="nextButton:" destination="Z3F-eC-A1d" eventType="touchUpInside" id="0CZ-bi-Veh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.047806359829999999" green="0.072120495140000004" blue="0.16079440710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="DhZ-oI-mCb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="l40-tu-cZC"/>
+                    <connections>
+                        <outlet property="videoView" destination="sNd-sc-czr" id="m7M-Yo-y57"/>
+                        <segue destination="jBk-HQ-sDG" kind="show" identifier="PrivacySegue" id="9cO-yk-py3"/>
+                        <segue destination="f6K-Qr-AID" kind="show" identifier="GDPRSegue" id="L7w-pL-OeV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bcc-uP-7Jq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2324" y="176"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ArrowRight" width="130" height="137"/>
         <image name="ArrowRight-1" width="1200" height="1200"/>
         <image name="HomeWallpaper" width="1373" height="997"/>
+        <image name="QR" width="2048" height="2048"/>
         <image name="Quaestio logo white text only" width="4843" height="1228"/>
         <image name="animoji-vos" width="548" height="548"/>
         <image name="back_arrow" width="47" height="47"/>
         <image name="bg2" width="2732" height="2048"/>
         <image name="location.fill" catalog="system" width="64" height="56"/>
         <image name="np_left-arrow_2970322_1A1B41" width="50" height="50"/>
-        <image name="qr-code-2" width="299" height="299"/>
         <image name="robotHome" width="840" height="840"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="743-gJ-toP"/>
+        <segue reference="hKg-0C-Xjl"/>
+        <segue reference="RRZ-Q8-sh9"/>
         <segue reference="ZuX-KE-OrH"/>
     </inferredMetricsTieBreakers>
 </document>

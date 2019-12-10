@@ -30,7 +30,6 @@ class Home: UIViewController{
     let sr = SpeechProcessing()
     
     var word = ""
-    
     func giveKeyWord(keyWord: String){
         self.word = keyWord
         print("got answer")
@@ -41,9 +40,10 @@ override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
         sr.initialize()
-        sr.sharedVars(textSR!)
         //sr.begin(keywords: ["Yes","No","Skip"], callBack: giveKeyWord)
         //sr.beginLongAnswer(callBack: giveKeyWord)
+        
+        
         
         self.StartButtonOutlet.layer.cornerRadius = 150
         self.SurveyCountButtonOutlet.layer.cornerRadius = 35

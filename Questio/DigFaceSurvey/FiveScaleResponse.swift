@@ -28,6 +28,10 @@ class FiveScaleResponse:UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cv.setupCaptureSession()
+        cv.setupDevice()
+        cv.setupInputOutput()
+        cv.startRunningCaptureSession()
         if(self.config.Face_Type == "F"){
             self.Animoji.image = UIImage(named: "animoji-vos")
 
@@ -62,8 +66,8 @@ class FiveScaleResponse:UIViewController{
         func nextVC(){
             print(self.cv.final_answer)
             print(self.config.Current_Question)
-             // cv.getResults()
-            //  cv.group.notify(queue: .main){
+              cv.getResults()
+              cv.group.notify(queue: .main){
                 self.ref.child("Data")
                     .child(self.config.surveySetID)
                     .child(self.config.surveyID)
@@ -78,10 +82,14 @@ class FiveScaleResponse:UIViewController{
                     .child(self.config.surveySetID)
                     .child(self.config.surveyID)
                     .child("Q"+self.config.Current_Question).child("Time")
-                    .setValue(self.stringFromDate(Date()))
+                    .setValue(Date().timeIntervalSince1970)
                     
-            //}
-            if(((Int(self.config.Current_Question) ?? 0) % 5) != 0){
+            }
+            if(self.config.Short_Limit == Int(self.config.Current_Question)){
+                self.ref.child("Current_Question").setValue(1)
+                self.exitVC(segueIdentifier: "EndSegue5")
+            }
+//            else if(((Int(self.config.Current_Question) ?? 0) % 5) != 0){
                 self.ref.child("Current_Question").setValue((Int(self.config.Current_Question) ?? 0)+1)
                     for vc in (self.navigationController?.viewControllers ?? []) {
                           if vc is Question {
@@ -89,17 +97,23 @@ class FiveScaleResponse:UIViewController{
                           break
                     }
                 }
+            //}
+           
+//                    else{
+//                        self.exitVC(segueIdentifier: "MoreSegue5")
+//                    }
             }
-            else{
-                self.exitVC(segueIdentifier: "More")
-            }
-        }
-        
-        /*Pass data across view controllers*/
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            let vc = segue.destination as! SurveyEnd
-            vc.config = self.config
-        }
+                
+                /*Pass data across view controllers*/
+                override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                    let vc = segue.destination as! SurveyEnd
+                    vc.config = self.config
+                    
+//                    else{
+//                        let vc = segue.destination as! More
+//                        vc.config = self.config
+//                    }
+                }
     
     func stringFromDate(_ date: Date) -> String {
         let formatter = DateFormatter()
@@ -127,4 +141,16 @@ class FiveScaleResponse:UIViewController{
         self.response = self.buttonFive.currentTitle!
         self.nextVC()
     }
+    @IBAction func skipButton(_ sender: Any) {
+        self.response = "Skip"
+        self.nextVC()
+    }
+    
+    @IBAction func exitButton(_ sender: Any) {
+        self.response = "End"
+        self.exitVC(segueIdentifier: "EndSegue5")
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+          self.dismiss(animated:true, completion: nil)
+      }
 }

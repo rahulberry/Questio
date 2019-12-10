@@ -157,7 +157,7 @@ class SetupListViewController: UIViewController, UITableViewDelegate, UITableVie
         chosenConfig.Face_Type = dbValue(surveyIndex: survey_index, key: key_faceType) as! String
         chosenConfig.Hypothesis = dbValue(surveyIndex: survey_index, key: key_hypothesis) as! String
         chosenConfig.Personal_Limit = dbValue(surveyIndex: survey_index, key: key_personalLimit) as! Int
-        chosenConfig.Short_Limit = dbValue(surveyIndex: survey_index, key: key_personalLimit) as! Int
+        chosenConfig.Short_Limit = dbValue(surveyIndex: survey_index, key: key_shortLimit) as! Int
         chosenConfig.Short_Timed = dbValue(surveyIndex: survey_index, key: key_shortTimed) as! Bool
         chosenConfig.shuffled = dbValue(surveyIndex: survey_index, key: key_shuffled) as! Bool
         chosenConfig.Privacy_Code = dbValue(surveyIndex: survey_index, key: key_privacyCode) as! Bool

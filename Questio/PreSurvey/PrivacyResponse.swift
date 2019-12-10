@@ -17,6 +17,7 @@ class PrivacyResponse:UIViewController{
     var uid = ""
     var AcceptPressed = false
     var config = config_data()
+    var qOrder = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42"]
 
     let ref = Database.database().reference()
     let cv = ComputerVision()
@@ -24,10 +25,10 @@ class PrivacyResponse:UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        cv.setupCaptureSession()
-//        cv.setupDevice()
-//        cv.setupInputOutput()
-//        cv.startRunningCaptureSession()
+        cv.setupCaptureSession()
+        cv.setupDevice()
+        cv.setupInputOutput()
+        cv.startRunningCaptureSession()
         if(self.config.Face_Type == "F"){
             self.Animoji.image = UIImage(named: "animoji-vos")
         }
@@ -52,6 +53,7 @@ class PrivacyResponse:UIViewController{
             self.config.surveyID = self.randomString(length: 6)
             let vc = segue.destination as! Question
             vc.config = self.config
+            vc.qOrder = self.qOrder
         }
     }
     
@@ -61,16 +63,20 @@ class PrivacyResponse:UIViewController{
      @IBAction func AcceptButton(_ sender: Any) {
         /*Set user ID & transition*/
         self.AcceptPressed = true
+        self.ref.child("Current_Question").setValue(1)
+
+        if(self.config.shuffled){
+            self.qOrder.shuffle()
+        }
         self.exitVC(segueIdentifier: "StartSurvey")
-//        cv.getResults()
-//        cv.group.notify(queue: .main){
-//          //  self.config.surveyID = self.randomString(length: 6)
-//            print(self.cv.final_answer)
+        cv.getResults()
+        cv.group.notify(queue: .main){
+            print(self.cv.final_answer)
 //            self.ref.child("Data").child(self.config.surveySetID).child(self.config.surveyID).child("Age").setValue(self.cv.final_answer.age)
         print(self.config)
         self.ref.child("Data").child(self.config.surveySetID).child(self.config.surveyID).child("Mood_Start").setValue(self.cv.final_answer.emotion)
-            self.ref.child("Data").child(self.config.surveySetID).child(self.config.surveyID).child("Gender").setValue(self.cv.final_answer.gender)
-//        }
+        self.ref.child("Data").child(self.config.surveySetID).child(self.config.surveyID).child("Gender").setValue(self.cv.final_answer.gender)
+        }
       
     }
 }

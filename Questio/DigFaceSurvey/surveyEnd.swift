@@ -12,12 +12,16 @@ import Firebase
 
 class SurveyEnd:UIViewController{
     var config = config_data()
+    let ref = Database.database().reference()
     
     @IBOutlet weak var surveyID: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(self.config)
         self.surveyID.text = self.config.surveyID
+        self.ref.child("Personal_Start").setValue(false)
+        self.ref.child("Current_Question").setValue(1)
     }
    
     @IBAction func NextSurveyButton(_ sender: Any) {

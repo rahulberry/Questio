@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import AVKit
 
 class GDPR1: UIViewController {
     
@@ -19,17 +20,21 @@ class GDPR1: UIViewController {
 
     
     @IBOutlet weak var Animoji: UIImageView!
+    @IBOutlet weak var videoView: UIView!
     
     override func viewDidLoad() {
         navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewDidLoad()
-        
-        //fix state management
-        self.Animoji.image = UIImage(named: Face_Type)
-        
+        var videoName = "HowWeUseYourData"
+        let pathURL = URL.init(fileURLWithPath:  Bundle.main.path(forResource: videoName, ofType: "mp4")!)
+        let player = AVPlayer(playerItem: AVPlayerItem(url: pathURL))
+        let playerLayer = AVPlayerLayer(player: player)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.finishVideo), name: .AVPlayerItemDidPlayToEndTime, object: nil)
+        playerLayer.frame = .init(x: 0, y: 0, width: self.videoView.frame.width, height: self.videoView.frame.height)
+        self.videoView.layer.addSublayer(playerLayer)
+        player.play()
+        //fix state management        
     }
-    
-   
     
     /*Pass data across view controllers*/
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -46,7 +51,17 @@ class GDPR1: UIViewController {
         
     }
 
+    @objc func finishVideo(note: NSNotification){
+        DispatchQueue.main.asyncAfter(deadline:.now() + 0.2, execute: {
+               self.exitVC(segueIdentifier: "PrivacyResponse2")
+        })
+        }
+    
     @IBAction func NextButton(_ sender: Any) {
         self.exitVC(segueIdentifier: "PrivacyResponse2")
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
 }
