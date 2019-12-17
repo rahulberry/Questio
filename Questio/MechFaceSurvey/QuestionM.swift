@@ -22,7 +22,7 @@ class QuestionM:UIViewController{
     var objPlayer: AVAudioPlayer?
     var skipHandle = false
     var player:AVPlayer?
-    var faceStateArray = ["annoyed", "ears_flapping", "flirt", "happy", "sad", "surprised", "suspicious", "wink", "headspin", "done","done","done","done","done"]
+    var faceStateArray = ["annoyed", "ears_flapping", "flirt", "happy", "sad", "surprised", "suspicious", "wink", "nothing","nothing","nothing","nothing","nothing"]
     var cv = ComputerVision()
 
     @IBOutlet weak var QuestionLabel: UILabel!
@@ -35,7 +35,7 @@ class QuestionM:UIViewController{
 //        cv.startRunningCaptureSession()
 //
         self.skipHandle = false
-        ref.child("Hardware_Interface").child("Current_State").setValue("Question")
+        self.ref.child("Hardware_Interface").child("Current_State").setValue("Question")
         self.ref.child("Current_Question").observeSingleEvent(of: .value, with: { snapshot in
             print(snapshot)
             if let value = snapshot.value as? Int{
@@ -43,9 +43,14 @@ class QuestionM:UIViewController{
                 let pathURL = URL.init(fileURLWithPath:  Bundle.main.path(forResource: "Q"+self.config.Current_Question + "A" , ofType: "mp3")!)
                 self.player = AVPlayer(playerItem: AVPlayerItem(url: pathURL))
                 let playerLayer = AVPlayerLayer(player: self.player)
+                 let asset = AVURLAsset(url: pathURL, options: nil)
+                let audioDuration = asset.duration
+                let audioDurationSeconds = CMTimeGetSeconds(audioDuration)
+                self.ref.child("Hardware_Interface").child("Audio").setValue(Int(audioDurationSeconds)-1)
+
                     NotificationCenter.default.addObserver(self, selector: #selector(self.finishVideo), name: .AVPlayerItemDidPlayToEndTime, object: nil)
                 self.player?.play()
-            let randomInt = Int.random(in: 0..<14)
+            let randomInt = Int.random(in: 0..<13)
                    self.ref.child("Hardware_Interface").child("Face_State").setValue(self.faceStateArray[randomInt])
         
 //                guard let url = Bundle.main.url(forResource: "Q"+self.config.Current_Question+"A", withExtension: "mp3") else { return }
@@ -107,7 +112,6 @@ class QuestionM:UIViewController{
                     if(value == "Yes"){
                         self.skipHandle = true
                         self.ref.child("Hardware_Interface").child("Audio").setValue("End")
-                        self.ref.child("Hardware_Interface").child("Face_State").setValue("End")
                         self.player?.pause()
                         if((self.qData.format == "y/n")||(self.qData.format=="two")){
                             self.exitVC(segueIdentifier: "YNSegueM")

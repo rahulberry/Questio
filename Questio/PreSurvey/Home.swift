@@ -38,6 +38,10 @@ class Home: UIViewController{
     
 override func viewDidLoad() {
         super.viewDidLoad()
+    cv.setupCaptureSession()
+    cv.setupDevice()
+    cv.setupInputOutput()
+    cv.startRunningCaptureSession()
         navigationController?.setNavigationBarHidden(true, animated: false)
         sr.initialize()
         //sr.begin(keywords: ["Yes","No","Skip"], callBack: giveKeyWord)
@@ -81,7 +85,12 @@ override func viewDidLoad() {
         }
     
         @IBAction func SetupButton(_ sender: Any){
-            self.exitVC(segueIdentifier: "SetupSegue")
+            cv.getResults()
+            cv.group.notify(queue: .main){
+                print(self.cv.final_answer)
+                self.p.image = self.cv.load_image
+            }
+           // self.exitVC(segueIdentifier: "SetupSegue")
         }
     
         

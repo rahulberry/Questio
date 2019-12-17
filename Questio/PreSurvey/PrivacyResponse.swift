@@ -72,7 +72,7 @@ class PrivacyResponse:UIViewController{
         cv.getResults()
         cv.group.notify(queue: .main){
             print(self.cv.final_answer)
-//            self.ref.child("Data").child(self.config.surveySetID).child(self.config.surveyID).child("Age").setValue(self.cv.final_answer.age)
+       self.ref.child("Data").child(self.config.surveySetID).child(self.config.surveyID).child("Age").setValue(self.cv.final_answer.age)
         print(self.config)
         self.ref.child("Data").child(self.config.surveySetID).child(self.config.surveyID).child("Mood_Start").setValue(self.cv.final_answer.emotion)
         self.ref.child("Data").child(self.config.surveySetID).child(self.config.surveyID).child("Gender").setValue(self.cv.final_answer.gender)

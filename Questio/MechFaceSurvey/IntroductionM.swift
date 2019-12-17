@@ -41,7 +41,7 @@ class IntroductionM:UIViewController{
         let asset = AVURLAsset(url: pathURL, options: nil)
         let audioDuration = asset.duration
         let audioDurationSeconds = CMTimeGetSeconds(audioDuration)
-        ref.child("Hardware_Interface").child("Audio").setValue(Int(audioDurationSeconds))
+        ref.child("Hardware_Interface").child("Audio").setValue(Int(audioDurationSeconds)-1)
 
         player = AVPlayer(playerItem: AVPlayerItem(url: pathURL))
         let playerLayer = AVPlayerLayer(player: player)

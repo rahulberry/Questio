@@ -36,7 +36,7 @@ class Introduction:UIViewController{
      /*Pass data across view controllers*/
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
              if(self.config.Data_Notice){
-                        let vc = segue.destination as! GDPR1
+                        let vc = segue.destination as! PrivacyResponse
                         vc.config = self.config
                     }else{
                         let vc = segue.destination as! PrivacyPolicy
@@ -47,18 +47,19 @@ class Introduction:UIViewController{
      @objc func finishVideo(note: NSNotification){
             DispatchQueue.main.asyncAfter(deadline:.now() + 0.5, execute: {
                     if(self.config.Data_Notice){
-                        self.exitVC(segueIdentifier: "GDPRSegue")
+                        self.exitVC(segueIdentifier: "ResponseSegue")
                     }else{
                         self.exitVC(segueIdentifier: "PrivacySegue")
                     }
             })
-        
+    
+    
     }
     
     @IBAction func nextButton(_ sender: Any) {
         player?.pause()
         if(self.config.Data_Notice){
-            self.exitVC(segueIdentifier: "GDPRSegue")
+            self.exitVC(segueIdentifier: "ResponseSegue")
         }else{
             self.exitVC(segueIdentifier: "PrivacySegue")
         }

@@ -38,7 +38,8 @@ class FiveScaleResponseM:UIViewController{
     var sliderAnswer = ""
     
     let cv = ComputerVision()
-
+    @IBOutlet weak var ExitButton: UIView!
+    
     override func viewDidLoad() {
         print("ScreenLoad 5")
 
@@ -57,7 +58,8 @@ class FiveScaleResponseM:UIViewController{
         
         super.viewDidLoad()
         self.GreenButton.layer.cornerRadius = 45
-       
+        self.ExitButton.layer.cornerRadius = 45
+
         self.L1Value.text = self.qData.optOne
         self.L2Value.text = self.qData.optTwo
         self.L3Value.text = self.qData.optThree

@@ -17,9 +17,13 @@ class PrivacyM:UIViewController{
     @IBOutlet weak var RedButton: UIView!
     @IBOutlet weak var GreenButton: UIView!
 
+    override func viewDidAppear(_ animated: Bool) {
+        self.AcceptPressed = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.AcceptPressed = false
 //        cv.setupCaptureSession()
 //        cv.setupDevice()
 //        cv.setupInputOutput()
@@ -36,7 +40,7 @@ class PrivacyM:UIViewController{
             let asset = AVURLAsset(url: url, options: nil)
             let audioDuration = asset.duration
             let audioDurationSeconds = CMTimeGetSeconds(audioDuration)
-            ref.child("Hardware_Interface").child("Audio").setValue(Int(audioDurationSeconds))
+            ref.child("Hardware_Interface").child("Audio").setValue(Int(audioDurationSeconds)-1)
             // For iOS 11
             objPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
 
@@ -90,6 +94,7 @@ class PrivacyM:UIViewController{
             let vc = segue.destination as! QuestionM
             vc.config = self.config
             vc.qOrder = self.qOrder
+            self.AcceptPressed = false
         }
         else{
             let vc = segue.destination as! DeclinedM

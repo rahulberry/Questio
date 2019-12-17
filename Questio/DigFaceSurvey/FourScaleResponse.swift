@@ -147,4 +147,8 @@ class FourScaleResponse:UIViewController{
     override func viewDidDisappear(_ animated: Bool) {
           self.dismiss(animated:true, completion: nil)
       }
+    @IBAction func skipButton(_ sender: Any) {
+        self.response = "Skip"
+        self.nextVC()
+    }
 }

@@ -16,7 +16,6 @@ class SurveyHomeScreen: UIViewController {
     @IBOutlet weak var SurveyButtonOutlet: UIButton!
 
     var objPlayer: AVAudioPlayer?
-    let url = Bundle.main.url(forResource: "approachAudio", withExtension: "mp3")
     var Privacy_Code = false
     var uid = ""
     var faceType = ""
@@ -24,7 +23,9 @@ class SurveyHomeScreen: UIViewController {
     var config = config_data()
     var pause = false
     var player:AVPlayer?
+    var url = Bundle.main.url(forResource: "approachAudio", withExtension: "mp3")
     
+
     override func viewDidLoad() {
         ref.child("Reset").observe(.value, with: {snapshot in
                if let value = snapshot.value as? Bool{
@@ -40,28 +41,35 @@ class SurveyHomeScreen: UIViewController {
            }
            })
     self.SurveyButtonOutlet.layer.cornerRadius = 45
-    
         super.viewDidLoad()
+        self.ref.child("Hardware_Interface").child("Face_State").setValue("Digital")
+
         navigationController?.setNavigationBarHidden(true, animated: false)
 
         self.playAudio()
         ref.child("Approach_Question").observe(.value, with: {snapshot in
             if let value = snapshot.value as? String{
-                 if(value == "V1"){
-                    self.playAudio()
-                }
-                else if (value == "V2"){
-                    
-                }
-                else if (value == "V3"){
-                        
-                }
+                if(value == "V0"){
+                        self.url = Bundle.main.url(forResource: "approachAudio", withExtension: "mp3")
+                    }
+                     else  if(value == "V1"){
+                        self.url = Bundle.main.url(forResource: "Please-come-back", withExtension: "mp3")
+                    }
+                    else if (value == "V2"){
+                        self.url = Bundle.main.url(forResource: "Youre-making-me-sad", withExtension: "mp3")
+
+                    }
+                    else if (value == "V3"){
+                        self.url = Bundle.main.url(forResource: "Im-going-to-cry-now", withExtension: "mp3")
+
+                    }
                 else if (value == "V4"){
                         
                 }
                 else if (value == "V5"){
                                 
                 }
+                self.playAudio()
             }
         })
     }
@@ -79,7 +87,7 @@ class SurveyHomeScreen: UIViewController {
             let asset = AVURLAsset(url: self.url!, options: nil)
             let audioDuration = asset.duration
             let audioDurationSeconds = CMTimeGetSeconds(audioDuration)
-            ref.child("Hardware_Interface").child("Audio").setValue(Int(audioDurationSeconds))
+            //ref.child("Hardware_Interface").child("Audio").setValue(Int(audioDurationSeconds))
         
             // For iOS 11
             objPlayer = try AVAudioPlayer(contentsOf: self.url!, fileTypeHint: AVFileType.mp3.rawValue)

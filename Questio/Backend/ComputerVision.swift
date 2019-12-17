@@ -114,7 +114,7 @@ extension ComputerVision: AVCapturePhotoCaptureDelegate {
         
         if let imageData = photo.fileDataRepresentation() {
             image = UIImage(data:imageData)
-            let newImage = image?.rotate(radians: .pi/2)
+            let newImage = image?.rotate(radians: .pi/(2/3))
             let png_format = newImage?.jpegData(compressionQuality: 0.6)
             load_image = newImage
             let url = URL(string: "https://surveybot12.cognitiveservices.azure.com/face/v1.0/detect?returnFaceAttributes=gender,emotion,age")!

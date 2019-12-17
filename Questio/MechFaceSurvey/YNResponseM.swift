@@ -27,6 +27,7 @@ class YNResponseM:UIViewController{
     @IBOutlet weak var QuestionLabel: UILabel!
     @IBOutlet weak var YesLabel: UILabel!
     @IBOutlet weak var NoLabel: UILabel!
+    @IBOutlet weak var ExitButton: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +46,8 @@ class YNResponseM:UIViewController{
         self.RedButton.layer.cornerRadius = 110
         self.GreenButton.layer.cornerRadius = 110
         self.YellowButton.layer.cornerRadius = 45
-
+        self.ExitButton.layer.cornerRadius = 45
+        
         if(self.qData.format == "two"){
             self.YesLabel.text = self.qData.optTwo
             self.NoLabel.text = self.qData.optTwo

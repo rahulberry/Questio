@@ -21,7 +21,11 @@ class SurveyStartM: UIViewController{
     let ref = Database.database().reference()
     var objPlayer: AVAudioPlayer?
     var url = Bundle.main.url(forResource: "approachAudio", withExtension: "mp3")
+    
+    override func viewWillAppear(_ animated: Bool) {
+        ref.child("Hardware_Interface").child("Current_State").setValue("Welcome")
 
+    }
     override func viewDidLoad(){
         super.viewDidLoad()
         ref.child("Reset").observe(.value, with: {snapshot in
@@ -64,15 +68,18 @@ class SurveyStartM: UIViewController{
             print(snapshot)
              if let value = snapshot.value as? String{
                 print(value)
-                if(value == "V1"){
+                if(value == "V0"){
                     self.url = Bundle.main.url(forResource: "approachAudio", withExtension: "mp3")
                 }
+                 else  if(value == "V1"){
+                    self.url = Bundle.main.url(forResource: "Please-come-back", withExtension: "mp3")
+                }
                 else if (value == "V2"){
-                    self.url = Bundle.main.url(forResource: "ComeBack", withExtension: "mp3")
+                    self.url = Bundle.main.url(forResource: "Youre-making-me-sad", withExtension: "mp3")
 
                 }
                 else if (value == "V3"){
-                    self.url = Bundle.main.url(forResource: "PleaseDontGo", withExtension: "mp3")
+                    self.url = Bundle.main.url(forResource: "Im-going-to-cry-now", withExtension: "mp3")
 
                 }
                 else if (value == "V4"){
@@ -96,7 +103,7 @@ class SurveyStartM: UIViewController{
             let asset = AVURLAsset(url: self.url!, options: nil)
             let audioDuration = asset.duration
             let audioDurationSeconds = CMTimeGetSeconds(audioDuration)
-            ref.child("Hardware_Interface").child("Audio").setValue(Int(audioDurationSeconds))
+            ref.child("Hardware_Interface").child("Audio").setValue(Int(audioDurationSeconds)-1)
         
             // For iOS 11
             objPlayer = try AVAudioPlayer(contentsOf: self.url!, fileTypeHint: AVFileType.mp3.rawValue)

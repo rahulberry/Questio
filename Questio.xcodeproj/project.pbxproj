@@ -55,6 +55,10 @@
 		2E85FBD9236B2BF600EDFF56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E85FBD7236B2BF600EDFF56 /* Main.storyboard */; };
 		2E85FBDB236B2BF900EDFF56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E85FBDA236B2BF900EDFF56 /* Assets.xcassets */; };
 		2E85FBDE236B2BF900EDFF56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E85FBDC236B2BF900EDFF56 /* LaunchScreen.storyboard */; };
+		2EA7A1D623A25B4800555DD7 /* Please-come-back.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2EA7A1D223A25B4700555DD7 /* Please-come-back.mp3 */; };
+		2EA7A1D723A25B4800555DD7 /* Where-are-you-going.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2EA7A1D323A25B4800555DD7 /* Where-are-you-going.mp3 */; };
+		2EA7A1D823A25B4800555DD7 /* Youre-making-me-sad.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2EA7A1D423A25B4800555DD7 /* Youre-making-me-sad.mp3 */; };
+		2EA7A1D923A25B4800555DD7 /* Im-going-to-cry-now.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2EA7A1D523A25B4800555DD7 /* Im-going-to-cry-now.mp3 */; };
 		2EB26EB1239933CC00E0CC9B /* Introduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB26EB0239933CC00E0CC9B /* Introduction.swift */; };
 		2EB26EB3239937BD00E0CC9B /* HowWeUseYourData.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2EB26EB2239937B200E0CC9B /* HowWeUseYourData.mp4 */; };
 		2EB26EB52399CC8200E0CC9B /* IntroductionM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB26EB42399CC8200E0CC9B /* IntroductionM.swift */; };
@@ -229,6 +233,10 @@
 		2E85FBDA236B2BF900EDFF56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E85FBDD236B2BF900EDFF56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E85FBDF236B2BF900EDFF56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EA7A1D223A25B4700555DD7 /* Please-come-back.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Please-come-back.mp3"; sourceTree = "<group>"; };
+		2EA7A1D323A25B4800555DD7 /* Where-are-you-going.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Where-are-you-going.mp3"; sourceTree = "<group>"; };
+		2EA7A1D423A25B4800555DD7 /* Youre-making-me-sad.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Youre-making-me-sad.mp3"; sourceTree = "<group>"; };
+		2EA7A1D523A25B4800555DD7 /* Im-going-to-cry-now.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Im-going-to-cry-now.mp3"; sourceTree = "<group>"; };
 		2EB26EAF2399309200E0CC9B /* QM1F.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = QM1F.mp4; sourceTree = "<group>"; };
 		2EB26EB0239933CC00E0CC9B /* Introduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Introduction.swift; sourceTree = "<group>"; };
 		2EB26EB2239937B200E0CC9B /* HowWeUseYourData.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = HowWeUseYourData.mp4; sourceTree = "<group>"; };
@@ -370,6 +378,10 @@
 		2E5F9E4F2382CDBE00D971B0 /* VideoAssets */ = {
 			isa = PBXGroup;
 			children = (
+				2EA7A1D523A25B4800555DD7 /* Im-going-to-cry-now.mp3 */,
+				2EA7A1D223A25B4700555DD7 /* Please-come-back.mp3 */,
+				2EA7A1D323A25B4800555DD7 /* Where-are-you-going.mp3 */,
+				2EA7A1D423A25B4800555DD7 /* Youre-making-me-sad.mp3 */,
 				2EB26F142399E03F00E0CC9B /* Q1A.mp3 */,
 				2EB26F152399E03F00E0CC9B /* Q14A.mp3 */,
 				2ED39F44239DD91D00391E3D /* approachAudio.mp3 */,
@@ -712,6 +724,7 @@
 				2EF62D1B2394053900074437 /* QM2F.mp4 in Resources */,
 				2EB26EE42399CECE00E0CC9B /* Q31A.mp3 in Resources */,
 				2EB26EEB2399CECE00E0CC9B /* Q13A.mp3 in Resources */,
+				2EA7A1D723A25B4800555DD7 /* Where-are-you-going.mp3 in Resources */,
 				2EF62D1C2394053900074437 /* QM3F.mp4 in Resources */,
 				2EF62D1D2394053900074437 /* QP1F.mp4 in Resources */,
 				2EF62D1E2394053900074437 /* QP2F.mp4 in Resources */,
@@ -736,6 +749,7 @@
 				2EF62D2C2394053900074437 /* QP16F.mp4 in Resources */,
 				2EF62D2D2394053900074437 /* QP17F.mp4 in Resources */,
 				2EB26EF92399CECE00E0CC9B /* Q36A.mp3 in Resources */,
+				2EA7A1D623A25B4800555DD7 /* Please-come-back.mp3 in Resources */,
 				2EB26EF32399CECE00E0CC9B /* Q17A.mp3 in Resources */,
 				2EF62D2E2394053900074437 /* QP18F.mp4 in Resources */,
 				2EB26F022399CECE00E0CC9B /* Q37A.mp3 in Resources */,
@@ -768,6 +782,7 @@
 				2EB26EE82399CECE00E0CC9B /* Q10A.mp3 in Resources */,
 				2EF62CE12392DEF700074437 /* Q24F.mp4 in Resources */,
 				2EB26EFF2399CECE00E0CC9B /* Q12A.mp3 in Resources */,
+				2EA7A1D923A25B4800555DD7 /* Im-going-to-cry-now.mp3 in Resources */,
 				2EF62CE22392DEF700074437 /* Q25F.mp4 in Resources */,
 				2EF62CE32392DEF700074437 /* Q26F.mp4 in Resources */,
 				2EB26EFA2399CECE00E0CC9B /* Q20A.mp3 in Resources */,
@@ -814,6 +829,7 @@
 				2EB26F0C2399CECE00E0CC9B /* QM2A.mp3 in Resources */,
 				2EB26EFB2399CECE00E0CC9B /* Q41A.mp3 in Resources */,
 				2E193BD6237CC6A400FCC545 /* OpenSans-Regular.ttf in Resources */,
+				2EA7A1D823A25B4800555DD7 /* Youre-making-me-sad.mp3 in Resources */,
 				2E406444238EB1B3006894D2 /* L1A.mp3 in Resources */,
 				2E193BD0237CC6A400FCC545 /* OpenSans-BoldItalic.ttf in Resources */,
 				2E193BCE237CC6A400FCC545 /* OpenSans-ExtraBold.ttf in Resources */,

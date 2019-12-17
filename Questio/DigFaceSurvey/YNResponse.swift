@@ -102,7 +102,6 @@ class YNResponse:UIViewController{
         print("THIS IS THE SHORT LIMIT")
         print(self.config.Short_Limit)
         if(self.config.Short_Limit == Int(self.config.Current_Question)){
-            self.ref.child("Current_Question").setValue(1)
             self.exitVC(segueIdentifier: "EndSegueYN")
         }
         

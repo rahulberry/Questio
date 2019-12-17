@@ -20,6 +20,8 @@ class SurveyEndMech:UIViewController{
         self.ref.child("Current_Question").setValue(1)
         self.ref.child("Hardware_Interface").child("Current_State").setValue("End Screen")
         self.ref.child("Hardware_Interface").child("Face_State").setValue("celebrate")
+        self.surveyID.text = self.config.surveyID
+        
     }
     
     @IBAction func nextButton(_ sender: Any) {
